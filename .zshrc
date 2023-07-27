@@ -4,15 +4,15 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh" 
 
+# append rust
+PATH="$HOME/.cargo/bin/:$PATH"
+
 # Python
 # /Users/xixiao/Library/Python/3.8/bin
 # export PATH="/usr/local/anaconda3/bin:$PATH"  # commented out by conda initialize
 # export PATH=/Users/xixiao/Library/Python/3.8/bin:$PATH
 # export PATH="$PATH:/usr/local/bin/phantomjs"
 
-# Needed for Rust compilation and linking
-export PATH=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib:$PATH
-export LIBRARY_PATH="$LIBRARY_PATH:/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -86,6 +86,7 @@ alias e="exit"
 alias c="clear"
 alias vim='nvim'
 alias v='nvim'
+alias n='nvim'
 
 
 # Which plugins would you like to load?
