@@ -7,8 +7,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # Python
 # /Users/xixiao/Library/Python/3.8/bin
 # export PATH="/usr/local/anaconda3/bin:$PATH"  # commented out by conda initialize
-export PATH=/Users/xixiao/Library/Python/3.8/bin:$PATH
-export PATH="$PATH:/usr/local/bin/phantomjs"
+# export PATH=/Users/xixiao/Library/Python/3.8/bin:$PATH
+# export PATH="$PATH:/usr/local/bin/phantomjs"
 
 # Needed for Rust compilation and linking
 export PATH=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib:$PATH
@@ -78,7 +78,7 @@ ZSH_THEME="ys"
 
 # Custom
 
-. $(brew --prefix)/etc/profile.d/z.sh
+# . $(brew --prefix)/etc/profile.d/z.sh
 
 # Alias
 alias gs="git status"
@@ -122,12 +122,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.1.2
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+# export PYENV_ROOT="$HOME/.pyenv"
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+# source /usr/local/opt/chruby/share/chruby/chruby.sh
+# source /usr/local/opt/chruby/share/chruby/auto.sh
+# chruby ruby-3.1.2
+# export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
