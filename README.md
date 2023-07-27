@@ -2,6 +2,14 @@
 
 The repo is configured based on [the best way to store your dotfiles](https://www.ackama.com/what-we-think/the-best-way-to-store-your-dotfiles-a-bare-git-repository-explained/).
 
+### How to restore
+
+1. go to your $HOME, echo ".cfg" >> .gitignore (There could be weird behaviour if .cfg tries to track itself. Avoid recursive issues by adding .cfg to your global Git ignore)
+2. git clone git@github.com:xixiaofinland/dotfiles.git$HOME/.cfg --bare
+3. alias config='/usr/bin/git --git-dir=$HOME/.cfg/  --work-tree=$HOME'
+4. config config --local status.showUntrackedFiles no
+5. config checkout (make sure no files with same name existing, otherwise checkout action will fail)
+
 
 Nvim related:
 
