@@ -19,8 +19,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- My general keys
 -- vim.keymap.set('n', '<S-Enter>', 'O<ESC>j', { silent = true })
-vim.keymap.set('n', '<Enter>', 'o<ESC>k', { silent = true })
-
+-- vim.keymap.set('n', '<Enter>', 'o<ESC>k', { silent = true })
 
 -- Salesforce
 vim.keymap.set('n', '<leader>sfp', '<C-w>s<C-w>j10<C-w>-:term sf project deploy start  --source-dir "%" --target-org xixiao100<CR>', { desc = 'Apex deploy current file' })
