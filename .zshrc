@@ -11,7 +11,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # OS specific
 case `uname` in
     Darwin)
-        echo 'ZSH in Mac'
 
         # Rust
         export PATH=/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib:$PATH
@@ -33,7 +32,6 @@ case `uname` in
         # export PATH="/usr/local/opt/mysql-client/bin:$PATH"
     ;;
     Linux)
-        echo 'ZSH in Linux'
     ;;
 esac
 
