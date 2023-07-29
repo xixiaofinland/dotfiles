@@ -2,13 +2,19 @@
 
 The repo is configured based on [the best way to store/restore your dotfiles](https://www.atlassian.com/git/tutorials/dotfiles).
 
+### Feature
+
+- zsh
+- tmux
+- nvim
+
 ### How to restore
 
-1. go to your $HOME, echo ".cfg" >> .gitignore (There could be weird behaviour if .cfg tries to track itself. Avoid recursive issues by adding .cfg to your global Git ignore)
-2. git clone git@github.com:xixiaofinland/dotfiles.git$HOME/.cfg --bare
-3. alias config='/usr/bin/git --git-dir=$HOME/.cfg/  --work-tree=$HOME'
-4. config config --local status.showUntrackedFiles no
-5. config checkout (make sure no files with same name existing, otherwise checkout action will fail)
+1. `echo ".cfg" >> ~/.gitignore` (in case recursive load issue)
+2. `git clone git@github.com:xixiaofinland/dotfiles.git $HOME/.cfg --bare`
+3. `alias config='/usr/bin/git --git-dir=$HOME/.cfg/  --work-tree=$HOME'`
+4. `config config --local status.showUntrackedFiles no`
+5. `config checkout`
 
 
 Nvim related:
