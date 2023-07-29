@@ -1,6 +1,5 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh" 
-source $ZSH/oh-my-zsh.sh
 
 # append rust
 PATH="$HOME/.cargo/bin/:$PATH"
@@ -12,6 +11,7 @@ ZSH_THEME="ys"
 # Load plugins
 plugins=(git nvm npm fzf z)
 
+source $ZSH/oh-my-zsh.sh
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
