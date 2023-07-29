@@ -81,6 +81,7 @@ ZSH_THEME="ys"
 # . $(brew --prefix)/etc/profile.d/z.sh
 
 # Alias
+
 alias gs="git status"
 alias e="exit"
 alias c="clear"
@@ -90,7 +91,9 @@ alias n='nvim'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias cs='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME status'
 alias ca='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME add'
-alias cc='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME commit -m "+"'
+alias cc='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME commit -am "+"'
+
+# Manually run "config push origin branch -u" to set the default
 alias cp='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME push'
 
 
