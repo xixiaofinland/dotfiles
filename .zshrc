@@ -87,6 +87,11 @@ alias c="clear"
 alias vim='nvim'
 alias v='nvim'
 alias n='nvim'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias cs='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME status'
+alias ca='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME add'
+alias cc='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME commit -m "+"'
+alias cp='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME push'
 
 
 # Which plugins would you like to load?
@@ -131,6 +136,5 @@ source $ZSH/oh-my-zsh.sh
 # chruby ruby-3.1.2
 # export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
