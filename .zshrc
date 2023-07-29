@@ -1,3 +1,6 @@
+# launch TMUX automatically at start
+if [ "$TMUX" = "" ]; then tmux; fi
+
 # append rust
 PATH="$HOME/.cargo/bin/:$PATH"
 
