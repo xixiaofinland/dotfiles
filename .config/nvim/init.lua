@@ -149,6 +149,11 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  },
+
   -- other plugins;
   { import = 'plugins' },
 }, {})
@@ -173,10 +178,29 @@ require('telescope').setup {
       },
     },
   },
+  -- telescope-file-browser settings
+  extensions = {
+    file_browser = {
+      -- theme = "ivy",
+      -- disables netrw and use telescope-file-browser in its place
+      hijack_netrw = true,
+      mappings = {
+        ["i"] = {
+          -- your custom insert mode mappings
+        },
+        ["n"] = {
+          -- your custom normal mode mappings
+        },
+      },
+    },
+  },
 }
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
+
+-- Enable telescope-file-browser
+require("telescope").load_extension "file_browser"
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
@@ -225,7 +249,7 @@ parser_config.soql = {
     files = { "src/parser.c" },
     branch = "main",                            -- default branch in case of git repo if different from master
     generate_requires_npm = false,              -- if stand-alone parser without npm dependencies
-    requires_generate_from_grammar = false,      -- if folder contains pre-generated src/parser.c
+    requires_generate_from_grammar = false,     -- if folder contains pre-generated src/parser.c
   }
 }
 
@@ -235,7 +259,7 @@ parser_config.sosl = {
     files = { "src/parser.c" },
     branch = "main",                            -- default branch in case of git repo if different from master
     generate_requires_npm = false,              -- if stand-alone parser without npm dependencies
-    requires_generate_from_grammar = false,      -- if folder contains pre-generated src/parser.c
+    requires_generate_from_grammar = false,     -- if folder contains pre-generated src/parser.c
   }
 }
 
