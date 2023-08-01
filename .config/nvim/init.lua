@@ -165,7 +165,7 @@ require 'opts'
 require 'plug-settings'
 
 -- load some legacy vim scripts
-vim.cmd('source scripts.vim')
+-- vim.cmd('source scripts.vim')
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
