@@ -1,5 +1,17 @@
 # launch TMUX automatically at start
-if [ "$TMUX" = "" ]; then tmux; fi
+session_name="xi-workspace"
+
+tmux has-session -t=$session_name 2> /dev/null
+
+if [[ $? -ne 0 ]]; then
+  TMUX='' tmux new-session -d -s "$session_name"
+fi
+
+if [[ -z "$TMUX" ]]; then
+    tmux attach -t "$session_name"
+else
+    tmux switch-client -t "$session_name"
+fi
 
 # Append rust commands
 PATH="$HOME/.cargo/bin/:$PATH"
@@ -50,6 +62,3 @@ if [ -f ~/.config/zsh/.zsh_alias ]; then
 else
     print "404: ~/.config/zsh/.zsh_alias not found."
 fi
-
-# run only when no other zsh process is running
-[[ "$(pidof zsh)" == *' '* ]] || config pull
