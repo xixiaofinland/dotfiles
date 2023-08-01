@@ -51,5 +51,5 @@ else
     print "404: ~/.config/zsh/.zsh_alias not found."
 fi
 
-# get latest dotfiles version
-config pull
+# run only when no other zsh process is running
+[[ "$(pidof zsh)" == *' '* ]] || config pull
