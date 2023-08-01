@@ -1,4 +1,4 @@
-# launch TMUX automatically at start
+# Launch or re-attach
 session_name="xi-workspace"
 
 tmux has-session -t=$session_name 2> /dev/null
