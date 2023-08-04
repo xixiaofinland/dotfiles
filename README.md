@@ -1,4 +1,4 @@
-### Depend
+# What
 
 The repo is configured based on [the best way to store/restore your dotfiles](https://www.atlassian.com/git/tutorials/dotfiles).
 
