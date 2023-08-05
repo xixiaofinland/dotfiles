@@ -19,9 +19,18 @@ vim.filetype.add({
 
 -- Set highlight on search
 vim.o.hlsearch = false
+vim.o.incsearch = true
+
+vim.o.wrap = false
+
+vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.o.undofile = true
+
+vim.o.termguicolors = true
 
 -- Make line numbers default
 vim.wo.number = true
+vim.o.relativenumber = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
