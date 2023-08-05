@@ -17,6 +17,10 @@ The repo is configured based on [the best way to store/restore your dotfiles](ht
 5. `config checkout`
 
 
+### Dependencies
+
+- Tmux plugin manager
+
 Nvim related:
 
 - [ripgrep](https://github.com/BurntSushi/ripgrep#installation) is required for multiple [telescope](https://github.com/nvim-telescope/telescope.nvim#suggested-dependencies) pickers.
