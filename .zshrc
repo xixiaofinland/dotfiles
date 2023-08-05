@@ -5,7 +5,6 @@ tmux has-session -t=$session_name 2> /dev/null
 
 if [[ $? -ne 0 ]]; then
   TMUX='' tmux new-session -d -s "$session_name" -n "work"
-  tmux split-window -v 'ipython'
 fi
 
 if [[ -z "$TMUX" ]]; then
