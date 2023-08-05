@@ -1,5 +1,5 @@
 # Launch or re-attach
-session_name="xi-workspace"
+session_name="xixiao"
 
 tmux has-session -t=$session_name 2> /dev/null
 
