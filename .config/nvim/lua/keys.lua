@@ -23,21 +23,35 @@ vim.keymap.set('n', ']<Space>', ':<C-u>put =repeat(nr2char(10),v:count)<Bar>exec
 vim.keymap.set('n', '[<Space>', ':<C-u>put!=repeat(nr2char(10),v:count)<Bar>execute "\']+1"<CR>',
   { silent = true, noremap = true })
 
-vim.keymap.set('n', '<space>fba', ':Telescope file_browser<CR>', { noremap = true })
-vim.keymap.set('n', '<space>fbb', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { noremap = true })
+-- See `:help telescope.builtin`
+
+local tel = require('telescope.builtin')
+
+vim.keymap.set('n', '<leader>?', tel.oldfiles, { desc = '[?] Find recently opened files' })
+vim.keymap.set('n', '<leader><space>', tel.buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader>/', function()
+  tel.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
+    previewer = false,
+  })
+end, { desc = '[/] Fuzzily search in current buffer' })
+
+vim.keymap.set('n', '<leader>fi', tel.git_files, { desc = '[F]ind g[I]t files' })
+vim.keymap.set('n', '<leader>ff', tel.find_files, { desc = '[F]ind [F]iles' })
+vim.keymap.set('n', '<leader>fh', tel.help_tags, { desc = '[F]ind [H]elp' })
+vim.keymap.set('n', '<leader>fw', tel.grep_string, { desc = '[F]ind current [W]ord' })
+vim.keymap.set('n', '<leader>fg', tel.live_grep, { desc = '[F]ind by [G]rep' })
+-- vim.keymap.set('n', '<leader>sd', tel.diagnostics, { desc = '[S]earch [D]iagnostics' })
+
 
 -- open file_browser with the path of the current buffer
-vim.api.nvim_set_keymap(
-  "n",
-  "<space>fbb",
-  ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
-  { noremap = true }
-)
+vim.keymap.set('n', '<leader>fb', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>fB', ':Telescope file_browser<CR>', { noremap = true })
 
 -- Salesforce keys
 
--- vim.keymap.set('n', '<leader>sfp',
---   '<C-w>s<C-w>j10<C-w>-:term sf project deploy start  --source-dir "%" --target-org xixiao100<CR>',
---   { desc = 'Apex deploy current file' })
+vim.keymap.set('n', '<leader>sfp',
+  '<C-w>s<C-w>j10<C-w>-:term sf project deploy start  --source-dir "%" --target-org xixiao100<CR>',
+  { desc = 'Apex deploy current file' })
 
--- vim.keymap.set('n', '<leader>fa', '<C-w>s<C-w>j10<C-w>-:term prettier --plugin=prettier-plugin-apex --write "%" <CR>', { desc = 'Format by cmd' })
+-- vim.keymap.set('n', '<leader>fa', '<C-w>s<C-w>j10<C-w>-:term prettier --plugin=prettier-plugin-apex --write "%" <CR>', { desc = 'Format by cmd' }
