@@ -1,10 +1,10 @@
 # Launch or re-attach
-session_name="xixiao"
+session_name="0"
 
 tmux has-session -t=$session_name 2> /dev/null
 
 if [[ $? -ne 0 ]]; then
-  TMUX='' tmux new-session -d -s "$session_name" -n "work"
+  TMUX='' tmux new-session -d -s "$session_name"
 fi
 
 if [[ -z "$TMUX" ]]; then
