@@ -11,3 +11,5 @@ alias cc='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME commit -am "+"'
 
 # Manually run "config push origin branch -u" to set the default
 alias cp='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME push'
+
+alias ts='tms switch'
