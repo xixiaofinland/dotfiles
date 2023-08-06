@@ -19,14 +19,9 @@ The repo is configured based on [the best way to store/restore your dotfiles](ht
 
 ### Dependencies
 
-- Tmux plugin manager
-
-Nvim related:
-
+- [tmux sessionizer](https://github.com/jrmoulton/tmux-sessionizer)
+- [Tmux plugin manager](https://github.com/tmux-plugins/tpm)
 - [ripgrep](https://github.com/BurntSushi/ripgrep#installation) is required for multiple [telescope](https://github.com/nvim-telescope/telescope.nvim#suggested-dependencies) pickers.
-
 - Prettier, Apex-Prettier - formatting
-
-- sfapex-treesitter - syntax highlight
-
-- apex LSP.jar - code jumpping etc.
+- [sfapex-treesitter](https://github.com/aheber/tree-sitter-sfapex) - syntax highlight
+- [apex LSP jar](https://github.com/forcedotcom/salesforcedx-vscode/blob/develop/packages/salesforcedx-vscode-apex/out/apex-jorje-lsp.jar) - code jumpping etc.
