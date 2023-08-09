@@ -19,6 +19,8 @@ The repo is configured based on [the best way to store/restore your dotfiles](ht
 
 ### Dependencies
 
+- Install one nerd font to be used by the terminal
+- [Starship](https://github.com/starship/starship)
 - [tmux sessionizer](https://github.com/jrmoulton/tmux-sessionizer)
 - [Tmux plugin manager](https://github.com/tmux-plugins/tpm)
 - [ripgrep](https://github.com/BurntSushi/ripgrep#installation) is required for multiple [telescope](https://github.com/nvim-telescope/telescope.nvim#suggested-dependencies) pickers.

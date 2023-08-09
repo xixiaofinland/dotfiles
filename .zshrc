@@ -47,7 +47,7 @@ case `uname` in
     ;;
 esac
 
-ZSH_THEME="ys"
+# ZSH_THEME="ys"
 
 # Load plugins
 plugins=(git nvm npm fzf z)
