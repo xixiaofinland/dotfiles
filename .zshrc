@@ -47,7 +47,7 @@ case `uname` in
     ;;
 esac
 
-# ZSH_THEME="ys"
+ZSH_THEME="ys"
 
 # Load plugins
 plugins=(git nvm npm fzf z)
@@ -57,7 +57,7 @@ plugins=(git nvm npm fzf z)
 source $ZSH/oh-my-zsh.sh
 
 # shell prompt
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 # Load extra setting files
 if [ -f ~/.config/zsh/.zsh_alias ]; then
