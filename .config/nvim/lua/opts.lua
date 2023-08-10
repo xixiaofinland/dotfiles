@@ -17,6 +17,8 @@ vim.filetype.add({
   }
 })
 
+vim.o.history = 200
+
 -- Set highlight on search
 vim.o.hlsearch = false
 vim.o.incsearch = true
