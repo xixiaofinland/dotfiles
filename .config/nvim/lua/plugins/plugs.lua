@@ -16,5 +16,15 @@ return{
 
   {
     "jose-elias-alvarez/null-ls.nvim"
-  }
+  },
+
+  'saifulapm/chartoggle.nvim',
+
+  'tpope/vim-surround',
+
+  'mbbill/undotree',
+
+  -- Seamless with Tmux
+  'christoomey/vim-tmux-navigator',
+
 }

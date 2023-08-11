@@ -22,19 +22,10 @@ vim.opt.rtp:prepend(lazypath)
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
-
-  'tpope/vim-surround',
-
-  'mbbill/undotree',
-
-  -- Seamless with Tmux
-  'christoomey/vim-tmux-navigator',
-
+  
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
-
-  'jiangmiao/auto-pairs',
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
