@@ -19,11 +19,11 @@ The repo is configured based on [the best way to store/restore your dotfiles](ht
 
 ### Dependencies
 
-- Install one nerd font to be used by the terminal
-- [Starship](https://github.com/starship/starship)
-- [tmux sessionizer](https://github.com/jrmoulton/tmux-sessionizer)
+- [finter - tmux sessionizer](https://github.com/xixiaofinland/finter)
 - [Tmux plugin manager](https://github.com/tmux-plugins/tpm)
 - [ripgrep](https://github.com/BurntSushi/ripgrep#installation) is required for multiple [telescope](https://github.com/nvim-telescope/telescope.nvim#suggested-dependencies) pickers.
-- Prettier, Apex-Prettier - formatting
-- [sfapex-treesitter](https://github.com/aheber/tree-sitter-sfapex) - syntax highlight
-- [apex LSP jar](https://github.com/forcedotcom/salesforcedx-vscode/blob/develop/packages/salesforcedx-vscode-apex/out/apex-jorje-lsp.jar) - code jumpping etc.
+
+#### Salesforce
+- Prettier, Apex-Prettier
+- [sfapex-treesitter](https://github.com/aheber/tree-sitter-sfapex)
+- [apex LSP jar](https://github.com/forcedotcom/salesforcedx-vscode/blob/develop/packages/salesforcedx-vscode-apex/out/apex-jorje-lsp.jar)
