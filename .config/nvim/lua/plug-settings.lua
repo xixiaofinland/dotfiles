@@ -302,16 +302,25 @@ cmp.setup {
 local null_ls = require("null-ls")
 
 null_ls.setup({
-    sources = {
-        -- not work global prettier :(
-        -- null_ls.builtins.formatting.prettier.with({
-        --     filetypes = { "apex" },
-        --     extra_args = { "--plugin=prettier-plugin-apex", "--write" },
-        -- }),
-    },
+  sources = {
+    -- not work global prettier :(
+    -- null_ls.builtins.formatting.prettier.with({
+    --     filetypes = { "apex" },
+    --     extra_args = { "--plugin=prettier-plugin-apex", "--write" },
+    -- }),
+
+    null_ls.builtins.diagnostics.pmd.with({
+      filetypes = { "apex" },
+      extra_args = {
+        "check",
+        "--rulesets",
+        "apex_ruleset.xml"         -- or path to self-written ruleset
+      },
+    }),
+  }
 })
 
-require('chartoggle').setup ({
-          leader = '<localleader>', -- you can use any key as Leader
-          keys = {',', ';' } -- Which keys will be toggle end of the line
+require('chartoggle').setup({
+  leader = '<localleader>',         -- you can use any key as Leader
+  keys = { ',', ';' }               -- Which keys will be toggle end of the line
 })
