@@ -56,8 +56,7 @@ plugins=(git nvm npm fzf z)
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-# shell prompt
-# eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
 # Load extra setting files
 if [ -f ~/.config/zsh/.zsh_alias ]; then
