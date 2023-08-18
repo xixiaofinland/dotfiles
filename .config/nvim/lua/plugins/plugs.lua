@@ -27,4 +27,6 @@ return{
   -- Seamless with Tmux
   'christoomey/vim-tmux-navigator',
 
+  'jvgrootveld/telescope-zoxide',
+
 }

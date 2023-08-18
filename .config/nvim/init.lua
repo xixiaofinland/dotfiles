@@ -201,6 +201,7 @@ pcall(require('telescope').load_extension, 'fzf')
 
 -- Enable telescope-file-browser
 require("telescope").load_extension "file_browser"
+require("telescope").load_extension('zoxide')
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
