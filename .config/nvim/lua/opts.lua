@@ -1,10 +1,8 @@
 -- See `:help vim.o`
--- NOTE: You can change these options as you wish!
-
 -- Set commentstring. :h comment.ft
 
 local ft = require('Comment.ft')
-ft.set('apex', {'//%s', '/*%s*/'})
+ft.set('apex', { '//%s', '/*%s*/' })
 
 -- Set file extensions to auto-launch LSP for Apex
 vim.filetype.add({
@@ -16,6 +14,8 @@ vim.filetype.add({
     sosl = 'sosl',
   }
 })
+
+vim.o.textwidth = 80
 
 vim.o.history = 200
 
