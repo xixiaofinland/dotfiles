@@ -64,5 +64,3 @@ if [ -f ~/.config/zsh/.zsh_alias ]; then
 else
     print "404: ~/.config/zsh/.zsh_alias not found."
 fi
-
-config pull
