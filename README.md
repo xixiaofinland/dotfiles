@@ -1,6 +1,7 @@
 # What
 
-The repo is configured based on [the best way to store/restore your dotfiles](https://www.atlassian.com/git/tutorials/dotfiles).
+The repo is configured based on [the best way to store/restore your
+dotfiles](https://www.atlassian.com/git/tutorials/dotfiles).
 
 ### Feature
 
@@ -21,9 +22,14 @@ The repo is configured based on [the best way to store/restore your dotfiles](ht
 
 - [finter - tmux sessionizer](https://github.com/xixiaofinland/finter)
 - [Tmux plugin manager](https://github.com/tmux-plugins/tpm)
-- [ripgrep](https://github.com/BurntSushi/ripgrep#installation) is required for multiple [telescope](https://github.com/nvim-telescope/telescope.nvim#suggested-dependencies) pickers.
+- [ripgrep](https://github.com/BurntSushi/ripgrep#installation) is required for
+  multiple
+[telescope](https://github.com/nvim-telescope/telescope.nvim#suggested-dependencies)
+pickers.
 
 #### Salesforce
-- Prettier, Apex-Prettier
+- PMD (download, put in path, give rule file)
+- Prettier, Apex-Prettier (npm local version)
 - [sfapex-treesitter](https://github.com/aheber/tree-sitter-sfapex)
-- [apex LSP jar](https://github.com/forcedotcom/salesforcedx-vscode/blob/develop/packages/salesforcedx-vscode-apex/out/apex-jorje-lsp.jar)
+- [apex LSP jar put into
+~](https://github.com/forcedotcom/salesforcedx-vscode/blob/develop/packages/salesforcedx-vscode-apex/out/apex-jorje-lsp.jar)
