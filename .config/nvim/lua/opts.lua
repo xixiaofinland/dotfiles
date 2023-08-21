@@ -23,6 +23,9 @@ vim.o.history = 200
 vim.o.hlsearch = false
 vim.o.incsearch = true
 
+-- default updatetime 4000ms is not good for async update
+vim.o.updatetime = 100
+
 vim.o.wrap = false
 
 vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir"

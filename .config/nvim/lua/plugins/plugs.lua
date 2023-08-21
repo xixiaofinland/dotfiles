@@ -1,8 +1,8 @@
-return{
+return {
   {
     'rust-lang/rust.vim',
     ft = "rust",
-    init = function ()
+    init = function()
       -- autoformat in save
       vim.g.rustfmt_autosave = 1
     end
@@ -35,5 +35,7 @@ return{
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim',         opts = {} },
+  { 'numToStr/Comment.nvim', opts = {} },
+
+  'mhinz/vim-signify',
 }
