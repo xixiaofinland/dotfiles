@@ -38,4 +38,6 @@ return {
   { 'numToStr/Comment.nvim', opts = {} },
 
   'mhinz/vim-signify',
+
+  'sindrets/diffview.nvim',
 }
