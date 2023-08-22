@@ -239,12 +239,13 @@ mason_lspconfig.setup_handlers {
 
 -- require("mason").setup {}
 -- require("mason-lspconfig").setup()
-require 'lspconfig'.apex_ls.setup {
+require'lspconfig'.apex_ls.setup {
   -- download apex LSP jar file from official site to user home
   apex_jar_path = os.getenv('HOME') .. '/apex-jorje-lsp.jar',
   apex_enable_semantic_errors = false,       -- Whether to allow Apex Language Server to surface semantic errors
   apex_enable_completion_statistics = false, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
   filetypes = { 'apex' },
+  root_dir = require'lspconfig'.util.root_pattern('sfdx-project.json'),
 
   -- `mason_lspconfig.setup_handlers` doesn't handle manually configured languages, we need to manually attach below actions
   on_attach = on_attach,
