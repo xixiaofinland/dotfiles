@@ -201,7 +201,7 @@ local servers = {
   -- gopls = {},
   -- pyright = {},
   rust_analyzer = {},
-  apex_ls = {},
+  -- apex_ls = {},
   -- tsserver = {},
 
   lua_ls = {
@@ -214,6 +214,8 @@ local servers = {
 
 -- Setup neovim lua configuration
 require('neodev').setup()
+
+require("mason").setup {}
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -237,8 +239,6 @@ mason_lspconfig.setup_handlers {
   end,
 }
 
--- require("mason").setup {}
--- require("mason-lspconfig").setup()
 local lspconfig = require 'lspconfig'
 lspconfig.apex_ls.setup {
   -- download apex LSP jar file from official site to user home
