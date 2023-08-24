@@ -79,10 +79,14 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
       on_attach = function(bufnr)
-        vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk,
-          { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
-        vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
-        vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
+        vim.keymap.set('n', '[c', require('gitsigns').prev_hunk,
+          { buffer = bufnr, desc = 'previous hunk' })
+        vim.keymap.set('n', ']c', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'next hunk' })
+        vim.keymap.set('n', '<leader>hh', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'preview hunk' })
+        vim.keymap.set('n', '<leader>ha', require('gitsigns').stage_hunk, { buffer = bufnr, desc = 'stage_hunk' })
+        vim.keymap.set('n', '<leader>hu', require('gitsigns').undo_stage_hunk, { buffer = bufnr, desc = 'undo_stage_hunk' })
+        vim.keymap.set('n', '<leader>hS', require('gitsigns').stage_buffer, { buffer = bufnr, desc = 'stage_buffer' })
+        vim.keymap.set('n', '<leader>hb', require('gitsigns').toggle_current_line_blame, { buffer = bufnr, desc = 'toggle line blame' })
       end,
     },
   },

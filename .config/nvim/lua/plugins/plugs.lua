@@ -37,7 +37,8 @@ return {
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
-  'mhinz/vim-signify',
+  -- duplicate of gitsigns ?
+  -- 'mhinz/vim-signify',
 
   'sindrets/diffview.nvim',
 }
