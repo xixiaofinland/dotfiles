@@ -58,7 +58,7 @@ vim.keymap.set('n', '<leader>ff', tel.find_files, { desc = '[F]ind [F]iles' })
 vim.keymap.set('n', '<leader>fh', tel.help_tags, { desc = '[F]ind [H]elp' })
 vim.keymap.set('n', '<leader>fw', tel.grep_string, { desc = '[F]ind current [W]ord' })
 vim.keymap.set('n', '<leader>fg', tel.live_grep, { desc = '[F]ind by [G]rep' })
-vim.keymap.set('n', '<leader>gl', tel.git_commits, { desc = 'git log' })
+vim.keymap.set('n', '<leader>hl', tel.git_commits, { desc = 'git log' })
 -- vim.keymap.set('n', '<leader>sd', tel.diagnostics, { desc = '[S]earch [D]iagnostics' })
 
 vim.keymap.set("n", "<leader>z", require("telescope").extensions.zoxide.list, { desc = 'Z jump' })
