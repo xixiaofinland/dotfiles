@@ -42,10 +42,10 @@ require("telescope").load_extension('zoxide')
 -- [[ use the open-source parser ]]
 -- https://github.com/aheber/tree-sitter-sfapex
 -- 1. the parser needs to be built by tree-sitter cli: https://github.com/nvim-treesitter/nvim-treesitter#adding-parsers
--- 2. Also the query files must be manually copied into tree-sitter queries folder (~/.local/share/nvim/lazy/nvim-treesitter/queries), ref below:
--- ln -s ~/projects/tree-sitter-sfapex/apex/queries apex
--- https://github.com/aheber/tree-sitter-sfapex/issues/14
---
+-- 2. Also the query files must be manually copied into tree-sitter queries folder (~/.local/share/nvim/lazy/nvim-treesitter/queries)
+-- ln -s  ~/.config/nvim/queries/apex apex
+-- ref: https://github.com/aheber/tree-sitter-sfapex/issues/14
+
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 parser_config.apex = {
   install_info = {
