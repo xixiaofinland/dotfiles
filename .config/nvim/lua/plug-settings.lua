@@ -44,6 +44,7 @@ require("telescope").load_extension('zoxide')
 -- 1. the parser needs to be built by tree-sitter cli: https://github.com/nvim-treesitter/nvim-treesitter#adding-parsers
 -- 2. Also the query files must be manually copied into tree-sitter queries folder (~/.local/share/nvim/lazy/nvim-treesitter/queries)
 -- ln -s  ~/.config/nvim/queries/apex apex
+-- 3. maybe also need to copy textobjects.scm into ".local/share/nvim/lazy/nvim-treesitter-textobjects/queries/apex"
 -- ref: https://github.com/aheber/tree-sitter-sfapex/issues/14
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
@@ -317,13 +318,13 @@ null_ls.setup({
       extra_args = {
         "check",
         "--rulesets",
-        "apex_ruleset.xml"         -- or path to self-written ruleset
+        "apex_ruleset.xml" -- or path to self-written ruleset
       },
     }),
   }
 })
 
 require('chartoggle').setup({
-  leader = '<localleader>',         -- you can use any key as Leader
-  keys = { ',', ';' }               -- Which keys will be toggle end of the line
+  leader = '<localleader>', -- you can use any key as Leader
+  keys = { ',', ';' }       -- Which keys will be toggle end of the line
 })
