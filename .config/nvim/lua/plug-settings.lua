@@ -203,7 +203,7 @@ local servers = {
   -- gopls = {},
   -- pyright = {},
   rust_analyzer = {},
-  -- apex_ls = {},
+  apex_ls = {},
   -- tsserver = {},
 
   lua_ls = {
