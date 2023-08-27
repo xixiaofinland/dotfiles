@@ -1,6 +1,13 @@
+-- Setup globals that I expect to be always available.
+-- --  See `./lua/xx/globals.lua` for more information.
+require "xx.globals"
+
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+
+-- Turn off builtin plugins I do not use.
+require "xx.disable_builtin"
 
 -- Install package manager
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -22,6 +29,8 @@ vim.opt.rtp:prepend(lazypath)
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
+
+  { 'stackmap',             dir = "/home/finxxi/projects/stackmap.nvim" },
 
   -- Git related plugins
   'tpope/vim-fugitive',
@@ -65,7 +74,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',          opts = {} },
+  { 'folke/which-key.nvim', opts = {} },
   {
     -- Adds git releated signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
