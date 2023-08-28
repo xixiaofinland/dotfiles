@@ -26,7 +26,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
-  { 'stackmap',             dir = "/home/finxxi/projects/stackmap.nvim" },
+  -- { 'stackmap',             dir = "/home/finxxi/projects/stackmap.nvim" },
 
   -- Git related plugins
   'tpope/vim-fugitive',
