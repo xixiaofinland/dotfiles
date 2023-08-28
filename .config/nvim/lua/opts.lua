@@ -78,3 +78,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
+
+-- TODO: how to get it in lua?
+vim.cmd([[autocmd BufEnter * set formatoptions-=cro]])
