@@ -6,17 +6,6 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set('n', '[b', ':bprevious<CR>', { silent = true, noremap = true })
 vim.keymap.set('n', ']b', ':bnext<CR>', { silent = true, noremap = true })
 
--- Salesforce keys
-
-vim.keymap.set('n', '<leader>sfp',
-  '<C-w>s<C-w>j10<C-w>-:term sf project deploy start  --source-dir "%" --target-org xixiao100<CR>',
-  { desc = 'Apex deploy current file' })
-
-vim.keymap.set('n', '<leader>sff',
-  ':!npm run prettier -- --plugin=prettier-plugin-apex --write "%"<CR>',
-  { desc = 'Prettier local format' })
-
--- vim.keymap.set('n', '<leader>fa', '<C-w>s<C-w>j10<C-w>-:term prettier --plugin=prettier-plugin-apex --write "%" <CR>', { desc = 'Format by cmd' }
 
 -- copied from ThePrimeGen
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

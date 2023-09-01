@@ -4,6 +4,7 @@
 local ft = require('Comment.ft')
 ft.set('apex', { '//%s', '/*%s*/' })
 
+vim.filetype = on
 -- Set file extensions to auto-launch LSP for Apex
 vim.filetype.add({
   extension = {
