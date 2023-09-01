@@ -304,7 +304,6 @@
 (soql_query 
     (soql_query_body) @keyword)
 
-; ((soql_query_body)
-;      @injection.content
-;       (#set! injection.language "soql"))
+; ((soql_query_body) @injection.content
+;   (#set! injection.language "soql"))
 
