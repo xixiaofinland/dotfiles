@@ -300,3 +300,11 @@
 
 (scoped_type_identifier
   (type_identifier) @type)
+
+(soql_query 
+    (soql_query_body) @keyword)
+
+; ((soql_query_body)
+;      @injection.content
+;       (#set! injection.language "soql"))
+
