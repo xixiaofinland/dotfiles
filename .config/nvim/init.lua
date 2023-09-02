@@ -25,7 +25,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
-  { 'stackmap',             dir = "/home/finxxi/projects/stackmap.nvim" },
+  { 'stackmap',             dir = "/home/finxxi/projects/sf.nvim" },
 
   -- Git related plugins
   'tpope/vim-fugitive',
@@ -129,7 +129,7 @@ require('lazy').setup({
       char = '┊',
       show_trailing_blankline_indent = false,
       show_current_context = true,
-      show_current_context_start = true,
+      show_current_context_start = false,
     },
   },
 
