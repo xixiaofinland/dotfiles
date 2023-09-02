@@ -81,5 +81,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 
--- TODO: how to get it in lua?
 vim.cmd([[autocmd BufEnter * set formatoptions-=cro]])
+-- TODO: how to get it in lua? below not work
+-- vim.opt.formatoptions = { c = false, r = false, o = false }
