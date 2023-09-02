@@ -1,13 +1,12 @@
--- Setup globals that I expect to be always available.
 -- --  See `./lua/xx/globals.lua` for more information.
 require "xx.globals"
+
+-- Turn off builtin plugins I do not use.
+require "xx.disable_builtin"
 
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-
--- Turn off builtin plugins I do not use.
-require "xx.disable_builtin"
 
 -- Install package manager
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -179,15 +178,12 @@ vim.keymap.set('n', '<leader>fw', tel.grep_string, { desc = '[F]ind current [W]o
 vim.keymap.set('n', '<leader>fc', tel.command_history, { desc = '[C]ommand history' })
 vim.keymap.set('n', '<leader>fg', tel.live_grep, { desc = '[F]ind by [G]rep' })
 vim.keymap.set('n', '<leader>fl', tel.git_commits, { desc = 'git log' })
--- vim.keymap.set('n', '<leader>sd', tel.diagnostics, { desc = '[S]earch [D]iagnostics' })
-
-vim.keymap.set("n", "<leader>z", require("telescope").extensions.zoxide.list, { desc = 'Z jump' })
-
-
 -- open file_browser with the path of the current buffer
 vim.keymap.set('n', '<leader>fb', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>fB', ':Telescope file_browser<CR>', { noremap = true })
-
+-- zoxide jump support
+vim.keymap.set("n", "<leader>z", require("telescope").extensions.zoxide.list, { desc = 'Z jump' })
+-- vim.keymap.set('n', '<leader>sd', tel.diagnostics, { desc = '[S]earch [D]iagnostics' })
 
 -- [[ my own custom settings ]]
 require 'keys'
