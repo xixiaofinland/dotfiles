@@ -25,7 +25,10 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
-  { 'salesforce',             dir = "/home/finxxi/projects/salesforce.nvim" },
+  {
+    'salesforce',
+    dir = "/home/finxxi/projects/salesforce.nvim/"
+  },
 
   -- Git related plugins
   'tpope/vim-fugitive',
@@ -69,7 +72,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',          opts = {} },
   {
     -- Adds git releated signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -117,6 +120,16 @@ require('lazy').setup({
         component_separators = '|',
         section_separators = '',
       },
+      sections = {
+        lualine_a = { 'mode' },
+        lualine_b = { 'branch' },
+        -- lualine_b = {'branch', 'diff', 'diagnostics'},
+        lualine_c = { 'filename' },
+        lualine_x = { 'encoding', 'filetype' },
+        -- lualine_x = {'encoding', 'fileformat', 'filetype'},
+        lualine_y = { 'progress' },
+        lualine_z = { 'location' }
+      }
     },
   },
 
