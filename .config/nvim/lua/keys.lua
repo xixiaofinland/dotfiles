@@ -26,7 +26,7 @@ vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
-vim.keymap.set('n', '<leader>hv', vim.cmd.Gvdiff , { desc = 'git virtical diff' })
+vim.keymap.set('n', '<leader>hv', vim.cmd.Gvdiff, { desc = 'git virtical diff' })
 
 -- Diagnostic keymaps
 
@@ -43,3 +43,4 @@ vim.keymap.set('n', ']<Space>', ':<C-u>put =repeat(nr2char(10),v:count)<Bar>exec
 vim.keymap.set('n', '[<Space>', ':<C-u>put!=repeat(nr2char(10),v:count)<Bar>execute "\']+1"<CR>',
   { silent = true, noremap = true })
 
+vim.keymap.set('n', '<leader>b', ':enew<bar>bd #<CR>', { noremap = true, desc = 'Close current buffer' })
