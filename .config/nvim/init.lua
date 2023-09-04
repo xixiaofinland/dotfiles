@@ -26,8 +26,8 @@ require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
   {
-    'salesforce',
-    dir = "/home/finxxi/projects/salesforce.nvim/"
+    'org-setter.nvim',
+    dir = "/home/finxxi/projects/org-setter.nvim/"
   },
 
   -- Git related plugins
