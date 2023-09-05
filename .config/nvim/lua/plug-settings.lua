@@ -1,5 +1,4 @@
 -- [[ Configure Telescope ]]
--- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
   defaults = {
     mappings = {
@@ -27,20 +26,13 @@ require('telescope').setup {
   },
 }
 
--- Enable telescope fzf native, if installed
-pcall(require('telescope').load_extension, 'fzf')
-
--- Enable telescope-file-browser
+require('telescope').load_extension "fzf"
 require("telescope").load_extension "file_browser"
-require("telescope").load_extension('zoxide')
+require("telescope").load_extension "zoxide"
 
 -- [[ Configure Treesitter ]]
--- See `:help nvim-treesitter`
 
--- vim.treesitter.language.register('java', 'apex')
-
--- [[ use the open-source parser ]]
--- https://github.com/aheber/tree-sitter-sfapex
+-- [[ Apex ]
 -- 1. the parser `parser.c` needs to be built by tree-sitter cli: https://github.com/nvim-treesitter/nvim-treesitter#adding-parsers
 -- 2. the query cmd files are already part of my dotfiles under `nvim/after/queries` folder
 
