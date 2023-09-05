@@ -145,17 +145,75 @@ require('lazy').setup({
     },
   },
 
-  { 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' },
-  }, 
-
   {
-  'nvim-telescope/telescope-fzf-native.nvim',
-  build = 'make',
-  cond = function()
-    -- Only load if `make` is available.
-    return vim.fn.executable 'make' == 1
-  end,
-},
+    "nvim-telescope/telescope.nvim",
+    branch = "0.1.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
+      },
+    },
+    config = function()
+      local telescope = require("telescope")
+      local actions = require("telescope.actions")
+
+      telescope.setup({
+        defaults = {
+          path_display = { "truncate " },
+          mappings = {
+            i = {
+              ['<C-u>'] = false,
+              ['<C-d>'] = false,
+            },
+          },
+        },
+
+        -- telescope-file-browser settings
+        extensions = {
+          file_browser = {
+            -- theme = "ivy",
+            -- disables netrw and use telescope-file-browser in its place
+            hijack_netrw = true,
+            mappings = {
+              ["i"] = {
+              },
+              ["n"] = {
+              },
+            },
+          },
+        },
+      })
+
+      telescope.load_extension("fzf")
+      telescope.load_extension("file_browser")
+      telescope.load_extension("zoxide")
+
+      local tel = require('telescope.builtin')
+
+      vim.keymap.set('n', '<leader>?', tel.oldfiles, { desc = '[?] Find recently opened files' })
+      vim.keymap.set('n', '<leader><space>', tel.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set('n', '<leader>/', function()
+        tel.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+          winblend = 10,
+          previewer = false,
+        })
+      end, { desc = '[/] Fuzzily search in current buffer' })
+
+      vim.keymap.set('n', '<leader>fi', tel.git_files, { desc = '[F]ind g[I]t files' })
+      vim.keymap.set('n', '<leader>ff', tel.find_files, { desc = '[F]ind [F]iles' })
+      vim.keymap.set('n', '<leader>fh', tel.help_tags, { desc = '[F]ind [H]elp' })
+      vim.keymap.set('n', '<leader>fw', tel.grep_string, { desc = '[F]ind current [W]ord' })
+      vim.keymap.set('n', '<leader>fc', tel.command_history, { desc = '[C]ommand history' })
+      vim.keymap.set('n', '<leader>fg', tel.live_grep, { desc = '[F]ind by [G]rep' })
+      vim.keymap.set('n', '<leader>fl', tel.git_commits, { desc = 'git log' })
+      vim.keymap.set('n', '<leader>fb', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { noremap = true })
+      vim.keymap.set('n', '<leader>fB', ':Telescope file_browser<CR>', { noremap = true })
+      vim.keymap.set('n', '<leader>fd', tel.diagnostics, { desc = '[F]ind [D]iagnostics' })
+      vim.keymap.set("n", "<leader>z", require("telescope").extensions.zoxide.list, { desc = 'Z jump' })
+    end,
+  },
 
   {
     'nvim-treesitter/nvim-treesitter',
@@ -168,35 +226,9 @@ require('lazy').setup({
   { import = 'plugins' },
 }, {})
 
-
-local tel = require('telescope.builtin')
-
-vim.keymap.set('n', '<leader>?', tel.oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader><space>', tel.buffers, { desc = '[ ] Find existing buffers' })
-vim.keymap.set('n', '<leader>/', function()
-  tel.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    winblend = 10,
-    previewer = false,
-  })
-end, { desc = '[/] Fuzzily search in current buffer' })
-
-vim.keymap.set('n', '<leader>fi', tel.git_files, { desc = '[F]ind g[I]t files' })
-vim.keymap.set('n', '<leader>ff', tel.find_files, { desc = '[F]ind [F]iles' })
-vim.keymap.set('n', '<leader>fh', tel.help_tags, { desc = '[F]ind [H]elp' })
-vim.keymap.set('n', '<leader>fw', tel.grep_string, { desc = '[F]ind current [W]ord' })
-vim.keymap.set('n', '<leader>fc', tel.command_history, { desc = '[C]ommand history' })
-vim.keymap.set('n', '<leader>fg', tel.live_grep, { desc = '[F]ind by [G]rep' })
-vim.keymap.set('n', '<leader>fl', tel.git_commits, { desc = 'git log' })
--- open file_browser with the path of the current buffer
-vim.keymap.set('n', '<leader>fb', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { noremap = true })
-vim.keymap.set('n', '<leader>fB', ':Telescope file_browser<CR>', { noremap = true })
--- zoxide jump support
-vim.keymap.set("n", "<leader>z", require("telescope").extensions.zoxide.list, { desc = 'Z jump' })
--- vim.keymap.set('n', '<leader>sd', tel.diagnostics, { desc = '[S]earch [D]iagnostics' })
-
 -- [[ my own custom settings ]]
 require 'keys'
 require 'opts'
-require 'plug-settings'
+require 'lang-settings'
 
 -- vim: ts=2 sts=2 sw=2 et
