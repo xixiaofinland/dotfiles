@@ -1,7 +1,3 @@
-require "xx.globals"         --  See `./lua/xx/globals.lua` for more information.
-
-require "xx.disable_builtin" -- Turn off builtin plugins I do not use.
-
 --  NOTE: Must happen earlier than lazy
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -43,6 +39,7 @@ require('lazy').setup({
 })
 
 -- [[ my own custom settings ]]
+require "globals"
 require 'keys'
 require 'opts'
 
