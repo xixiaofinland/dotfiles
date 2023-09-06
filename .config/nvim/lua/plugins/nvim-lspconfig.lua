@@ -4,11 +4,8 @@ return {
     -- Automatically install LSPs to stdpath for neovim
     { 'williamboman/mason.nvim', config = true,  opts = {} },
     'williamboman/mason-lspconfig.nvim',
-
-    -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+     "hrsh7th/cmp-nvim-lsp",
     { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
-
-    -- Additional lua configuration, makes nvim stuff amazing!
     { 'folke/neodev.nvim',       opts = {} },
   },
   config = function()
