@@ -91,5 +91,15 @@ return {
         requires_generate_from_grammar = false,     -- if folder contains pre-generated src/parser.c
       }
     }
+
+    parser_config.learn = {
+      install_info = {
+        url = "~/projects/parser-learning",
+        files = { "src/parser.c" },
+        branch = "main",                            -- default branch in case of git repo if different from master
+        generate_requires_npm = false,              -- if stand-alone parser without npm dependencies
+        requires_generate_from_grammar = false,     -- if folder contains pre-generated src/parser.c
+      }
+    }
   end,
 }
