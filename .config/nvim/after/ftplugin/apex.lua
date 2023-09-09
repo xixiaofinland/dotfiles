@@ -13,5 +13,3 @@ vim.keymap.set('n', '<leader>sF', ':!sf project retrieve start  --source-dir "%"
 vim.keymap.set('n', '<leader>sk',
   ':!npm run prettier -- --plugin=prettier-plugin-apex --write "%"<CR>',
   { desc = 'Prettier current file' })
-
--- vim.keymap.set('n', '<leader>fa', '<C-w>s<C-w>j10<C-w>-:term prettier --plugin=prettier-plugin-apex --write "%" <CR>', { desc = 'Format by cmd' }

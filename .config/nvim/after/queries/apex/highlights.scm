@@ -46,7 +46,7 @@
 (interface_declaration
   name: (identifier) @interface)
 (class_declaration
-  name: (identifier) @class)
+  name: (identifier) @type)
 (class_declaration
   (superclass) @class)
 (enum_declaration
