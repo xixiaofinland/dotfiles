@@ -3,12 +3,15 @@
   "]"
   "{"
   "}"
-  "?"
+  "("
+  ")"
 ] @punctuation.bracket
 
 [
   ";"
-] @punctuation.delimiter
+  ";"
+  "."
+ ] @punctuation.delimiter
 
 ;; Methods
 
@@ -34,8 +37,6 @@
 
 (annotation
   name: (identifier) @attribute)
-
-"@" @operator
 
 (annotation_key_value
   (identifier) @variable)
@@ -173,6 +174,8 @@
   (trigger_event) @keyword
   ("," (trigger_event) @keyword)*)
 
+"@" @operator
+
 (binary_expression
   operator: [
     ">"
@@ -215,6 +218,15 @@
   (void_type)
 ] @type.defaultLibrary;;
 
+; Fields
+
+(field_declaration
+  declarator: (variable_declarator
+    name: (identifier) @field))
+
+(field_access
+  field: (identifier) @field)
+
 ; Variables
 
 (field_declaration
@@ -225,11 +237,8 @@
 (variable_declarator
   (identifier) @property)
 
-;; because itendifying it when declared doesn't carry to use
-;; leans on the convention that "screaming snake case" is a const
 ((identifier) @constant
   (#match? @constant "^_*[A-Z][A-Z\\d_]+$"))
-
 
 (this) @variable.builtin
 
@@ -248,16 +257,30 @@
   (block_comment)
 ] @comment
 
+(null_literal) @constant.builtin
+
 ;; ;; Keywords
+
+[
+ "abstract"
+ "final"
+ "private"
+ "protected"
+ "public"
+ "static"
+ ] @type.qualifier
 
 [
   "if"
   "else"
+  "switch"
 ] @conditional
 
 [
   "for"
   "while"
+  "do"
+  "break"
 ] @repeat
 
 [
@@ -265,34 +288,37 @@
 ] @keyword.return
 
 [
+ "throw"
+ "finally"
+ "try"
+ "catch"
+ ] @exception
+
+[
+ "new"
+] @keyword.operator
+
+[
   "abstract"
-  "break"
-  "catch"
   "class"
   "continue"
   "default"
-  "do"
   "enum"
   "extends"
   "final"
-  "finally"
   "get"
   "global"
   "implements"
   "instanceof"
   "interface"
-  "new"
   "on"
   "private"
   "protected"
   "public"
   "set"
   "static"
-  "switch"
   "testMethod"
-  "throw"
   "transient"
-  "try"
   "trigger"
   "virtual"
   "when"
