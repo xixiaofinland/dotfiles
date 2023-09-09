@@ -308,7 +308,7 @@
 ;; I don't love this but couldn't break them up right now
 ;; can't figure out how to let that be special without conflicting
 ;; in the grammar
-"System.runAs" @method.defaultLibrary
+"System.runAs" @type.builtin
 
 (scoped_type_identifier
   (type_identifier) @type)
