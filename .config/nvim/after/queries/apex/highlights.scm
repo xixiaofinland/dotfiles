@@ -44,24 +44,24 @@
 ;; Types
 
 (interface_declaration
-  name: (identifier) @interface)
+  name: (identifier) @type)
 (class_declaration
   name: (identifier) @type)
 (class_declaration
-  (superclass) @class)
+  (superclass) @class) ;; 
 (enum_declaration
-  name: (identifier) @enum)
+  name: (identifier) @type)
 (enum_constant
-  name: (identifier) @enumMember)
+  name: (identifier) @enumMember);;
 
 (interfaces
   (type_list
-    (type_identifier) @interface ))
+    (type_identifier) @interface ));;
 
 (local_variable_declaration
-  (type_identifier) @type )
+  (type_identifier) @variable)
 
-( expression_statement (_ (identifier)) @variable)
+(expression_statement (_ (identifier)) @variable)
 
 (type_arguments "<" @punctuation)
 (type_arguments ">" @punctuation)
@@ -139,7 +139,7 @@
 (constructor_declaration
   name: (identifier) @constructor)
 
-(dml_type) @function.defaultLibrary
+(dml_type) @function.defaultLibrary;;
 
 (bound_apex_expression
   (identifier) @variable)
@@ -213,25 +213,25 @@
 [
   (boolean_type)
   (void_type)
-] @type.defaultLibrary
+] @type.defaultLibrary;;
 
 ; Variables
 
 (field_declaration
   (modifiers (modifier ["final" "static"])(modifier ["final" "static"]))
   (variable_declarator
-    name: (identifier) @variable.readonly))
+    name: (identifier) @constant))
 
 (variable_declarator
   (identifier) @property)
 
 ;; because itendifying it when declared doesn't carry to use
 ;; leans on the convention that "screaming snake case" is a const
-((identifier) @variable.readonly
-  (#match? @variable.readonly "^_*[A-Z][A-Z\\d_]+$"))
+((identifier) @constant
+  (#match? @constant "^_*[A-Z][A-Z\\d_]+$"))
 
 
-(this) @variable.defaultLibrary
+(this) @variable.builtin
 
 ; Literals
 
@@ -251,6 +251,20 @@
 ;; ;; Keywords
 
 [
+  "if"
+  "else"
+] @conditional
+
+[
+  "for"
+  "while"
+] @repeat
+
+[
+  "return"
+] @keyword.return
+
+[
   "abstract"
   "break"
   "catch"
@@ -258,15 +272,12 @@
   "continue"
   "default"
   "do"
-  "else"
   "enum"
   "extends"
   "final"
   "finally"
-  "for"
   "get"
   "global"
-  "if"
   "implements"
   "instanceof"
   "interface"
@@ -275,7 +286,6 @@
   "private"
   "protected"
   "public"
-  "return"
   "set"
   "static"
   "switch"
@@ -286,7 +296,6 @@
   "trigger"
   "virtual"
   "when"
-  "while"
   "with_sharing"
   "without_sharing"
   "inherited_sharing"
