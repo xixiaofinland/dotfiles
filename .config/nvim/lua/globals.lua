@@ -25,3 +25,11 @@ R = function(name)
   RELOAD(name)
   return require(name)
 end
+
+vim.api.nvim_create_autocmd('BufWrite', {
+  pattern = '*.scm',
+  callback = function()
+    print('scm cache cleaned!');
+    require 'nvim-treesitter.query'.invalidate_query_cache('apex');
+  end,
+})
