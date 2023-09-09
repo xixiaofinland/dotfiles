@@ -1,27 +1,30 @@
-;; attempting to match concepts represented here:
-;; https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide
-
 [
   "["
   "]"
   "{"
   "}"
   "?"
+] @punctuation.bracket
+
+[
   ";"
-] @punctuation
+] @punctuation.delimiter
 
 ;; Methods
 
 (method_declaration
   name: (identifier) @method)
+
 (method_declaration
   type: (type_identifier) @type)
 
 (method_invocation
-  name: (identifier) @method)
+  name: (identifier) @method.call)
+
 (argument_list
   (identifier) @variable)
-(super) @function.defaultLibrary
+
+(super) @function.builtin
 
 (explicit_constructor_invocation
   arguments: (argument_list
@@ -30,7 +33,7 @@
 ;; Annotations
 
 (annotation
-  name: (identifier) @decorator)
+  name: (identifier) @attribute)
 
 "@" @operator
 
@@ -134,7 +137,7 @@
     (identifier) @variable))
 
 (constructor_declaration
-  name: (identifier) @class)
+  name: (identifier) @constructor)
 
 (dml_type) @function.defaultLibrary
 
