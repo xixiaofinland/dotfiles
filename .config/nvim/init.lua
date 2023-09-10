@@ -17,9 +17,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  {
-    'xixiaofinland/sf.nvim',
-  },
+
+  'xixiaofinland/sf.nvim',
 
   'tpope/vim-surround',
 
