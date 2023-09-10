@@ -18,8 +18,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   {
-    'force.nvim',
-    dir = "/home/finxxi/projects/force.nvim/"
+    'sf.nvim',
+    dir = "/home/finxxi/projects/sf.nvim/"
   },
 
   'tpope/vim-surround',
