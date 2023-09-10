@@ -43,4 +43,14 @@ vim.keymap.set('n', '[<Space>', ':<C-u>put!=repeat(nr2char(10),v:count)<Bar>exec
 
 vim.keymap.set('n', '<leader>b', ':b#|bd#<CR>', { noremap = true, desc = 'Close current buffer' })
 
-vim.keymap.set("n", "<leader>t", "<Plug>PlenaryTestFile", { noremap = false, silent = false })
+vim.keymap.set("n", "<leader>t",
+  function()
+    if vim.bo.filetype == "lua" then
+      return "<Plug>PlenaryTestFile"
+    elseif vim.bo.filetype == "apex" then
+      print "We doing go apex"
+      return ""
+    end
+  end,
+  { expr = true }
+)
