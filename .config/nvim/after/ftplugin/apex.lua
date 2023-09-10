@@ -14,5 +14,13 @@ vim.keymap.set('n', '<leader>sk',
   ':!npm run prettier -- --plugin=prettier-plugin-apex --write "%"<CR>',
   { desc = 'Prettier current file' })
 
+vim.keymap.set('n', '<leader>st',
+  ':lua require"sf".setTargetOrg()<CR>',
+  { desc = 'Set Target Org' })
+
+vim.keymap.set('n', '<leader>so',
+  ':lua require"sf".fetchOrgInfo()<CR>',
+  { desc = 'Fetch Org Info' })
+
 -- vim.opt.foldmethod = "expr"
 -- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
