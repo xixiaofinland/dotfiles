@@ -19,7 +19,10 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   {
     'sf.nvim',
-    dir = "/home/finxxi/projects/sf.nvim/"
+    dir = "/home/finxxi/projects/sf.nvim/",
+    enabled = function () -- install only when sf cli is installed
+      return vim.fn.executable('sf') == 1
+    end
   },
 
   'tpope/vim-surround',
