@@ -17,12 +17,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  -- 'xixiaofinland/sf.nvim',
-
-  {
-    'sf.nvim',
-    dir = "/home/finxxi/projects/sf.nvim/",
-  },
+  'xixiaofinland/sf.nvim',
+  -- {
+  --   'sf.nvim',
+  --   dir = "/home/finxxi/projects/sf.nvim/",
+  -- },
 
   'tpope/vim-surround',
 
