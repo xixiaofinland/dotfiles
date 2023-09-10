@@ -18,11 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   {
-    'sf.nvim',
-    dir = "/home/finxxi/projects/sf.nvim/",
-    enabled = function () -- install only when sf cli is installed
-      return vim.fn.executable('sf') == 1
-    end
+    'xixiaofinland/sf.nvim',
   },
 
   'tpope/vim-surround',
@@ -35,7 +31,7 @@ require('lazy').setup({
 
   { 'numToStr/Comment.nvim', opts = {} },
 
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
 
   -- other rplugins that require setups
   { import = 'plugins' },
