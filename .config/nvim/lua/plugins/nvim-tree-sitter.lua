@@ -7,7 +7,8 @@ return {
   config = function()
     local treesitter = require("nvim-treesitter.configs")
     treesitter.setup({
-      ensure_installed = { 'lua', 'rust', 'vimdoc', 'vim', 'java', 'apex', 'sosl', 'soql', 'javascript' },
+      ensure_installed = { 'lua', 'rust', 'vimdoc', 'vim', 'java', 'apex', 'javascript' },
+      -- ensure_installed = { 'lua', 'rust', 'vimdoc', 'vim', 'java', 'apex', 'sosl', 'soql', 'javascript' },
       auto_install = true,
       highlight = { enable = true },
       indent = { enable = true },
@@ -73,34 +74,24 @@ return {
       },
     }
 
-    parser_config.soql = {
-      install_info = {
-        url = "~/projects/tree-sitter-sfapex/soql", -- local path or git repo
-        files = { "src/parser.c" },
-        branch = "main",                            -- default branch in case of git repo if different from master
-        generate_requires_npm = false,              -- if stand-alone parser without npm dependencies
-        requires_generate_from_grammar = false,     -- if folder contains pre-generated src/parser.c
-      }
-    }
-
-    parser_config.sosl = {
-      install_info = {
-        url = "~/projects/tree-sitter-sfapex/sosl", -- local path or git repo
-        files = { "src/parser.c" },
-        branch = "main",                            -- default branch in case of git repo if different from master
-        generate_requires_npm = false,              -- if stand-alone parser without npm dependencies
-        requires_generate_from_grammar = false,     -- if folder contains pre-generated src/parser.c
-      }
-    }
-
-    parser_config.learn = {
-      install_info = {
-        url = "~/projects/parser-learning",
-        files = { "src/parser.c" },
-        branch = "main",                            -- default branch in case of git repo if different from master
-        generate_requires_npm = false,              -- if stand-alone parser without npm dependencies
-        requires_generate_from_grammar = false,     -- if folder contains pre-generated src/parser.c
-      }
-    }
+    -- parser_config.soql = {
+    --   install_info = {
+    --     url = "~/projects/tree-sitter-sfapex/soql", -- local path or git repo
+    --     files = { "src/parser.c" },
+    --     branch = "main",                            -- default branch in case of git repo if different from master
+    --     generate_requires_npm = false,              -- if stand-alone parser without npm dependencies
+    --     requires_generate_from_grammar = false,     -- if folder contains pre-generated src/parser.c
+    --   }
+    -- }
+    --
+    -- parser_config.sosl = {
+    --   install_info = {
+    --     url = "~/projects/tree-sitter-sfapex/sosl", -- local path or git repo
+    --     files = { "src/parser.c" },
+    --     branch = "main",                            -- default branch in case of git repo if different from master
+    --     generate_requires_npm = false,              -- if stand-alone parser without npm dependencies
+    --     requires_generate_from_grammar = false,     -- if folder contains pre-generated src/parser.c
+    --   }
+    -- }
   end,
 }
