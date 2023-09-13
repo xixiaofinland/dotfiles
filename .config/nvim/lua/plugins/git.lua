@@ -17,7 +17,7 @@ return {
           { buffer = bufnr, desc = 'previous hunk' })
         vim.keymap.set('n', ']c', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'next hunk' })
         vim.keymap.set('n', '<leader>hh', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'preview hunk' })
-        vim.keymap.set('n', '<leader>ha', require('gitsigns').stage_hunk, { buffer = bufnr, desc = 'stage_hunk' })
+        vim.keymap.set('n', '<leader>hs', require('gitsigns').stage_hunk, { buffer = bufnr, desc = 'stage_hunk' })
         vim.keymap.set('n', '<leader>hu', require('gitsigns').undo_stage_hunk,
           { buffer = bufnr, desc = 'undo_stage_hunk' })
         vim.keymap.set('n', '<leader>hS', require('gitsigns').stage_buffer, { buffer = bufnr, desc = 'stage_buffer' })

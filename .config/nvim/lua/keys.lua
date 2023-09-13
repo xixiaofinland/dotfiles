@@ -6,8 +6,8 @@ vim.keymap.set('n', ']b', ':bnext<CR>', { silent = true, noremap = true })
 
 
 -- copied from ThePrimeGen
--- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
--- vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -51,3 +51,11 @@ vim.keymap.set("n", "<leader>t",
   end,
   { expr = true }
 )
+
+vim.keymap.set("n", "<leader>ht", require("harpoon.ui").toggle_quick_menu, { desc = "Toggle Harpoon Menu" })
+vim.keymap.set("n", "<leader>ha", require("harpoon.mark").add_file, { desc = "Add file to harpoon list" })
+for pos = 0, 9 do
+  vim.keymap.set("n", "<leader>h" .. pos, function()
+    require("harpoon.ui").nav_file(pos)
+  end, { desc = "Move to harpoon mark #" .. pos })
+end
