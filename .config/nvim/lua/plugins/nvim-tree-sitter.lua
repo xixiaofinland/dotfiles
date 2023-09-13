@@ -7,8 +7,7 @@ return {
   config = function()
     local treesitter = require("nvim-treesitter.configs")
     treesitter.setup({
-      ensure_installed = { 'lua', 'rust', 'vimdoc', 'vim', 'java', 'apex', 'javascript' },
-      -- ensure_installed = { 'lua', 'rust', 'vimdoc', 'vim', 'java', 'apex', 'sosl', 'soql', 'javascript' },
+      ensure_installed = { 'lua', 'rust', 'vimdoc', 'vim', 'java', 'apex', 'sosl', 'soql', 'javascript' },
       auto_install = true,
       highlight = { enable = true },
       indent = { enable = true },
