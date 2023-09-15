@@ -49,23 +49,23 @@
 (class_declaration
   name: (identifier) @type)
 (class_declaration
-  (superclass) @class) ;; 
+  (superclass) @type) 
 (enum_declaration
   name: (identifier) @type)
 (enum_constant
-  name: (identifier) @enumMember);;
+  name: (identifier) @constant)
 
 (interfaces
   (type_list
-    (type_identifier) @interface ));;
+    (type_identifier) @type));;
 
 (local_variable_declaration
   (type_identifier) @variable)
 
 (expression_statement (_ (identifier)) @variable)
 
-(type_arguments "<" @punctuation)
-(type_arguments ">" @punctuation)
+(type_arguments "<" @punctuation.delimiter)
+(type_arguments ">" @punctuation.delimiter)
 
 ; (identifier) @variable
 
@@ -140,7 +140,7 @@
 (constructor_declaration
   name: (identifier) @constructor)
 
-(dml_type) @function.defaultLibrary;;
+(dml_type) @function.builtin;;
 
 (bound_apex_expression
   (identifier) @variable)
@@ -166,7 +166,7 @@
 
 (switch_rule
   (switch_label
-    (identifier) @enumMember ))
+    (identifier) @variable ))
 
 (trigger_declaration
   name: (identifier) @type
@@ -216,7 +216,7 @@
 [
   (boolean_type)
   (void_type)
-] @type.defaultLibrary;;
+] @type.builtin;;
 
 ; Fields
 
@@ -238,7 +238,7 @@
   (identifier) @property)
 
 ((identifier) @constant
-  (#match? @constant "^_*[A-Z][A-Z\\d_]+$"))
+  (#lua-match? @constant "^[A-Z][A-Z0-9_]+$")) ; SCREAM SNAKE CASE
 
 (this) @variable.builtin
 
