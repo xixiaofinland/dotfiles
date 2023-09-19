@@ -53,6 +53,8 @@ ZSH_THEME="ys"
 plugins=(git nvm npm fzf z)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+export FZF_DEFAULT_COMMAND='fd --type file --hidden --no-ignore'
+
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
