@@ -12,7 +12,6 @@ vim.filetype.add({
     trigger = 'apex',
     soql = 'soql',
     sosl = 'sosl',
-    learn = 'learn',
   }
 })
 
