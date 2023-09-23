@@ -57,40 +57,5 @@ return {
         },
       },
     })
-
-    -- -- [[ Apex ]
-    -- -- 1. the parser `parser.c` needs to be built by tree-sitter cli: https://github.com/nvim-treesitter/nvim-treesitter#adding-parsers
-    -- -- 2. the query cmd files are already part of my dotfiles under `nvim/after/queries` folder
-    -- local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
-    -- parser_config.apex = {
-    --   install_info = {
-    --     url = "~/projects/tree-sitter-sfapex/apex", -- local path or git repo
-    --     files = { "src/parser.c" },                 -- note that some parsers also require src/scanner.c or src/scanner.cc
-    --     -- optional entries:
-    --     branch = "main",                            -- default branch in case of git repo if different from master
-    --     generate_requires_npm = false,              -- if stand-alone parser without npm dependencies
-    --     requires_generate_from_grammar = true,     -- if folder contains pre-generated src/parser.c
-    --   },
-    -- }
-    --
-    -- parser_config.soql = {
-    --   install_info = {
-    --     url = "~/projects/tree-sitter-sfapex/soql", -- local path or git repo
-    --     files = { "src/parser.c" },
-    --     branch = "main",                            -- default branch in case of git repo if different from master
-    --     generate_requires_npm = false,              -- if stand-alone parser without npm dependencies
-    --     requires_generate_from_grammar = true,     -- if folder contains pre-generated src/parser.c
-    --   },
-    -- }
-    --
-    -- parser_config.sosl = {
-    --   install_info = {
-    --     url = "~/projects/tree-sitter-sfapex/sosl", -- local path or git repo
-    --     files = { "src/parser.c" },
-    --     branch = "main",                            -- default branch in case of git repo if different from master
-    --     generate_requires_npm = false,              -- if stand-alone parser without npm dependencies
-    --     requires_generate_from_grammar = true,     -- if folder contains pre-generated src/parser.c
-    --   },
-    -- }
   end,
 }
