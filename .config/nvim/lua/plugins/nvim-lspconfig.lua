@@ -81,7 +81,7 @@ return {
     local lspconfig = require 'lspconfig'
     lspconfig.apex_ls.setup {
       -- Note. need manually to download apex LSP jar
-      apex_jar_path = os.getenv('HOME') .. '/apex-jorje-lsp.jar',
+      -- apex_jar_path = os.getenv('HOME') .. '/apex-jorje-lsp.jar',
       apex_enable_semantic_errors = false,
       apex_enable_completion_statistics = false,
       filetypes = { 'apex' },
