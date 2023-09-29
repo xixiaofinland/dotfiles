@@ -3,9 +3,14 @@ return {
   'lukas-reineke/indent-blankline.nvim',
   main = "ibl",
   opts = {
-    char = '┊',
-    show_trailing_blankline_indent = false,
-    show_current_context = true,
-    show_current_context_start = false,
+    indent = { char = '┊' },
+    scope = {
+      enabled = true,
+      show_start = false,
+      show_end = false,
+      injected_languages = false,
+      highlight = { "Function", "Label" },
+      -- priority = 500,
+    }
   },
 }
