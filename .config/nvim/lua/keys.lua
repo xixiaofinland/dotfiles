@@ -1,4 +1,5 @@
-vim.keymap.set('n', '<leader>sn', '<CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('n', '<leader>t', '<CMD>lua require("sf").toggle()<CR>')
+vim.keymap.set('n', '<leader>sr', '<CMD>lua require("sf").deploy()<CR>')
 
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -43,18 +44,6 @@ vim.keymap.set('n', '[<Space>', ':<C-u>put!=repeat(nr2char(10),v:count)<Bar>exec
   { silent = true, noremap = true })
 
 vim.keymap.set('n', '<leader>b', ':b#|bd#<CR>', { noremap = true, desc = 'Close current buffer' })
-
-vim.keymap.set("n", "<leader>t",
-  function()
-    if vim.bo.filetype == "lua" then
-      return "<Plug>PlenaryTestFile"
-    elseif vim.bo.filetype == "apex" then
-      print "We doing go apex"
-      return ""
-    end
-  end,
-  { expr = true }
-)
 
 vim.keymap.set("n", "<leader>ht", require("harpoon.ui").toggle_quick_menu, { desc = "Toggle Harpoon Menu" })
 vim.keymap.set("n", "<leader>ha", require("harpoon.mark").add_file, { desc = "Add file to harpoon list" })
