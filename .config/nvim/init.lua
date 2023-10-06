@@ -17,12 +17,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  {
-    'xixiaofinland/sfterm.nvim',
-    dependencies = {
-      'xixiaofinland/sforg.nvim',
-    }
-  },
+  'xixiaofinland/sforg.nvim',
+  'xixiaofinland/sfterm.nvim',
+
+  -- {
+  --   'sforg.nvim',
+  --   dir = "/home/finxxi/projects/sforg.nvim/",
+  -- },
+  -- {
+  --   'sfterm.nvim',
+  --   dir = "/home/finxxi/projects/sfterm.nvim/",
+  -- },
 
   'tpope/vim-surround',
 
