@@ -25,8 +25,6 @@ require('lazy').setup({
 
   'tpope/vim-surround',
 
-  'mbbill/undotree',
-
   'christoomey/vim-tmux-navigator',
 
   'tpope/vim-sleuth',

@@ -19,8 +19,6 @@ vim.keymap.set("x", "<leader>p", [["_dP]], { desc = 'paste without losing the co
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
-
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Diagnostic keymaps
