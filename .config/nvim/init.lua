@@ -33,7 +33,7 @@ require('lazy').setup({
 
   { 'folke/which-key.nvim',  opts = {} },
 
-  -- other rplugins that require setups
+  -- other plugins that require setups
   { import = 'plugins' },
 })
 
