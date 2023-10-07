@@ -19,13 +19,9 @@ vim.keymap.set("x", "<leader>p", [["_dP]], { desc = 'paste without losing the co
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-
-vim.keymap.set('n', '<leader>hv', vim.cmd.DiffviewOpen, { desc = 'Diffview Open' })
-vim.keymap.set('n', '<leader>hc', vim.cmd.DiffviewClose, { desc = 'Diffview Close' })
 
 -- Diagnostic keymaps
 
