@@ -28,7 +28,8 @@ vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
-vim.keymap.set('n', '<leader>hv', vim.cmd.Gvdiff, { desc = 'git virtical diff' })
+vim.keymap.set('n', '<leader>hv', vim.cmd.DiffviewOpen, { desc = 'Diffview Open' })
+vim.keymap.set('n', '<leader>hc', vim.cmd.DiffviewClose, { desc = 'Diffview Close' })
 
 -- Diagnostic keymaps
 
