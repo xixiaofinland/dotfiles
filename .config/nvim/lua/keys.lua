@@ -1,7 +1,3 @@
-vim.keymap.set('n', '<leader>t', require("sfterm").toggle, { desc = "Toggle terminal" })
-vim.keymap.set('n', '<leader>sp', require("sfterm").push,  { desc = "Sf: push current file" })
-vim.keymap.set('n', '<leader>sr', require("sfterm").retrieve,  { desc = "Sf: retrieve current file" })
-
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
@@ -47,8 +43,8 @@ vim.keymap.set('n', '[<Space>', ':<C-u>put!=repeat(nr2char(10),v:count)<Bar>exec
 
 vim.keymap.set('n', '<leader>b', ':b#|bd#<CR>', { noremap = true, desc = 'Close current buffer' })
 
-vim.keymap.set("n", "<leader>ht", require("harpoon.ui").toggle_quick_menu, { desc = "Toggle Harpoon Menu" })
-vim.keymap.set("n", "<leader>ha", require("harpoon.mark").add_file, { desc = "Add file to harpoon list" })
+-- vim.keymap.set("n", "<leader>ht", require("harpoon.ui").toggle_quick_menu, { desc = "Toggle Harpoon Menu" })
+-- vim.keymap.set("n", "<leader>ha", require("harpoon.mark").add_file, { desc = "Add file to harpoon list" })
 for pos = 0, 9 do
   vim.keymap.set("n", "<leader>h" .. pos, function()
     require("harpoon.ui").nav_file(pos)
