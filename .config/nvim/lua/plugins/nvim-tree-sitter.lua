@@ -18,11 +18,10 @@ return {
             ["l="] = { query = "@assignment.lhs", desc = "Select left hand side of an assignment" },
             ["r="] = { query = "@assignment.rhs", desc = "Select right hand side of an assignment" },
 
-            -- works for javascript/typescript files (custom capture I created in after/queries/ecma/textobjects.scm)
-            ["a:"] = { query = "@property.outer", desc = "Select outer part of an object property" },
-            ["i:"] = { query = "@property.inner", desc = "Select inner part of an object property" },
-            ["l:"] = { query = "@property.lhs", desc = "Select left part of an object property" },
-            ["r:"] = { query = "@property.rhs", desc = "Select right part of an object property" },
+            -- ["a:"] = { query = "@property.outer", desc = "Select outer part of an object property" },
+            -- ["i:"] = { query = "@property.inner", desc = "Select inner part of an object property" },
+            -- ["l:"] = { query = "@property.lhs", desc = "Select left part of an object property" },
+            -- ["r:"] = { query = "@property.rhs", desc = "Select right part of an object property" },
 
             ["aa"] = { query = "@parameter.outer", desc = "Select outer part of a parameter/argument" },
             ["ia"] = { query = "@parameter.inner", desc = "Select inner part of a parameter/argument" },
@@ -48,13 +47,13 @@ return {
           enable = true,
           swap_next = {
             ["<leader>na"] = "@parameter.inner",   -- swap parameters/argument with next
-            ["<leader>n:"] = "@property.outer",    -- swap object property with next
             ["<leader>nm"] = "@function.outer",    -- swap function with next
+            -- ["<leader>n:"] = "@property.outer",    -- swap object property with next
           },
           swap_previous = {
             ["<leader>pa"] = "@parameter.inner",     -- swap parameters/argument with prev
-            ["<leader>p:"] = "@property.outer",      -- swap object property with prev
             ["<leader>pm"] = "@function.outer",      -- swap function with previous
+            ["<leader>p:"] = "@property.outer",      -- swap object property with prev
           },
         },
 
@@ -109,57 +108,5 @@ return {
     vim.keymap.set({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F)
     vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t)
     vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T)
-    -- local treesitter = require("nvim-treesitter.configs")
-    -- treesitter.setup({
-    --   ensure_installed = { 'lua', 'rust', 'vimdoc', 'vim', 'java', 'apex', 'sosl', 'soql', 'javascript' },
-    --   auto_install = true,
-    --   highlight = { enable = true },
-    --   indent = { enable = true },
-    -- textobjects = {
-    --   select = {
-    --     enable = true,
-    --     lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-    --     keymaps = {
-    --       -- You can use the capture groups defined in textobjects.scm
-    --       ['aa'] = '@parameter.outer',
-    --       ['ia'] = '@parameter.inner',
-    --       ['af'] = '@function.outer',
-    --       ['if'] = '@function.inner',
-    --       ['ac'] = '@class.outer',
-    --       ['ic'] = '@class.inner',
-    --     },
-    --   },
-    --   move = {
-    --     enable = true,
-    --     set_jumps = true, -- whether to set jumps in the jumplist
-    --     goto_next_start = {
-    --       [']f'] = '@function.outer',
-    --       [']]'] = '@class.outer',
-    --     },
-    --     goto_next_end = {
-    --       [']g'] = '@function.outer',
-    --       [']['] = '@class.outer',
-    --     },
-    --     goto_previous_start = {
-    --       ['[f'] = '@function.outer',
-    --       ['[['] = '@class.outer',
-    --     },
-    --     goto_previous_end = {
-    --       ['[F'] = '@function.outer',
-    --
-    --       ['[]'] = '@class.outer',
-    --     },
-    --   },
-    --   swap = {
-    --     enable = true,
-    --     swap_next = {
-    --       ['<leader>a'] = '@parameter.inner',
-    --     },
-    --     swap_previous = {
-    --       ['<leader>A'] = '@parameter.inner',
-    --     },
-    --   },
-    -- },
-    -- })
   end,
 }

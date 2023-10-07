@@ -68,3 +68,8 @@
    (line_comment)
      (block_comment)
 ] @comment.outer
+
+;; assignment
+(variable_declarator
+   name: (identifier) @assignment.lhs
+   value: (_) @assignment.rhs) @assignment.inner @assignment.outer
