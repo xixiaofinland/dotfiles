@@ -1,7 +1,15 @@
 return {
-  'sindrets/diffview.nvim',
+  {
+    'sindrets/diffview.nvim',
+    config = function()
+      vim.keymap.set('n', '<leader>hv', vim.cmd.DiffviewOpen, { desc = 'Diffview Open' })
+      vim.keymap.set('n', '<leader>hc', vim.cmd.DiffviewClose, { desc = 'Diffview Close' })
+    end
+  },
+
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
+
   {
     'lewis6991/gitsigns.nvim', -- See `:help gitsigns.txt`
     opts = {
