@@ -6,6 +6,14 @@ return {
   build = ':TSUpdate',
   config = function()
     require("nvim-treesitter.configs").setup({
+      ensure_installed = { "apex", "soql", "sosl", "lua", "vim", "vimdoc" },
+      auto_install = true,
+
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
+
       textobjects = {
         select = {
           enable = true,
@@ -46,20 +54,20 @@ return {
         swap = {
           enable = true,
           swap_next = {
-            ["<leader>na"] = "@parameter.inner",   -- swap parameters/argument with next
-            ["<leader>nm"] = "@function.outer",    -- swap function with next
+            ["<leader>na"] = "@parameter.inner", -- swap parameters/argument with next
+            ["<leader>nm"] = "@function.outer",  -- swap function with next
             -- ["<leader>n:"] = "@property.outer",    -- swap object property with next
           },
           swap_previous = {
-            ["<leader>pa"] = "@parameter.inner",     -- swap parameters/argument with prev
-            ["<leader>pm"] = "@function.outer",      -- swap function with previous
-            ["<leader>p:"] = "@property.outer",      -- swap object property with prev
+            ["<leader>pa"] = "@parameter.inner", -- swap parameters/argument with prev
+            ["<leader>pm"] = "@function.outer",  -- swap function with previous
+            ["<leader>p:"] = "@property.outer",  -- swap object property with prev
           },
         },
 
         move = {
           enable = true,
-          set_jumps = true,     -- whether to set jumps in the jumplist
+          set_jumps = true, -- whether to set jumps in the jumplist
           goto_next_start = {
             ["]f"] = { query = "@call.outer", desc = "ts: next call method/function start" },
             ["]m"] = { query = "@function.outer", desc = "ts: next def method/function start" },
