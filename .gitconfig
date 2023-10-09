@@ -3,6 +3,7 @@
 	name = xi xiao
 [core]
 	editor = nvim
+	excludesFile = ~/.gitignore
 [mergetool "nvim"]
 	  cmd = nvim -c \"DiffviewOpen\"
 [merge]
