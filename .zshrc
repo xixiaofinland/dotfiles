@@ -44,6 +44,7 @@ case `uname` in
         # export PATH="/usr/local/opt/mysql-client/bin:$PATH"
     ;;
     Linux)
+        alias fd="fdfind"
     ;;
 esac
 
