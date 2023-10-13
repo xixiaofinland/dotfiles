@@ -23,6 +23,8 @@ require('lazy').setup({
   --   dir = "/home/finxxi/projects/sforg.nvim/",
   -- },
 
+  'nvim-tree/nvim-web-devicons',
+
   'tpope/vim-surround',
 
   'christoomey/vim-tmux-navigator',
