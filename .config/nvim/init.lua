@@ -25,8 +25,6 @@ require('lazy').setup({
 
   'nvim-tree/nvim-web-devicons',
 
-  -- 'tpope/vim-surround',
-
   'christoomey/vim-tmux-navigator',
 
   'tpope/vim-sleuth',
