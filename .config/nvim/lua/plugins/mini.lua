@@ -4,6 +4,10 @@ return {
     version = false,
     config = function()
       require('mini.surround').setup()
-    end
+      require('mini.bufremove').setup({
+        silent = true,
+        vim.keymap.set('n', '<leader>b', require'mini.bufremove'.delete, { desc = 'Remove current buffer' })
+      })
+    end,
   }
 }
