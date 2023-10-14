@@ -9,8 +9,8 @@ return {
       require('mini.pairs').setup()
       require('mini.bufremove').setup({
         silent = true,
-        vim.keymap.set('n', '<leader>b', require'mini.bufremove'.delete, { desc = 'remove current buffer' })
       })
+      vim.keymap.set('n', '<leader>b', require 'mini.bufremove'.delete, { desc = 'remove current buffer' })
     end,
   }
 }
