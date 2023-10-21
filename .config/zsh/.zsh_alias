@@ -1,9 +1,9 @@
 alias gs="git status"
 alias e="exit"
 alias c="clear"
-alias vim='nvim'
-alias v='nvim'
+alias t='tmux'
 alias n='nvim'
+
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias cs='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME status'
 alias ca='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME add'
@@ -12,4 +12,3 @@ alias cc='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME commit -am "+"'
 # Manually run "config push origin branch -u" to set the default
 alias cpp='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME push'
 
-alias ts='tms switch'
