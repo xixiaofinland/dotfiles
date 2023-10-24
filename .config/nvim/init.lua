@@ -17,12 +17,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  'xixiaofinland/sforg.nvim',
-  -- {
-  --   'sforg.nvim',
-  --   dir = "/home/finxxi/projects/sforg.nvim/",
-  -- },
-
   'nvim-tree/nvim-web-devicons',
 
   'christoomey/vim-tmux-navigator',
