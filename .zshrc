@@ -55,6 +55,7 @@ plugins=(git nvm npm fzf z)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_DEFAULT_COMMAND='fd --type file --hidden --no-ignore'
+export LANG="en_US.UTF-8"
 
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -66,4 +67,5 @@ if [ -f ~/.config/zsh/.zsh_alias ]; then
     source ~/.config/zsh/.zsh_alias
 else
     print "404: ~/.config/zsh/.zsh_alias not found."
+
 fi
