@@ -27,7 +27,7 @@ require('lazy').setup({
 
   { 'folke/which-key.nvim',  opts = {} },
 
-  { 'pocco81/auto-save.nvim',  opts = {} },
+  -- { 'pocco81/auto-save.nvim',  opts = {} },
 
   -- other plugins that require setups
   { import = 'plugins' },
