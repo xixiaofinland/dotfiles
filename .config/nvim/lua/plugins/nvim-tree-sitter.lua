@@ -69,9 +69,9 @@ return {
           enable = true,
           set_jumps = true, -- whether to set jumps in the jumplist
           goto_next_start = {
-            ["]n"] = { query = "@meth_name", desc = "ts: next call method/function name" },
+            ["]m"] = { query = "@meth_name", desc = "ts: next def method/function name" },
             ["]f"] = { query = "@call.outer", desc = "ts: next call method/function start" },
-            ["]m"] = { query = "@function.outer", desc = "ts: next def method/function start" },
+            -- ["]m"] = { query = "@function.outer", desc = "ts: next def method/function start" },
             ["]c"] = { query = "@class.outer", desc = "ts: next class start" },
             ["]i"] = { query = "@conditional.outer", desc = "ts: next conditional start" },
             ["]l"] = { query = "@loop.outer", desc = "next loop start" },
@@ -89,9 +89,9 @@ return {
             ["]L"] = { query = "@loop.outer", desc = "ts: next loop end" },
           },
           goto_previous_start = {
-            ["[n"] = { query = "@meth_name", desc = "ts: next call method/function name" },
+            ["[m"] = { query = "@meth_name", desc = "ts: next call method/function name" },
             ["[f"] = { query = "@call.outer", desc = "ts: prev call method/function start" },
-            ["[m"] = { query = "@function.outer", desc = "ts: prev def method/function start" },
+            -- ["[m"] = { query = "@function.outer", desc = "ts: prev def method/function start" },
             ["[c"] = { query = "@class.outer", desc = "ts: prev class start" },
             ["[i"] = { query = "@conditional.outer", desc = "ts: prev conditional start" },
             ["[l"] = { query = "@loop.outer", desc = "ts: prev loop start" },
