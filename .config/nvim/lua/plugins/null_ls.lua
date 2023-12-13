@@ -13,7 +13,7 @@ return {
         null_ls.builtins.diagnostics.pmd.with({
           filetypes = { "apex" },
           extra_args = {
-            "check",
+            -- "check",
             "--rulesets",
             "apex_ruleset.xml",
             -- "--dir"
