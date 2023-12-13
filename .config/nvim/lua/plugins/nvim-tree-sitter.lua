@@ -89,6 +89,7 @@ return {
             ["]L"] = { query = "@loop.outer", desc = "ts: next loop end" },
           },
           goto_previous_start = {
+            ["[n"] = { query = "@meth_name", desc = "ts: next call method/function name" },
             ["[f"] = { query = "@call.outer", desc = "ts: prev call method/function start" },
             ["[m"] = { query = "@function.outer", desc = "ts: prev def method/function start" },
             ["[c"] = { query = "@class.outer", desc = "ts: prev class start" },
@@ -105,14 +106,14 @@ return {
         },
 
         lsp_interop = {
-                enable = true,
-                      border = 'none',
-                            floating_preview_opts = {},
-                                  peek_definition_code = {
-                                            ["<leader>df"] = "@function.outer",
-                                                    ["<leader>dF"] = "@class.outer",
-                                                          },
-                                                              },
+          enable = true,
+          border = 'none',
+          floating_preview_opts = {},
+          peek_definition_code = {
+            ["<leader>df"] = "@function.outer",
+            ["<leader>dF"] = "@class.outer",
+          },
+        },
       },
     })
 
