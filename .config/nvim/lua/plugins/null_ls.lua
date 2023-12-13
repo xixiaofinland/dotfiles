@@ -1,5 +1,5 @@
 return {
-  "jose-elias-alvarez/null-ls.nvim", -- configure formatters & linters
+  "nvimtools/none-ls.nvim", -- configure formatters & linters
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     local null_ls = require("null-ls")
@@ -15,7 +15,8 @@ return {
           extra_args = {
             "check",
             "--rulesets",
-            "apex_ruleset.xml" -- or path to self-written ruleset
+            "apex_ruleset.xml",
+            -- "--dir"
           },
         }),
       }
