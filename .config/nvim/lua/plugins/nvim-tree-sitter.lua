@@ -69,6 +69,7 @@ return {
           enable = true,
           set_jumps = true, -- whether to set jumps in the jumplist
           goto_next_start = {
+            ["]n"] = { query = "@meth_name", desc = "ts: next call method/function name" },
             ["]f"] = { query = "@call.outer", desc = "ts: next call method/function start" },
             ["]m"] = { query = "@function.outer", desc = "ts: next def method/function start" },
             ["]c"] = { query = "@class.outer", desc = "ts: next class start" },
@@ -102,6 +103,16 @@ return {
             ["[L"] = { query = "@loop.outer", desc = "ts: prev loop end" },
           },
         },
+
+        lsp_interop = {
+                enable = true,
+                      border = 'none',
+                            floating_preview_opts = {},
+                                  peek_definition_code = {
+                                            ["<leader>df"] = "@function.outer",
+                                                    ["<leader>dF"] = "@class.outer",
+                                                          },
+                                                              },
       },
     })
 
