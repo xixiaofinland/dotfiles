@@ -69,9 +69,9 @@ return {
           enable = true,
           set_jumps = true, -- whether to set jumps in the jumplist
           goto_next_start = {
-            ["]m"] = { query = "@meth_name", desc = "ts: next def method/function name" },
+            ["]n"] = { query = "@meth_name", desc = "ts: next def method/function name" },
             ["]f"] = { query = "@call.outer", desc = "ts: next call method/function start" },
-            -- ["]m"] = { query = "@function.outer", desc = "ts: next def method/function start" },
+            ["]m"] = { query = "@function.outer", desc = "ts: next def method/function start" },
             ["]c"] = { query = "@class.outer", desc = "ts: next class start" },
             ["]i"] = { query = "@conditional.outer", desc = "ts: next conditional start" },
             ["]l"] = { query = "@loop.outer", desc = "next loop start" },
