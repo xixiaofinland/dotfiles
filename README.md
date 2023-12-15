@@ -30,6 +30,5 @@ pickers.
 #### Salesforce
 - PMD (download, put in path, give rule file)
 - Prettier, Apex-Prettier (npm local version)
-- [sfapex-treesitter](https://github.com/aheber/tree-sitter-sfapex)
 - [apex LSP jar put into
 ~](https://github.com/forcedotcom/salesforcedx-vscode/blob/develop/packages/salesforcedx-vscode-apex/out/apex-jorje-lsp.jar)
