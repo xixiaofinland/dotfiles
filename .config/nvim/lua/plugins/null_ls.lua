@@ -6,21 +6,16 @@ return {
     null_ls.setup({
       sources = {
         null_ls.builtins.formatting.prettier.with({
-            filetypes = { "apex" },
-            extra_args = { "--plugin=prettier-plugin-apex", "--write" },
+          filetypes = { "apex" },
+          extra_args = { "--plugin=prettier-plugin-apex", "--write" },
         }),
 
         null_ls.builtins.diagnostics.pmd.with({
           filetypes = { "apex" },
-          extra_args = {
-            -- "check",
-            "--rulesets",
-            "apex_ruleset.xml",
-            -- "--dir"
-          },
+          args = { "check", "--dir", "$ROOT", "--format", "json" },
+          extra_args = { "--rulesets", "apex_ruleset.xml", },
         }),
       }
     })
   end,
 }
-
