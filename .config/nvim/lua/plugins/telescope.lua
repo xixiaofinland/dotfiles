@@ -58,7 +58,6 @@ return {
       })
     end, { desc = '[/] Fuzzily search in current buffer' })
 
-    vim.keymap.set("n", "<leader>fs", tel.lsp_document_symbols, { desc = 'List [S]ymbols' })
     vim.keymap.set("n", "<leader>fm", function() tel.treesitter({ default_text = "method | function" }) end,
       { desc = 'List [M]ethods' })
     vim.keymap.set("n", "<leader>ft", tel.treesitter, { desc = 'List [T]reesitter symbols' })
