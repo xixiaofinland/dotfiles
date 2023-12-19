@@ -18,12 +18,12 @@ return {
         quickfix   = { suffix = 'q', options = {} },
         treesitter = { suffix = 't', options = {} },
 
-        -- disabled ones which I don't use
-        file       = '',
-        oldfile    = '',
-        undo       = '',
-        window     = '',
-        yank       = '',
+        file       = { suffix = '', options = {} },
+        oldfile    = { suffix = '', options = {} },
+        undo       = { suffix = '', options = {} },
+        window     = { suffix = '', options = {} },
+        yank       = { suffix = '', options = {} },
+
       })
 
       local gen_spec = require("mini.ai").gen_spec;
