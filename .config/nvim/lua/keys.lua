@@ -1,8 +1,8 @@
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
-vim.keymap.set('n', '[b', ':bprevious<CR>', { silent = true, noremap = true })
-vim.keymap.set('n', ']b', ':bnext<CR>', { silent = true, noremap = true })
+-- vim.keymap.set('n', '[b', ':bprevious<CR>', { silent = true, noremap = true })
+-- vim.keymap.set('n', ']b', ':bnext<CR>', { silent = true, noremap = true })
 
 
 -- copied from ThePrimeGen

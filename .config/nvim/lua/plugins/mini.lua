@@ -4,6 +4,7 @@ return {
     version = false,
     config = function()
       require('mini.surround').setup()
+      require('mini.bracketed').setup()
 
       local gen_spec = require("mini.ai").gen_spec;
       require("mini.ai").setup({
