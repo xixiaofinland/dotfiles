@@ -4,6 +4,7 @@ return {
     version = false,
     config = function()
       require('mini.surround').setup()
+      require('mini.trailspace').setup()
 
       require('mini.bracketed').setup({
         -- See `:h MiniBracketed.config` for more info.
@@ -46,6 +47,19 @@ return {
             }
             return { from = from, to = to }
           end
+        },
+      })
+
+      local hipatterns = require('mini.hipatterns')
+      hipatterns.setup({
+        highlighters = {
+          fixme     = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
+          todo      = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
+          note      = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
+          hack      = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
+
+          -- Highlight hex color strings (`#rrggbb`) using that color
+          hex_color = hipatterns.gen_highlighter.hex_color(),
         },
       })
 
