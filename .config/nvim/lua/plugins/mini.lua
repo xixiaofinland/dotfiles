@@ -6,7 +6,6 @@ return {
       require('mini.surround').setup()
 
       require('mini.bracketed').setup({
-        --   Supply empty string `''` to not create mappings.
         -- See `:h MiniBracketed.config` for more info.
         buffer     = { suffix = 'b', options = {} },
         comment    = { suffix = 'c', options = {} },
@@ -17,12 +16,13 @@ return {
         location   = { suffix = 'l', options = {} },
         quickfix   = { suffix = 'q', options = {} },
         treesitter = { suffix = 't', options = {} },
+        file       = { suffix = 'f', options = {} },
+        oldfile    = { suffix = 'o', options = {} },
+        yank       = { suffix = 'y', options = {} },
 
-        file       = { suffix = '', options = {} },
-        oldfile    = { suffix = '', options = {} },
+        -- disabled ones which I don't use
         undo       = { suffix = '', options = {} },
         window     = { suffix = '', options = {} },
-        yank       = { suffix = '', options = {} },
 
       })
 
