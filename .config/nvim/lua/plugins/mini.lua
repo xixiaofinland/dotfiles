@@ -15,6 +15,16 @@ return {
           m = ai.gen_spec.treesitter({ a = '@call.outer', i = '@call.inner' }),
           f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
           c = ai.gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }, {}),
+
+          -- select entire buffer
+          g = function()
+            local from = { line = 1, col = 1 }
+            local to = {
+              line = vim.fn.line('$'),
+              col = math.max(vim.fn.getline('$'):len(), 1)
+            }
+            return { from = from, to = to }
+          end
         },
       })
 
