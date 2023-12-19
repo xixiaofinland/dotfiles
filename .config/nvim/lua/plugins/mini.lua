@@ -4,7 +4,27 @@ return {
     version = false,
     config = function()
       require('mini.surround').setup()
-      require('mini.bracketed').setup()
+
+      require('mini.bracketed').setup({
+        --   Supply empty string `''` to not create mappings.
+        -- See `:h MiniBracketed.config` for more info.
+        buffer     = { suffix = 'b', options = {} },
+        comment    = { suffix = 'c', options = {} },
+        conflict   = { suffix = 'x', options = {} },
+        diagnostic = { suffix = 'd', options = {} },
+        indent     = { suffix = 'i', options = {} },
+        jump       = { suffix = 'j', options = {} },
+        location   = { suffix = 'l', options = {} },
+        quickfix   = { suffix = 'q', options = {} },
+        treesitter = { suffix = 't', options = {} },
+
+        -- disabled ones which I don't use
+        file       = '',
+        oldfile    = '',
+        undo       = '',
+        window     = '',
+        yank       = '',
+      })
 
       local gen_spec = require("mini.ai").gen_spec;
       require("mini.ai").setup({
