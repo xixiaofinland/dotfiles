@@ -33,8 +33,8 @@ return {
           a = gen_spec.argument({ brackets = { '%b()' } }),
 
           n = gen_spec.treesitter({ a = "@meth_name", i = "@meth_name" }, {}),
-          m = gen_spec.treesitter({ a = '@call.outer', i = '@call.inner' }),
-          f = gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
+          f = gen_spec.treesitter({ a = '@call.outer', i = '@call.inner' }),
+          m = gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
           c = gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }, {}),
 
           -- entire buffer
