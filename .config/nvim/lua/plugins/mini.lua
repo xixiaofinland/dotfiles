@@ -11,19 +11,10 @@ return {
           -- match only within `()`
           a = ai.gen_spec.argument({ brackets = { '%b()' } }),
 
-          -- Disable brackets alias in favor of builtin block textobject
-          -- b = false,
-
-          -- Function definition (needs treesitter queries with these captures)
-          -- F = ai.gen_spec.treesitter({ a = '@function.outer', i = '@function.inner' }),
-
-          -- Make `|` select both edges in non-balanced way
-          -- ['|'] = ai.gen_spec.pair('|', '|', { type = 'non-balanced' }),
-
-          -- o = ai.gen_spec.treesitter({ a = "@meth_name.outer", i = "@meth_name.inner" }, {}),
-
-          -- f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
-          -- c = ai.gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }, {}),
+          n = ai.gen_spec.treesitter({ a = "@meth_name", i = "@meth_name" }, {}),
+          m = ai.gen_spec.treesitter({ a = '@call.outer', i = '@call.inner' }),
+          f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
+          c = ai.gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }, {}),
         },
       })
 
