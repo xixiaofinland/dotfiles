@@ -66,8 +66,8 @@ return {
       })
 
       vim.keymap.set('n', '<leader>b', require'mini.bufremove'.delete, { desc = 'remove current buffer' })
-      vim.keymap.set('n', '<leader>mt', MiniTrailspace.trim, { desc = 'Trim all empty space' })
-      vim.keymap.set('n', '<leader>ml', MiniTrailspace.trim_last_lines, { desc = 'Trim empty ending lines' })
+      vim.keymap.set('n', '<leader>mx', MiniTrailspace.trim, { desc = 'Trim empty space' })
+      vim.keymap.set('n', '<leader>me', MiniTrailspace.trim_last_lines, { desc = 'Trim empty ending-line' })
     end,
   }
 }
