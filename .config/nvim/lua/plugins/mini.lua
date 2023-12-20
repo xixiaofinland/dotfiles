@@ -12,10 +12,12 @@ return {
       require("mini.ai").setup({
         custom_textobjects = {
           a = gen_spec.argument({ brackets = { '%b()' } }), -- match only within `()`
-          n = gen_spec.treesitter({ a = "@meth_name", i = "@meth_name" }, {}),
-          f = gen_spec.treesitter({ a = '@call.outer', i = '@call.inner' }),
-          m = gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
           c = gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }, {}),
+          f = gen_spec.treesitter({ a = '@call.outer', i = '@call.inner' }),
+          l = gen_spec.treesitter({ a = "@loop.outer", i = "@loop.inner" }, {}),
+          n = gen_spec.treesitter({ a = "@meth_name", i = "@meth_name" }, {}),
+          m = gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
+          i = gen_spec.treesitter({ a = "@conditional.outer", i = "@conditional.inner" }, {}),
           g = function()
             local from = { line = 1, col = 1 }
             local to = {
