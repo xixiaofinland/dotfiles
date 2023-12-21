@@ -26,6 +26,8 @@ return {
             ["im"] = { query = "@function.inner", desc = "ts: inner function" },
             ["l="] = { query = "@assignment.lhs", desc = "ts: left assignment" },
             ["r="] = { query = "@assignment.rhs", desc = "ts: right assignment" },
+            ["ai"] = { query = "@conditional.outer", desc = "ts: outer conditional" },
+            ["ii"] = { query = "@conditional.inner", desc = "ts: inner conditional" },
 
             -- ["a="] = { query = "@assignment.outer", desc = "ts: outer assignment" },
             -- ["i="] = { query = "@assignment.inner", desc = "ts: inner ssignment" },
@@ -33,8 +35,6 @@ return {
             -- ["i:"] = { query = "@property.inner", desc = "Select inner part of an object property" },
             -- ["l:"] = { query = "@property.lhs", desc = "Select left part of an object property" },
             -- ["r:"] = { query = "@property.rhs", desc = "Select right part of an object property" },
-            -- ["ai"] = { query = "@conditional.outer", desc = "ts: outer conditional" },
-            -- ["ii"] = { query = "@conditional.inner", desc = "ts: inner conditional" },
             -- ["al"] = { query = "@loop.outer", desc = "ts: outer loop" },
             -- ["il"] = { query = "@loop.inner", desc = "ts: inner loop" },
             -- ["af"] = { query = "@call.outer", desc = "ts: outer function-call" },
