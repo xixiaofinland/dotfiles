@@ -22,13 +22,13 @@ return {
           keymaps = {
             ["aa"] = { query = "@parameter.outer", desc = "ts: outer parameter" },
             ["ia"] = { query = "@parameter.inner", desc = "ts: inner parameter" },
-            ["am"] = { query = "@function.outer", desc = "ts: outer definition method/function" },
-            ["im"] = { query = "@function.inner", desc = "ts: inner definition method/function" },
+            ["am"] = { query = "@function.outer", desc = "ts: outer function" },
+            ["im"] = { query = "@function.inner", desc = "ts: inner function" },
+            ["l="] = { query = "@assignment.lhs", desc = "ts: left assignment" },
+            ["r="] = { query = "@assignment.rhs", desc = "ts: right assignment" },
 
             -- ["a="] = { query = "@assignment.outer", desc = "ts: outer assignment" },
             -- ["i="] = { query = "@assignment.inner", desc = "ts: inner ssignment" },
-            -- ["l="] = { query = "@assignment.lhs", desc = "ts: left assignment" },
-            -- ["r="] = { query = "@assignment.rhs", desc = "ts: right assignment" },
             -- ["a:"] = { query = "@property.outer", desc = "Select outer part of an object property" },
             -- ["i:"] = { query = "@property.inner", desc = "Select inner part of an object property" },
             -- ["l:"] = { query = "@property.lhs", desc = "Select left part of an object property" },
@@ -49,7 +49,32 @@ return {
           set_jumps = true, -- whether to set jumps in the jumplist
           goto_next_start = {
             ["]m"] = { query = "@function.outer", desc = "ts: next def method/function start" },
-          }
+            ["]a"] = { query = "@parameter.inner", desc = "ts: next def method/function start" },
+            -- ["]c"] = { query = "@class.outer", desc = "ts: next class start" },
+            -- ["]i"] = { query = "@conditional.outer", desc = "ts: next conditional start" },
+            -- ["]l"] = { query = "@loop.outer", desc = "next loop start" },
+            -- ["]s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
+            -- ["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
+          },
+          goto_next_end = {
+            ["]M"] = { query = "@function.outer", desc = "ts: next def method/function end" },
+            -- ["]C"] = { query = "@class.outer", desc = "ts: next class end" },
+            -- ["]I"] = { query = "@conditional.outer", desc = "ts: next conditional end" },
+            -- ["]L"] = { query = "@loop.outer", desc = "ts: next loop end" },
+          },
+          goto_previous_start = {
+            ["[m"] = { query = "@function.outer", desc = "ts: prev def method/function start" },
+            ["[a"] = { query = "@parameter.inner", desc = "ts: next def method/function start" },
+            -- ["[c"] = { query = "@class.outer", desc = "ts: prev class start" },
+            -- ["[i"] = { query = "@conditional.outer", desc = "ts: prev conditional start" },
+            -- ["[l"] = { query = "@loop.outer", desc = "ts: prev loop start" },
+          },
+          goto_previous_end = {
+            ["[M"] = { query = "@function.outer", desc = "ts: prev def method/function end" },
+            -- ["[C"] = { query = "@class.outer", desc = "ts: prev class end" },
+            -- ["[I"] = { query = "@conditional.outer", desc = "ts: prev conditional end" },
+            -- ["[L"] = { query = "@loop.outer", desc = "ts: prev loop end" },
+          },
         },
 
         swap = {
