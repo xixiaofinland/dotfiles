@@ -20,14 +20,14 @@ return {
           lookahead = true,
 
           keymaps = {
-            ["aa"] = { query = "@parameter.outer", desc = "ts: outer parameter" },
-            ["ia"] = { query = "@parameter.inner", desc = "ts: inner parameter" },
-            ["am"] = { query = "@function.outer", desc = "ts: outer function" },
-            ["im"] = { query = "@function.inner", desc = "ts: inner function" },
             ["l="] = { query = "@assignment.lhs", desc = "ts: left assignment" },
             ["r="] = { query = "@assignment.rhs", desc = "ts: right assignment" },
-            ["ai"] = { query = "@conditional.outer", desc = "ts: outer conditional" },
-            ["ii"] = { query = "@conditional.inner", desc = "ts: inner conditional" },
+            -- ["aa"] = { query = "@parameter.outer", desc = "ts: outer parameter" },
+            -- ["ia"] = { query = "@parameter.inner", desc = "ts: inner parameter" },
+            -- ["am"] = { query = "@function.outer", desc = "ts: outer function" },
+            -- ["im"] = { query = "@function.inner", desc = "ts: inner function" },
+            -- ["ai"] = { query = "@conditional.outer", desc = "ts: outer conditional" },
+            -- ["ii"] = { query = "@conditional.inner", desc = "ts: inner conditional" },
 
             -- ["a="] = { query = "@assignment.outer", desc = "ts: outer assignment" },
             -- ["i="] = { query = "@assignment.inner", desc = "ts: inner ssignment" },
