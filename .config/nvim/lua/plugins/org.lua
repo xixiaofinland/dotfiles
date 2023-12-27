@@ -1,4 +1,4 @@
-require("lazy").setup({
+return {
   {
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",
@@ -7,9 +7,9 @@ require("lazy").setup({
     config = function()
       require("neorg").setup {
         load = {
-          ["core.defaults"] = {},                                                               -- Loads default behaviour
-          ["core.concealer"] = {},                                                              -- Adds pretty icons to your documents
-          ["core.dirman"] = {                                                                   -- Manages Neorg workspaces
+          ["core.defaults"] = {},  -- Loads default behaviour
+          ["core.concealer"] = {}, -- Adds pretty icons to your documents
+          ["core.dirman"] = {      -- Manages Neorg workspaces
             config = {
               workspaces = {
                 notes = "~/notes",
@@ -19,5 +19,5 @@ require("lazy").setup({
         },
       }
     end,
-  },
-})
+  }
+}
