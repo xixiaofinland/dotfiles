@@ -21,6 +21,11 @@ vim.keymap.set("x", "<leader>p", [["_dP]], { desc = name .. 'paste without losin
 
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
+vim.keymap.set('n', ']<Space>', ':<C-u>put =repeat(nr2char(10),v:count)<Bar>execute "\'[-1"<CR>',
+  { desc = name .. 'add empty line below', silent = true, noremap = true })
+vim.keymap.set('n', '[<Space>', ':<C-u>put!=repeat(nr2char(10),v:count)<Bar>execute "\']+1"<CR>',
+  { desc = name .. 'add empty line above', silent = true, noremap = true })
+
 -- Diagnostic
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = name .. 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = name .. 'Open diagnostics list' })
