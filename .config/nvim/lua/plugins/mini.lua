@@ -66,9 +66,16 @@ return {
         silent = true,
       })
 
-      vim.keymap.set('n', '<leader>b', require'mini.bufremove'.delete, { desc = 'remove current buffer' })
-      vim.keymap.set('n', '<leader>mx', MiniTrailspace.trim, { desc = 'Trim empty space' })
-      vim.keymap.set('n', '<leader>me', MiniTrailspace.trim_last_lines, { desc = 'Trim empty ending-line' })
+      local nmap = function(keys, func, desc)
+        if desc then
+          desc = '[Mini] ' .. desc
+        end
+        vim.keymap.set('n', keys, func, {})
+      end
+
+      nmap('<leader>b', require 'mini.bufremove'.delete, '[B]uffer remove current')
+      nmap('<leader>tx', MiniTrailspace.trim, '[T]rim [S]pace')
+      nmap('<leader>te', MiniTrailspace.trim_last_lines, '[T]rim [E]nding-line')
     end,
   }
 }

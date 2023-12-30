@@ -6,7 +6,7 @@ return {
   config = function()
     local nmap = function(keys, func, desc)
       if desc then
-        desc = '[SfOrg] ' .. desc
+        desc = '[SfO] ' .. desc
       end
       vim.keymap.set('n', keys, func, { desc = desc })
     end

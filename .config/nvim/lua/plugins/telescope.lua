@@ -36,7 +36,7 @@ return {
       vim.keymap.set('n', keys, func, { desc = desc })
     end
 
-    nmap('<leader>?', tel.oldfiles, '[?] Recent files')
+    nmap('<leader>?', tel.oldfiles, 'Recent files')
     nmap("<leader>fm", function() tel.treesitter({ default_text = "method | function " }) end,
       '[M]ethods list')
     nmap("<leader>ft", tel.treesitter, '[T]reesitter symbols')
@@ -53,13 +53,13 @@ return {
     nmap('<leader><space>', function()
         tel.buffers({ sort_lastused = true, sort_mru = true })
       end,
-      '[ ] Current buffers')
+      'Current buffers')
 
     nmap('<leader>/', function()
       tel.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
         winblend = 10,
         previewer = false,
       })
-    end, '[/] Fuzzy search in this buffer')
+    end, 'Fuzzy search in this buffer')
   end,
 }
