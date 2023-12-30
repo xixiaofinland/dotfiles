@@ -4,7 +4,7 @@ return {
     -- Automatically install LSPs to stdpath for neovim
     { 'williamboman/mason.nvim', config = true,  opts = {} },
     'williamboman/mason-lspconfig.nvim',
-     "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-nvim-lsp",
     { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
     { 'folke/neodev.nvim',       opts = {} },
   },
@@ -12,7 +12,8 @@ return {
     local on_attach = function(_, bufnr)
       local nmap = function(keys, func, desc)
         if desc then
-          desc = 'LSP: ' .. desc
+          desc = desc
+          -- desc = 'LSP: ' .. desc
         end
 
         vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
@@ -42,7 +43,7 @@ return {
       nmap('<leader>fp', function(_)
         -- So Apex formatting doesn't timeout
         vim.lsp.buf.format({ timeout_ms = 2500 })
-      end, 'Format')
+      end, '[P]retty file')
     end
 
     -- Enable the following language servers in Mason
