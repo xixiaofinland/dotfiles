@@ -4,9 +4,16 @@ return {
   --   'sforg.nvim',
   --   dir = "/home/finxxi/projects/sforg.nvim/",
   config = function()
-    vim.keymap.set('n', '<leader>ss', require("sforg").set, { desc = "set target_org for the current workspace" })
-    vim.keymap.set('n', '<leader>sS', require("sforg").setGlobal, { desc = "set target_org globally" })
-    vim.keymap.set('n', '<leader>sf', require("sforg").fetch, { desc = "fetch orgs info" })
+    local nmap = function(keys, func, desc)
+      if desc then
+        desc = '[SfOrg] ' .. desc
+      end
+      vim.keymap.set('n', keys, func, { desc = desc })
+    end
+
+    nmap('<leader>ss', require("sforg").set,  "[s]et target_org current workspace" )
+    nmap('<leader>sS', require("sforg").setGlobal,  "[S]et target_org globally" )
+    nmap('<leader>sf', require("sforg").fetch,  "[F]etch orgs info" )
   end
   -- },
 }

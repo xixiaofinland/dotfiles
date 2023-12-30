@@ -19,6 +19,8 @@ return {
           },
         },
       }
+
+      vim.keymap.set("n", "<leader>oi", "<CMD>Neorg index<CR>", { desc = "[I]ndex org-mode" })
     end,
   }
 }

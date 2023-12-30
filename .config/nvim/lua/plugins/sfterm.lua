@@ -4,9 +4,17 @@ return {
   --   dir = "/home/finxxi/projects/sfterm.nvim/",
   'xixiaofinland/sfterm.nvim',
   config = function()
-    vim.keymap.set('n', '<leader>t', require("sfterm").toggle, { desc = "Toggle terminal" })
-    vim.keymap.set('n', '<leader>sp', require("sfterm").saveAndPush, { desc = "Sf: push current file" })
-    vim.keymap.set('n', '<leader>sr', require("sfterm").retrieve, { desc = "Sf: retrieve current file" })
+    local nmap = function(keys, func, desc)
+      if desc then
+        desc = '[SfTerm] ' .. desc
+      end
+      vim.keymap.set('n', keys, func, { desc = desc })
+    end
+
+    nmap('<leader>t', require("sfterm").toggle, "[T]erminal")
+    nmap('<leader>sp', require("sfterm").saveAndPush, "[P]ush current file")
+    nmap('<leader>sr', require("sfterm").retrieve, "[R]etrieve current file")
   end
+  -- end
   -- },
 }

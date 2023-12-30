@@ -12,8 +12,7 @@ return {
     local on_attach = function(_, bufnr)
       local nmap = function(keys, func, desc)
         if desc then
-          desc = desc
-          -- desc = 'LSP: ' .. desc
+          desc = '[LSP] ' .. desc
         end
 
         vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
