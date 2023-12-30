@@ -70,7 +70,7 @@ return {
         if desc then
           desc = '[Mini] ' .. desc
         end
-        vim.keymap.set('n', keys, func, {})
+        vim.keymap.set('n', keys, func, {desc = desc})
       end
 
       nmap('<leader>b', require 'mini.bufremove'.delete, '[B]uffer remove current')
