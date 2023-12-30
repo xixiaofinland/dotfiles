@@ -20,7 +20,8 @@ return {
         },
       }
 
-      vim.keymap.set("n", "<leader>oi", "<CMD>Neorg index<CR>", { desc = "[I]ndex org-mode" })
+      local name = "[neorg] "
+      vim.keymap.set("n", "<leader>ni", "<CMD>Neorg index<CR>", { desc = name .. "[I]ndex" })
     end,
   }
 }
