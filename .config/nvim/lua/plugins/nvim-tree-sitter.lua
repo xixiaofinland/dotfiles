@@ -6,7 +6,7 @@ return {
   build = ':TSUpdate',
   config = function()
     require("nvim-treesitter.configs").setup({
-      ensure_installed = { "apex", "rust", "soql", "sosl", "lua", "vim", "vimdoc" },
+      ensure_installed = { "apex", "bash", "rust", "soql", "sosl", "lua", "vim", "vimdoc" },
       auto_install = true,
 
       highlight = {
