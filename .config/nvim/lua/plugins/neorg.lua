@@ -12,19 +12,20 @@ return {
           ["core.dirman"] = {      -- Manages Neorg workspaces
             config = {
               workspaces = {
-                notes = "~/notes",
+                personal = "~/notes/personal",
+                work = "~/notes/work",
               },
-              default_workspace = "notes",
+              -- default_workspace = "personal",
             },
           },
         },
       }
 
       local name = "[neorg] "
-      vim.keymap.set("n", "<leader>ni", "<CMD>Neorg index<CR>", { desc = name .. "[I]ndex" })
+      -- vim.keymap.set("n", "<leader>ni", "<CMD>Neorg index<CR>", { desc = name .. "[I]ndex" })
       vim.keymap.set("n", "<leader>nc", "<CMD>Neorg return<CR>", { desc = name .. "[C]lose all" })
-      vim.keymap.set("n", "<leader>nt",  function() return ':e ' .. vim.fn.expand '~' .. '/notes/to-do.norg<CR>' end, { expr = true, desc = name .. "[T]o-do file" })
-      vim.keymap.set("n", "<leader>nw",  function() return ':e ' .. vim.fn.expand '~' .. '/notes/work.norg<CR>' end, { expr = true, desc = name .. "[W]ork file" })
+      vim.keymap.set("n", "<leader>nt",  "<CMD>Neorg workspace personal<CR>", {  desc = name .. "[T]o-Do file" })
+      vim.keymap.set("n", "<leader>nw",  "<CMD>Neorg workspace work<CR>", {  desc = name .. "[W]ork file" })
     end,
   }
 }
