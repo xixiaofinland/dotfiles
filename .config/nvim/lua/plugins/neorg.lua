@@ -9,7 +9,9 @@ return {
         load = {
           ["core.defaults"] = {},  -- Loads default behaviour
           ["core.concealer"] = {}, -- Adds pretty icons to your documents
-          ["core.dirman"] = {      -- Manages Neorg workspaces
+          ["core.completion"] = { config = { engine = "nvim-cmp", name = "[Norg]" } },
+          ["core.integrations.nvim-cmp"] = {},
+          ["core.dirman"] = {
             config = {
               workspaces = {
                 personal = "~/notes/personal",
@@ -24,8 +26,8 @@ return {
       local name = "[neorg] "
       -- vim.keymap.set("n", "<leader>ni", "<CMD>Neorg index<CR>", { desc = name .. "[I]ndex" })
       vim.keymap.set("n", "<leader>nc", "<CMD>Neorg return<CR>", { desc = name .. "[C]lose all" })
-      vim.keymap.set("n", "<leader>nt",  "<CMD>Neorg workspace personal<CR>", {  desc = name .. "[T]o-Do file" })
-      vim.keymap.set("n", "<leader>nw",  "<CMD>Neorg workspace work<CR>", {  desc = name .. "[W]ork file" })
+      vim.keymap.set("n", "<leader>nt", "<CMD>Neorg workspace personal<CR>", { desc = name .. "[T]o-Do file" })
+      vim.keymap.set("n", "<leader>nw", "<CMD>Neorg workspace work<CR>", { desc = name .. "[W]ork file" })
     end,
   }
 }
