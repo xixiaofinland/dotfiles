@@ -26,7 +26,7 @@ return {
       local name = "[neorg] "
       -- vim.keymap.set("n", "<leader>ni", "<CMD>Neorg index<CR>", { desc = name .. "[I]ndex" })
       vim.keymap.set("n", "<leader>nc", "<CMD>Neorg return<CR>", { desc = name .. "[C]lose all" })
-      vim.keymap.set("n", "<leader>nt", "<CMD>Neorg workspace personal<CR>", { desc = name .. "[T]o-Do file" })
+      vim.keymap.set("n", "<leader>np", "<CMD>Neorg workspace personal<CR>", { desc = name .. "[T]o-Do file" })
       vim.keymap.set("n", "<leader>nw", "<CMD>Neorg workspace work<CR>", { desc = name .. "[W]ork file" })
     end,
   }
