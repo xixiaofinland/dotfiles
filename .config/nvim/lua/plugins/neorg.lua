@@ -25,9 +25,12 @@ return {
 
       local name = "[neorg] "
       -- vim.keymap.set("n", "<leader>ni", "<CMD>Neorg index<CR>", { desc = name .. "[I]ndex" })
-      vim.keymap.set("n", "<leader>nc", "<CMD>Neorg return<CR>", { desc = name .. "[C]lose all" })
-      vim.keymap.set("n", "<leader>np", "<CMD>Neorg workspace personal<CR>", { desc = name .. "[T]o-Do file" })
+      vim.keymap.set("n", "<leader>no", "<CMD>Neorg workspace personal<CR>", { desc = name .. "[O]wn file" })
       vim.keymap.set("n", "<leader>nw", "<CMD>Neorg workspace work<CR>", { desc = name .. "[W]ork file" })
+
+      vim.keymap.set("n", "<leader>nc", "<CMD>Neorg return<CR>", { desc = name .. "[C]lose all notes" })
+      vim.keymap.set("n", "<leader>np", "<CMD>Git commit -am \"+\" | Git push<CR>", { desc = name .. "[P]ush all notes" })
+      vim.keymap.set("n", "<leader>nr", "<CMD>Git pull --all<CR>", { desc = name .. "[R]etrieve all notes" })
     end,
   }
 }
