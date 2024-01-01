@@ -38,4 +38,13 @@ require "globals"
 require 'keys'
 require 'opts'
 
+local path = vim.fn.expand("~") .. "/notes/"
+local command = "cd " .. path .. "; git commit -am \"+\"; git push;"
+vim.api.nvim_create_autocmd({ "VimLeave" }, {
+  callback = function()
+    vim.fn.jobstart(command, { detach = true })
+  end,
+})
+
+
 -- vim: ts=2 sts=2 sw=2 et

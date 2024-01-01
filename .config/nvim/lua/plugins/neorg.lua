@@ -24,13 +24,21 @@ return {
       }
 
       local name = "[neorg] "
+      local note_path = vim.fn.expand("~/notes/")
       -- vim.keymap.set("n", "<leader>ni", "<CMD>Neorg index<CR>", { desc = name .. "[I]ndex" })
-      vim.keymap.set("n", "<leader>no", "<CMD>Neorg workspace personal<CR>", { desc = name .. "[O]wn file" })
-      vim.keymap.set("n", "<leader>nw", "<CMD>Neorg workspace work<CR>", { desc = name .. "[W]ork file" })
-
+      vim.keymap.set("n", "<leader>no", ":e" .. note_path .. "personal.norg<CR>", { desc = name .. "[O]wn file" })
+      vim.keymap.set("n", "<leader>nw", ":e" .. note_path .. "work.norg<CR>", { desc = name .. "[W]ork file" })
       vim.keymap.set("n", "<leader>nc", "<CMD>Neorg return<CR>", { desc = name .. "[C]lose all notes" })
-      vim.keymap.set("n", "<leader>np", "<CMD>Git commit -am \"+\" | Git push<CR>", { desc = name .. "[P]ush all notes" })
-      vim.keymap.set("n", "<leader>nr", "<CMD>Git pull --all<CR>", { desc = name .. "[R]etrieve all notes" })
+
+      local path = vim.fn.expand("~") .. "/notes/"
+
+      -- auto git push notes to remote in Nvim closing
+      local command = "cd " .. path .. "; git commit -am \"+\"; git push;"
+      vim.api.nvim_create_autocmd({ "VimLeave" }, {
+        callback = function()
+          vim.fn.jobstart(command, { detach = true })
+        end,
+      })
     end,
   }
 }
