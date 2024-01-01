@@ -14,21 +14,31 @@ return {
           ["core.dirman"] = {
             config = {
               workspaces = {
-                personal = "~/notes/personal",
-                work = "~/notes/work",
+                notes = "~/notes/",
               },
-              -- default_workspace = "personal",
+              default_workspace = "notes",
             },
           },
-        },
+          ["core.keybinds"] = {
+            config = {
+              hook = function(keybinds)
+                -- remove create new org file hotkey
+                keybinds.unmap("norg", "n", keybinds.leader .. "nn")
+              end,
+            }
+          },
+        }
       }
 
       local name = "[neorg] "
       local note_path = vim.fn.expand("~/notes/")
-      -- vim.keymap.set("n", "<leader>ni", "<CMD>Neorg index<CR>", { desc = name .. "[I]ndex" })
+
       vim.keymap.set("n", "<leader>no", ":e" .. note_path .. "personal.norg<CR>", { desc = name .. "[O]wn file" })
       vim.keymap.set("n", "<leader>nw", ":e" .. note_path .. "work.norg<CR>", { desc = name .. "[W]ork file" })
       vim.keymap.set("n", "<leader>nc", "<CMD>Neorg return<CR>", { desc = name .. "[C]lose all notes" })
+      vim.keymap.set("n", "<leader>np", "<CMD>Git commit -am \"+\" | Git push<CR>", { desc = name .. "[P]ush all notes" })
+      vim.keymap.set("n", "<leader>nr", "<CMD>Git pull --all<CR>", { desc = name .. "[R]etrieve all notes" })
+      -- vim.keymap.set("n", "<leader>ni", "<CMD>Neorg index<CR>", { desc = name .. "[I]ndex" })
 
       -- auto git push notes to remote in Nvim closing
       local command = "cd " .. note_path .. "; git commit -am \"+\"; git push;"
