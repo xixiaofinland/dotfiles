@@ -40,13 +40,33 @@ return {
       vim.keymap.set("n", "<leader>nr", "<CMD>Git pull --all<CR>", { desc = name .. "[R]etrieve all notes" })
       -- vim.keymap.set("n", "<leader>ni", "<CMD>Neorg index<CR>", { desc = name .. "[I]ndex" })
 
-      -- auto git push notes to remote in Nvim closing
-      local command = "cd " .. note_path .. "; git commit -am \"+\"; git push;"
+      -- autocmd: git push notes to remote in Nvim closing
+      local push_command = "cd " .. note_path .. "; git commit -am \"+\"; git push;"
       vim.api.nvim_create_autocmd({ "VimLeave" }, {
         callback = function()
-          vim.fn.jobstart(command, { detach = true })
+          vim.fn.jobstart(push_command, { detach = true })
         end,
       })
+
+      -- autocmd: git pull notes
+      -- local pull_command = "git pull --all"
+      -- vim.api.nvim_create_autocmd({ "BufReadPre" }, {
+      --   group = vim.api.nvim_create_augroup("neorg-pull", { clear = true}),
+      --   pattern = "*.norg",
+      --   callback = function()
+      --     local display_data = function(_, data)
+      --       if data then
+      --         P(data)
+      --         vim.cmd(':edit')
+      --       end
+      --     end
+      --     vim.fn.jobstart(pull_command, {
+      --       stdout_buffered = true,
+      --       on_stdout = display_data,
+      --       on_stderr = display_data,
+      --     })
+      --   end,
+      -- })
     end,
   }
 }
