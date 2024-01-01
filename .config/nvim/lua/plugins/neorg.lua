@@ -31,8 +31,7 @@ return {
       vim.keymap.set("n", "<leader>nc", "<CMD>Neorg return<CR>", { desc = name .. "[C]lose all notes" })
 
       -- auto git push notes to remote in Nvim closing
-      local path = vim.fn.expand("~") .. "/notes/"
-      local command = "cd " .. path .. "; git commit -am \"+\"; git push;"
+      local command = "cd " .. note_path .. "; git commit -am \"+\"; git push;"
       vim.api.nvim_create_autocmd({ "VimLeave" }, {
         callback = function()
           vim.fn.jobstart(command, { detach = true })
