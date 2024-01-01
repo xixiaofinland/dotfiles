@@ -51,7 +51,7 @@ esac
 ZSH_THEME="ys"
 
 # Load plugins
-plugins=(git nvm npm fzf z)
+plugins=(git nvm npm fzf z zsh-autosuggestions)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_DEFAULT_COMMAND='fd --type file --hidden --no-ignore'
