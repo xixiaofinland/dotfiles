@@ -37,8 +37,7 @@ return {
     end
 
     nmap('<leader>?', tel.oldfiles, 'Recent files')
-    nmap("<leader>fm", function() tel.treesitter({ default_text = "method | function " }) end,
-      '[M]ethods list')
+    nmap("<leader>fm", function() tel.treesitter({ default_text = "method | function " }) end, '[M]ethods list')
     nmap("<leader>ft", tel.treesitter, '[T]reesitter symbols')
     nmap('<leader>fi', tel.git_files, 'g[I]t files')
     nmap('<leader>ff', tel.find_files, '[F]iles')
@@ -49,17 +48,11 @@ return {
     nmap('<leader>fl', tel.git_commits, '[L]og in git')
     nmap('<leader>fd', tel.diagnostics, '[D]iagnostics')
     nmap("<leader>z", require("telescope").extensions.zoxide.list, '[Z] jump')
+    nmap('<leader>fb', function() tel.buffers({ sort_lastused = true, sort_mru = true }) end, 'Current buffers')
 
-    nmap('<leader><space>', function()
-        tel.buffers({ sort_lastused = true, sort_mru = true })
-      end,
-      'Current buffers')
-
-    nmap('<leader>/', function()
-      tel.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-        winblend = 10,
-        previewer = false,
-      })
-    end, 'Fuzzy search in this buffer')
+    nmap('<leader>/',
+      function()
+        tel.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown { winblend = 10, previewer = false, })
+      end, 'Fuzzy search in this buffer')
   end,
 }

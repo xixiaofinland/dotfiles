@@ -73,7 +73,7 @@ return {
         vim.keymap.set('n', keys, func, {desc = desc})
       end
 
-      nmap('<leader>b', require 'mini.bufremove'.delete, '[B]uffer remove current')
+      nmap('<leader>b', require 'mini.bufremove'.delete, '[B]uffer delete')
       nmap('<leader>ts', MiniTrailspace.trim, '[T]rim [S]pace')
       nmap('<leader>te', MiniTrailspace.trim_last_lines, '[T]rim [E]nding-line')
     end,
