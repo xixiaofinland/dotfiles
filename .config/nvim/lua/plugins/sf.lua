@@ -15,6 +15,12 @@ return {
     nmap('<leader><leader>t', require("sf.term").toggle, "[T]erminal toggle")
     nmap('<leader>sp', require("sf.term").saveAndPush, "[P]ush current file")
     nmap('<leader>sr', require("sf.term").retrieve, "[R]etrieve current file")
+
+    vim.api.nvim_create_autocmd({ "VimEnter" }, {
+      callback = function()
+        require("sf.org").fetch()
+      end,
+    })
   end
   -- },
 }

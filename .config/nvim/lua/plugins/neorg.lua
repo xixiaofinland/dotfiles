@@ -49,7 +49,7 @@ return {
       })
 
       -- autocmd: git pull notes
-      -- local pull_command = "git pull --all"
+      -- local pull_command = ""
       -- vim.api.nvim_create_autocmd({ "BufReadPre" }, {
       --   group = vim.api.nvim_create_augroup("neorg-pull", { clear = true}),
       --   pattern = "*.norg",
