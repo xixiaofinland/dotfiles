@@ -11,7 +11,7 @@ return {
       lualine_a = { 'mode' },
       lualine_b = { 'branch', 'diff', 'diagnostics' },
       lualine_c = { 'filename', {
-        "require'sforg'.get()",
+        "require'sf.org'.get()",
         -- cond = function()
         --   return vim.bo.filetype == 'apex'
         -- end
