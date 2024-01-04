@@ -52,17 +52,14 @@ return {
         callback = function()
           vim.fn.jobstart(pull_cmd, {
             stdout_buffered = true,
-            on_stdout = function(_, data)
-              if data then
-                print('note pull success!')
-              end
-            end,
-            on_stderr = function(_, data)
-              if data then
-                print('note pull failed??')
-                -- P(data)
-              end
-            end,
+            on_exit =
+                function(_, code)
+                  if code == 0 then
+                    vim.notify('note pull success!', vim.log.levels.INFO)
+                  else
+                    vim.notify('note pull failed?', vim.log.levels.ERROR)
+                  end
+                end,
           })
         end,
       })
