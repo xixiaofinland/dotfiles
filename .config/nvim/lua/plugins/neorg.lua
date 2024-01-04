@@ -40,7 +40,6 @@ return {
       -- vim.keymap.set("n", "<leader>np", "<CMD>Git commit -am \"+\" | Git push<CR>", { desc = name .. "[P]ush all notes" })
       -- vim.keymap.set("n", "<leader>ni", "<CMD>Neorg index<CR>", { desc = name .. "[I]ndex" })
 
-      -- autocmd: git push notes to remote in Nvim closing
       local push_cmd = "cd " .. note_path .. "; git commit -am \"+\"; git push;"
       vim.api.nvim_create_autocmd({ "VimLeave" }, {
         callback = function()
@@ -52,35 +51,21 @@ return {
       vim.api.nvim_create_autocmd({ "VimEnter" }, {
         callback = function()
           vim.fn.jobstart(pull_cmd, {
+            stdout_buffered = true,
             on_stdout = function(_, data)
-              print('note pull success!')
+              if data then
+                print('note pull success!')
+              end
             end,
             on_stderr = function(_, data)
-              print('Failed: note pull!')
+              if data then
+                print('note pull failed??')
+                -- P(data)
+              end
             end,
           })
         end,
       })
-
-      -- autocmd: git pull notes
-      -- local pull_command = ""
-      -- vim.api.nvim_create_autocmd({ "BufReadPre" }, {
-      --   group = vim.api.nvim_create_augroup("neorg-pull", { clear = true}),
-      --   pattern = "*.norg",
-      --   callback = function()
-      --     local display_data = function(_, data)
-      --       if data then
-      --         P(data)
-      --         vim.cmd(':edit')
-      --       end
-      --     end
-      --     vim.fn.jobstart(pull_command, {
-      --       stdout_buffered = true,
-      --       on_stdout = display_data,
-      --       on_stderr = display_data,
-      --     })
-      --   end,
-      -- })
     end,
   }
 }
