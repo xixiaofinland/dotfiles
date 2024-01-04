@@ -16,6 +16,9 @@ return {
     nmap('<leader>sp', require("sf.term").saveAndPush, "[P]ush current file")
     nmap('<leader>sr', require("sf.term").retrieve, "[R]etrieve current file")
 
+    local sf_run_all_test = ''
+    nmap('<leader>sta', function() require("sf.term").run('echo hello') end, "[T]est [A]ll")
+
     vim.api.nvim_create_autocmd({ "VimEnter" }, {
       callback = function()
         require("sf.org").fetch()
