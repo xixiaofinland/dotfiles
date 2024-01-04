@@ -41,10 +41,24 @@ return {
       -- vim.keymap.set("n", "<leader>ni", "<CMD>Neorg index<CR>", { desc = name .. "[I]ndex" })
 
       -- autocmd: git push notes to remote in Nvim closing
-      local push_command = "cd " .. note_path .. "; git commit -am \"+\"; git push;"
+      local push_cmd = "cd " .. note_path .. "; git commit -am \"+\"; git push;"
       vim.api.nvim_create_autocmd({ "VimLeave" }, {
         callback = function()
-          vim.fn.jobstart(push_command, { detach = true })
+          vim.fn.jobstart(push_cmd, { detach = true })
+        end,
+      })
+
+      local pull_cmd = "cd " .. note_path .. "; git pull;"
+      vim.api.nvim_create_autocmd({ "VimEnter" }, {
+        callback = function()
+          vim.fn.jobstart(pull_cmd, {
+            on_stdout = function(_, data)
+              print('note pull success!')
+            end,
+            on_stderr = function(_, data)
+              print('Failed: note pull!')
+            end,
+          })
         end,
       })
 
