@@ -18,7 +18,6 @@ return {
 
     telescope.setup({
       defaults = {
-        file_ignore_patterns = {"node_modules", "*.cls-meta.xml$"},
         path_display = { "truncate " },
         mappings = {
           i = {
