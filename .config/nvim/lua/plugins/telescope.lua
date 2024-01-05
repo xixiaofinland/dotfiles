@@ -10,6 +10,10 @@ return {
     },
   },
   config = function()
+    -- `.cls` file is default to `tex` type in telescope, causing telescope previewer doesn't syntax highlight apex
+    -- overwrite the default by load `apex_type.lua` defined in dotfiles
+    require'plenary.filetype'.add_file('apex_type')
+
     local telescope = require("telescope")
 
     telescope.setup({
