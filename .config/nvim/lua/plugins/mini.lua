@@ -3,7 +3,7 @@ return {
     'echasnovski/mini.nvim',
     version = false,
     config = function()
-      -- require('mini.pairs').setup()
+      require('mini.comment').setup()
 
       require('mini.cursorword').setup()
       -- disable highlight of the word under the cursor
