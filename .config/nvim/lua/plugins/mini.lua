@@ -3,7 +3,13 @@ return {
     'echasnovski/mini.nvim',
     version = false,
     config = function()
-      require('mini.comment').setup()
+      -- require('mini.comment').setup(
+      --   {
+      --     options = {
+      --      custom_commentstring = '// %s',
+      --     }
+      --   }
+      -- )
 
       require('mini.cursorword').setup()
       -- disable highlight of the word under the cursor
@@ -75,7 +81,7 @@ return {
         if desc then
           desc = '[Mini] ' .. desc
         end
-        vim.keymap.set('n', keys, func, {desc = desc})
+        vim.keymap.set('n', keys, func, { desc = desc })
       end
 
       nmap('<leader>b', require 'mini.bufremove'.delete, '[B]uffer delete')
