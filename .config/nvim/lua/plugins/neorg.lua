@@ -8,7 +8,7 @@ return {
       require("neorg").setup {
         load = {
           ["core.defaults"] = {},  -- Loads default behaviour
-          ["core.concealer"] = {}, -- Adds pretty icons to your documents
+          ["core.concealer"] = {}, -- Adds pretty icons
           ["core.completion"] = { config = { engine = "nvim-cmp", name = "[Norg]" } },
           ["core.integrations.nvim-cmp"] = {},
           ["core.dirman"] = {
