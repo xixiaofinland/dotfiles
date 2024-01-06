@@ -19,6 +19,7 @@ return {
           o = gen_spec.treesitter({ a = "@loop.outer", i = "@loop.inner" }, {}),
           m = gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
           i = gen_spec.treesitter({ a = "@conditional.outer", i = "@conditional.inner" }, {}),
+          -- `g` text obj for the entire file
           g = function()
             local from = { line = 1, col = 1 }
             local to = {
@@ -36,16 +37,16 @@ return {
         -- See `:h MiniBracketed.config` for more info.
         buffer     = { suffix = 'b', options = {} },
         comment    = { suffix = 'c', options = {} },
-        conflict   = { suffix = 'x', options = {} },
-        diagnostic = { suffix = 'd', options = {} },
         indent     = { suffix = 'i', options = {} },
-        jump       = { suffix = 'j', options = {} },
-        location   = { suffix = 'l', options = {} },
-        quickfix   = { suffix = 'q', options = {} },
         treesitter = { suffix = 't', options = {} },
         file       = { suffix = 'f', options = {} },
         oldfile    = { suffix = 'o', options = {} },
         yank       = { suffix = 'y', options = {} },
+        quickfix   = { suffix = 'q', options = {} },
+        jump       = { suffix = 'j', options = {} },
+        location   = { suffix = 'l', options = {} },
+        conflict   = { suffix = 'x', options = {} },
+        diagnostic = { suffix = 'd', options = {} },
 
         -- disabled ones which I don't use
         undo       = { suffix = '', options = {} },
