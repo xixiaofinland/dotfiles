@@ -15,7 +15,6 @@ return {
       local gen_spec = require("mini.ai").gen_spec;
       require("mini.ai").setup({
         custom_textobjects = {
-          a = gen_spec.argument({ brackets = { '%b()' } }), -- match only within `()`
           o = gen_spec.treesitter({ a = "@loop.outer", i = "@loop.inner" }, {}),
           m = gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
           i = gen_spec.treesitter({ a = "@conditional.outer", i = "@conditional.inner" }, {}),
@@ -28,6 +27,10 @@ return {
             }
             return { from = from, to = to }
           end
+
+          -- ts-textobject already defined `a` move
+          -- a = gen_spec.argument({ brackets = { '%b()' } }), -- match only within `()`
+
           -- c = gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }, {}),
           -- f = gen_spec.treesitter({ a = '@call.outer', i = '@call.inner' }),
         },
