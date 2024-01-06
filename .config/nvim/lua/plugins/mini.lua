@@ -3,14 +3,7 @@ return {
     'echasnovski/mini.nvim',
     version = false,
     config = function()
-      -- require('mini.comment').setup(
-      --   {
-      --     options = {
-      --      custom_commentstring = '// %s',
-      --     }
-      --   }
-      -- )
-
+      require('mini.comment').setup()
       require('mini.cursorword').setup()
       -- disable highlight of the word under the cursor
       vim.cmd('hi! MiniCursorwordCurrent guifg=NONE guibg=NONE gui=NONE cterm=NONE')

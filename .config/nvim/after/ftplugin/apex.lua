@@ -1,5 +1,4 @@
-local ft = require('Comment.ft')
-ft.set('apex', { '//%s', '/*%s*/' })
+vim.bo.commentstring = '//%s'
 
 local nmap = function(keys, func, desc)
   if desc then
