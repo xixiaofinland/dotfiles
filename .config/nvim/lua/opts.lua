@@ -1,8 +1,3 @@
--- Set commentstring. :h comment.ft
-
-local ft = require('Comment.ft')
-ft.set('apex', { '//%s', '/*%s*/' })
-
 vim.filetype = on
 
 vim.filetype.add({
