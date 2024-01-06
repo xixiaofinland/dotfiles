@@ -4,9 +4,14 @@ return {
     version = false,
     config = function()
       -- require('mini.pairs').setup()
-      -- require('mini.cursorword').setup()
+
+      require('mini.cursorword').setup()
+      -- disable highlight of the word under the cursor
+      vim.cmd('hi! MiniCursorwordCurrent guifg=NONE guibg=NONE gui=NONE cterm=NONE')
+
       require('mini.surround').setup()
       require('mini.trailspace').setup()
+      require('mini.doc').setup()
 
       local gen_spec = require("mini.ai").gen_spec;
       require("mini.ai").setup({
