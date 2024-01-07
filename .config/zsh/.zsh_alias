@@ -1,7 +1,9 @@
 alias gs="git status"
 alias e="exit"
 alias c="clear"
-alias t='tmux new -c ~/.config/'
+# alias t="tmux new -c ~/.config/"
+alias t='tmux new-session -d -s 0 -n win; tmux send-keys -t 0:win "config pull" Enter; tmux attach -t 0:win'
+
 alias n='nvim'
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
