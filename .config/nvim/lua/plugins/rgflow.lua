@@ -15,6 +15,12 @@ return {
           default_ui_mappings = true,
           -- QuickFix window only mapping
           default_quickfix_mappings = true,
+          colors = {
+            RgFlowInputPath = { link = 'NormalFloat' },
+            RgFlowInputBg = { link = 'NormalFloat' },
+            RgFlowInputFlags = { link = 'NormalFloat' },
+            RgFlowInputPattern = { link = 'NormalFloat' },
+          },
         })
     end,
   }
