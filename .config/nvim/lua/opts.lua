@@ -1,4 +1,5 @@
 vim.filetype = on
+vim.o.foldenable = false
 
 vim.filetype.add({
   extension = {
