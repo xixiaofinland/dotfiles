@@ -39,7 +39,6 @@ return {
       require('mini.bracketed').setup({
         -- See `:h MiniBracketed.config` for more info.
         buffer     = { suffix = 'b', options = {} },
-        comment    = { suffix = 'c', options = {} },
         indent     = { suffix = 'i', options = {} },
         treesitter = { suffix = 't', options = {} },
         file       = { suffix = 'f', options = {} },
@@ -52,6 +51,7 @@ return {
         diagnostic = { suffix = 'd', options = {} },
 
         -- disabled ones which I don't use
+        comment    = { suffix = '', options = {} },
         undo       = { suffix = '', options = {} },
         window     = { suffix = '', options = {} },
 
