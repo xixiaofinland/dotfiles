@@ -82,8 +82,8 @@ return {
       end
 
       nmap('<leader>b', require 'mini.bufremove'.delete, '[B]uffer delete')
-      nmap('<leader>ts', MiniTrailspace.trim, '[T]rim [S]pace')
-      nmap('<leader>te', MiniTrailspace.trim_last_lines, '[T]rim [E]nding-line')
+      nmap('<leader>is', MiniTrailspace.trim, 'Tr[i]m [S]pace')
+      nmap('<leader>ie', MiniTrailspace.trim_last_lines, 'Tr[i]m [E]nding-line')
     end,
   }
 }
