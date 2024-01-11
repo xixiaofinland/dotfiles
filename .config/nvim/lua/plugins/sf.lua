@@ -1,5 +1,6 @@
 return {
   'xixiaofinland/sf.nvim',
+  -- dir = '~/projects/sf.nvim',
   config = function()
     local nmap = function(keys, func, desc)
       if desc then
@@ -8,9 +9,7 @@ return {
       vim.keymap.set('n', keys, func, { desc = desc })
     end
 
-    nmap('<leader>t', require("sf.term").toggle, "[T]erminal toggle")
-
-    -- other keys defined in after/ftplugins/apex.lua
+    -- keys are defined in after/ftplugins/apex.lua
 
     vim.api.nvim_create_autocmd({ "VimEnter" }, {
       callback = function()
