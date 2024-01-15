@@ -22,5 +22,5 @@ nmap('<leader>se', require("sf.term").scrollToEnd, "[E]nd scroll in terminal")
 nmap('<leader>sta', require("sf.term").runAllTestsInCurrentFile, "[T]est [A]ll")
 nmap('<leader>stt', require("sf.term").runCurrentTest, "[T]est [T]his under cursor")
 
-nmap('<leader>sto', require("sf.ts").open_test_buf, "[T]est [O]pen Buf Select")
+nmap('<leader>sto', require("sf.ts").open, "[T]est [O]pen Buf Select")
 nmap('<leader>str', require("sf.term").repeatLastTests, "[T]est [R]epeat")
