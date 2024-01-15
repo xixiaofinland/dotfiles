@@ -12,6 +12,7 @@ vim.filetype.add({
 })
 
 vim.o.textwidth = 80
+vim.o.colorcolumn = "80"
 
 vim.o.history = 200
 
