@@ -17,7 +17,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  'jonathanmorris180/salesforce.nvim',
+  -- 'jonathanmorris180/salesforce.nvim',
 
   'nvim-tree/nvim-web-devicons',
 
