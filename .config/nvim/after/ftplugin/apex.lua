@@ -8,8 +8,9 @@ local nmap = function(keys, func, desc)
 end
 
 nmap('<leader>ss', require("sf.org").set, "[s]et target_org current workspace")
-nmap('<leader>sS', require("sf.org").setGlobal, "[S]et target_org globally")
+nmap('<leader>sS', require("sf.org").set_global, "[S]et target_org globally")
 nmap('<leader>sf', require("sf.org").fetch, "[F]etch orgs info")
+nmap('<leader>sd', require("sf.org").diff_this, "[D]iff this")
 
 nmap('<leader><leader>', require("sf.term").toggle, "[T]erminal toggle")
 
