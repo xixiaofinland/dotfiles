@@ -1,6 +1,6 @@
 return {
   'xixiaofinland/sf.nvim',
-  dir = '~/projects/sf.nvim',
+  -- dir = '~/projects/sf.nvim',
   config = function()
     local nmap = function(keys, func, desc)
       if desc then
