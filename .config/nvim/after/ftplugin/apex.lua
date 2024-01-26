@@ -4,7 +4,7 @@ local nmap = function(keys, func, desc)
   if desc then
     desc = '[Sf] ' .. desc
   end
-  vim.keymap.set('n', keys, func, { desc = desc })
+  vim.keymap.set('n', keys, func, { buffer = true, desc = desc })
 end
 
 nmap('<leader>ss', require("sf.org").set, "[s]et target_org current workspace")
