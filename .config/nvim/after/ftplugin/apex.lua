@@ -10,7 +10,8 @@ end
 nmap('<leader>ss', require("sf.org").set, "[s]et target_org current workspace")
 nmap('<leader>sS', require("sf.org").set_global, "[S]et target_org globally")
 nmap('<leader>sf', require("sf.org").fetch, "[F]etch orgs info")
-nmap('<leader>sd', require("sf.org").diff_this, "[D]iff this")
+nmap('<leader>sd', require("sf.org").diff_in_target_org, "[d]iff with target_org")
+nmap('<leader>sD', require("sf.org").diff_in, "[D]iff with org...")
 
 nmap('<leader><leader>', require("sf.term").toggle, "[T]erminal toggle")
 
