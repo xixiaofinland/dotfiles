@@ -1,5 +1,6 @@
 vim.filetype = on
 vim.o.foldenable = false
+vim.cmd('packadd cfilter')
 
 vim.filetype.add({
   extension = {
