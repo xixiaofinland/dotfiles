@@ -35,5 +35,6 @@ require('lazy').setup({
 require "globals"
 require 'keys'
 require 'opts'
+require 'last_cursor'
 
 -- vim: ts=2 sts=2 sw=2 et
