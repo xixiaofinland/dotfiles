@@ -68,10 +68,10 @@ style = "Regular"
 x = 0
 y = 0
 
-[[keyboard.bindings]]
-action = "SpawnNewInstance"
-key = "N"
-mods = "Command"
+# [[keyboard.bindings]]
+# action = "SpawnNewInstance"
+# key = "N"
+# mods = "Command"
 
 [mouse]
 hide_when_typing = true
