@@ -9,7 +9,26 @@ return {
     { 'folke/neodev.nvim',       opts = {} },
   },
   config = function()
-    local on_attach = function(_, bufnr)
+    local on_attach = function(client, bufnr)
+
+      -- Config LSP Inlay Hint
+      if client.server_capabilities.inlayHintProvider then
+        vim.lsp.inlay_hint.enable(bufnr, true)
+      end
+      -- vim.api.nvim_create_augroup("lsp_augroup", { clear = true })
+      -- vim.api.nvim_create_autocmd("InsertEnter", {
+      --   buffer = bufnr,
+      --   callback = function() vim.lsp.inlay_hint.enable(bufnr, true) end,
+      --   group = "lsp_augroup",
+      -- })
+      -- vim.api.nvim_create_autocmd("InsertLeave", {
+      --   buffer = bufnr,
+      --   callback = function() vim.lsp.inlay_hint.enable(bufnr, false) end,
+      --   group = "lsp_augroup",
+      -- })
+
+      -- Set hotkeys
+
       local nmap = function(keys, func, desc)
         if desc then
           desc = '[LSP] ' .. desc
@@ -17,9 +36,6 @@ return {
 
         vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
       end
-
-      -- check lsp server capability
-      -- :lua =vim.lsp.get_active_clients()[1].server_capabilities
 
       nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
       nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
