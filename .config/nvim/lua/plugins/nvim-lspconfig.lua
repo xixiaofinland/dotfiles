@@ -28,7 +28,6 @@ return {
       -- })
 
       -- Set hotkeys
-
       local nmap = function(keys, func, desc)
         if desc then
           desc = '[LSP] ' .. desc
