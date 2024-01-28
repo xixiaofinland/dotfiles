@@ -14,11 +14,11 @@ nmap('<leader>sd', require("sf.org").diff_in_target_org, "[d]iff with target_org
 nmap('<leader>sD', require("sf.org").diff_in, "[D]iff with org...")
 
 nmap('<leader><leader>', require("sf.term").toggle, "[T]erminal toggle")
+nmap('<C-c>', require("sf.term").cancel, "[C]ancel current running command")
 
 nmap('<leader>sp', require("sf.term").saveAndPush, "[P]ush current file")
 nmap('<leader>sr', require("sf.term").retrieve, "[R]etrieve current file")
 
-nmap('<C-c>', require("sf.term").cancel, "[C]ancel current running command")
 nmap('<leader>se', require("sf.term").scrollToEnd, "[E]nd scroll in terminal")
 
 nmap('<leader>ta', require("sf.term").runAllTestsInCurrentFile, "[T]est [A]ll")
