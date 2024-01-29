@@ -10,7 +10,6 @@ vim.filetype.add({
 })
 vim.cmd('packadd cfilter')
 
-
 vim.opt.foldenable = false
 
 vim.opt.textwidth = 0
