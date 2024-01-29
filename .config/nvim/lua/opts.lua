@@ -12,10 +12,9 @@ vim.cmd('packadd cfilter')
 
 vim.opt.list = true
 vim.opt.listchars:append {
-	eol = "↵",
-	trail = "~",
-	tab = ">-",
-	nbsp = "␣",
+  trail = "~",
+  tab = ">-",
+  nbsp = "␣",
 }
 
 vim.opt.foldenable = false
