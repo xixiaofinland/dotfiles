@@ -10,6 +10,15 @@ vim.filetype.add({
 })
 vim.cmd('packadd cfilter')
 
+vim.opt.list = true
+local space = "·"
+vim.opt.listchars:append {
+	eol = "↵",
+	trail = "~",
+	tab = ">-",
+	nbsp = "␣",
+}
+
 vim.opt.foldenable = false
 
 vim.opt.textwidth = 0
