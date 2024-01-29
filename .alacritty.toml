@@ -86,7 +86,6 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 [window]
 decorations = "Transparent"
 blur = true
-opacity = 0.7
 option_as_alt = "OnlyLeft"
 dynamic_padding = true
 
