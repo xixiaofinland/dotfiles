@@ -13,6 +13,9 @@ nmap('<leader>sf', require("sf.org").fetch, "[F]etch orgs info")
 nmap('<leader>sd', require("sf.org").diff_in_target_org, "[d]iff with target_org")
 nmap('<leader>sD', require("sf.org").diff_in, "[D]iff with org...")
 
+nmap('<leader>mr', require("sf.org").get_md_from_target_org, "[m]etadata [r]etrieve")
+nmap('<leader>mp', require("sf.org").apex_in_target_org, "[m]etadata [p]ick and pull")
+
 nmap('<leader><leader>', require("sf.term").toggle, "[T]erminal toggle")
 nmap('<C-c>', require("sf.term").cancel, "[C]ancel current running command")
 
