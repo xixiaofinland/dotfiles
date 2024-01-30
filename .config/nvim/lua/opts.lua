@@ -20,7 +20,7 @@ vim.opt.listchars:append {
 vim.opt.foldenable = false
 
 vim.opt.textwidth = 0
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "100"
 
 vim.opt.history = 200
 
