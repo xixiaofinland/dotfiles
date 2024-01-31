@@ -17,6 +17,8 @@ nmap('<leader>mr', require("sf.org").get_md_from_target_org, "[m]etadata [r]etri
 nmap('<leader>mp', require("sf.org").apex_in_target_org, "[m]etadata [p]ick and pull")
 
 nmap('<leader><leader>', require("sf.term").toggle, "[T]erminal toggle")
+
+nmap('<leader>s-', require("sf.term").go_to_sf_root, "CD into [R]oot")
 nmap('<C-c>', require("sf.term").cancel, "[C]ancel current running command")
 
 nmap('<leader>sp', require("sf.term").saveAndPush, "[P]ush current file")
