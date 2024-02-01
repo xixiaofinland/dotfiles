@@ -1,6 +1,6 @@
 return {
   'xixiaofinland/sf.nvim',
-  dir = '~/projects/sf.nvim',
+  -- dir = '~/projects/sf.nvim',
   config = function()
     -- keys are defined in after/ftplugins/apex.lua
 
