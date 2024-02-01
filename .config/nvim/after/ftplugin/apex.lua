@@ -30,7 +30,7 @@ nmap('<leader>ta', require("sf.term").run_all_tests_in_this_file, "[T]est [A]ll"
 nmap('<leader>tt', require("sf.term").run_current_test, "[T]est [T]his under cursor")
 
 nmap('<leader>to', require("sf.test").open, "[T]est [O]pen Buf Select")
-nmap('<leader>tr', require("sf.term").repeatLastTests, "[T]est [R]epeat")
+nmap('<leader>tr', require("sf.term").repeat_last_tests, "[T]est [R]epeat")
 
 -- nmap('<leader>se', require("sf.term").scrollToEnd, "[E]nd scroll in terminal")
 
