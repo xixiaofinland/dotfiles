@@ -15,8 +15,8 @@ nmap('<leader>sf', require("sf.org").fetch_org_list, "[F]etch orgs info")
 nmap('<leader>sd', require("sf.org").diff_in_target_org, "[d]iff in target_org")
 nmap('<leader>sD', require("sf.org").select_org_to_diff_in, "[D]iff in org...")
 
-nmap('<leader>ml', require("sf.org").retrieve_metadata_list, "[m]etadata [l]ist retrieve")
-nmap('<leader>mr', require("sf.org").select_apex_to_retrieve, "[m]etadata [r]etrieve")
+nmap('<leader>mr', require("sf.org").retrieve_metadata_lists, "[m]etadata [l]ist retrieve")
+nmap('<leader>ml', require("sf.org").select_md_to_retrieve, "[m]etadata [r]etrieve")
 nmap('<leader>mt', require("sf.org").retrieve_apex_under_cursor, "[m]etadata [T]his retrieve")
 
 nmap('<leader><leader>', require("sf.term").toggle, "[T]erminal toggle")
