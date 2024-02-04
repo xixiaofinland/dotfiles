@@ -1,6 +1,6 @@
 return {
   'xixiaofinland/sf.nvim',
-  -- dir = '~/projects/sf.nvim',
+  dir = '~/projects/sf.nvim',
 
   dependencies = {
     "nvim-treesitter/nvim-treesitter",

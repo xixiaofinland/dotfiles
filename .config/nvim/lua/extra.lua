@@ -50,3 +50,14 @@ vim.api.nvim_create_autocmd({ 'BufWinEnter', 'FileType' }, {
   group = vim.api.nvim_create_augroup('nvim-lastplace', {}),
   callback = run
 })
+
+-- TODO: move this into sf.nvim plugin folder. Currently it blocks the mini.test
+local augroup = vim.api.nvim_create_augroup("Sf", { clear = true })
+vim.api.nvim_create_autocmd({ 'VimEnter' }, {
+  group = augroup,
+  desc = "Run sf org cmd and store org info in the plugin",
+  once = true,
+  callback = function()
+    require('sf.org').fetch_org_list()
+  end,
+})
