@@ -45,7 +45,7 @@ unfocused_hollow = true
 vi_mode_style = "Beam"
 
 [font]
-size = 15.0
+size = 16.0
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
