@@ -3,6 +3,10 @@ live_config_reload = true
 # Colors (Kanagawa Wave)
 # Source https//github.com/rebelot/kanagawa.nvim
 
+[colors.cursor]
+cursor = '#ffffff'
+text = 'CellBackground'
+
 [colors.primary]
 background = '#1f1f28'
 foreground = '#dcd7ba'
@@ -41,8 +45,7 @@ color = '#ff5d62'
 
 [cursor]
 style = "Block"
-thickness = 1.0
-unfocused_hollow = true
+unfocused_hollow = false
 vi_mode_style = "Beam"
 
 [font]
