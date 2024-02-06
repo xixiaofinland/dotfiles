@@ -41,6 +41,7 @@ color = '#ff5d62'
 
 [cursor]
 style = "Block"
+thickness = 1.0
 unfocused_hollow = true
 vi_mode_style = "Beam"
 
