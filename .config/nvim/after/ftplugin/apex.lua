@@ -32,6 +32,3 @@ nmap('<leader>tt', require("sf.term").run_current_test, "[T]est [T]his under cur
 
 nmap('<leader>to', require("sf.test").open, "[T]est [O]pen Buf Select")
 nmap('<leader>tr', require("sf.term").repeat_last_tests, "[T]est [R]epeat")
-
--- nmap('<leader>se', require("sf.term").scrollToEnd, "[E]nd scroll in terminal")
-
