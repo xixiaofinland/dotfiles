@@ -1,7 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
   dependencies = {
-    -- Automatically install LSPs to stdpath for neovim
     { 'williamboman/mason.nvim', config = true,  opts = {} },
     'williamboman/mason-lspconfig.nvim',
     "hrsh7th/cmp-nvim-lsp",
@@ -85,6 +84,7 @@ return {
       end,
     }
 
+    -- `mason_lspconfig.setup_handlers` doesn't handle apex_ls automaticlally (why not?), we need to manually attach below actions
     local lspconfig = require 'lspconfig'
     lspconfig.apex_ls.setup {
       apex_enable_semantic_errors = false,
@@ -92,7 +92,6 @@ return {
       filetypes = { 'apex' },
       root_dir = lspconfig.util.root_pattern('sfdx-project.json'),
 
-      -- `mason_lspconfig.setup_handlers` doesn't handle manually configured languages, we need to manually attach below actions
       on_attach = on_attach,
       capabilities = capabilities,
     }
