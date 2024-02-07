@@ -1,8 +1,8 @@
 -- TODO: how to get it in lua? This not work: vim.opt.formatoptions = { c = false, r = false, o = false }
--- Don't start commenting when adding a new line after a commenting line
+-- new line doesn't continue comment
 vim.cmd([[autocmd BufEnter * set formatoptions-=cro]])
 
--- [[ Highlight on yank ]] See `:help vim.highlight.on_yank()`
+-- Highlight on yank. `:h vim.highlight.on_yank`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
--- back to last cursor location: https://github.com/ethanholz/nvim-lastplace/blob/main/lua/nvim-lastplace/init.lua
+-- open file with cursor in the last location
 local ignore_buftype = { "quickfix", "nofile", "help" }
 local ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit" }
 
