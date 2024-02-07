@@ -11,23 +11,13 @@ return {
   config = function()
     local on_attach = function(client, bufnr)
 
-      -- Config LSP Inlay Hint
-      if client.server_capabilities.inlayHintProvider then
-        vim.lsp.inlay_hint.enable(bufnr, true)
+      local toggleInlay = function()
+        if client.server_capabilities.inlayHintProvider then
+          local current_value = vim.lsp.inlay_hint.get({ bufnr = 0 })[1]
+          vim.lsp.inlay_hint.enable(bufnr, not current_value)
+        end
       end
-      -- vim.api.nvim_create_augroup("lsp_augroup", { clear = true })
-      -- vim.api.nvim_create_autocmd("InsertEnter", {
-      --   buffer = bufnr,
-      --   callback = function() vim.lsp.inlay_hint.enable(bufnr, true) end,
-      --   group = "lsp_augroup",
-      -- })
-      -- vim.api.nvim_create_autocmd("InsertLeave", {
-      --   buffer = bufnr,
-      --   callback = function() vim.lsp.inlay_hint.enable(bufnr, false) end,
-      --   group = "lsp_augroup",
-      -- })
 
-      -- Set hotkeys
       local nmap = function(keys, func, desc)
         if desc then
           desc = '[LSP] ' .. desc
@@ -36,6 +26,7 @@ return {
         vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
       end
 
+      nmap('<leader>ti', toggleInlay, '[T]oggle [I]nlay hint')
       nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
       nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
       nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
