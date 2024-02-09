@@ -32,3 +32,8 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = name .. 'Op
 
 vim.keymap.set('n', '<leader>fn', function() return ':e ' .. vim.fn.expand '%:p:h' .. '/' end,
   { expr = true, desc = name .. '[N]ew the current file path in ex' })
+
+vim.keymap.set('n', '<leader>cc', function()
+  local file_name = vim.split(vim.fn.expand("%:t"), ".", { trimempty = true, plain = true })[1]
+  vim.fn.setreg('*', file_name)
+end, { desc = name .. '[C]opy file_name' })
