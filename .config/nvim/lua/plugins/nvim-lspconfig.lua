@@ -59,7 +59,7 @@ return {
           telemetry = { enable = false },
         },
       },
-      tsserver = {},
+      -- tsserver = {},
       -- apex_ls = {},
     }
 
