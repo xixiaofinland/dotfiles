@@ -50,10 +50,12 @@ return {
     nmap('<leader>fc', tel.command_history, '[C]ommand history')
     nmap('<leader>fg', tel.live_grep, '[G]rep')
     nmap('<leader>fl', tel.git_commits, '[L]og in git')
-    nmap('<leader>fd', tel.diagnostics, '[D]iagnostics')
     nmap("<leader>z", require("telescope").extensions.zoxide.list, '[Z] jump')
     nmap('<leader>fb', function() tel.buffers({ sort_lastused = true, sort_mru = true }) end, 'Current buffers')
-    nmap('<leader>fD', function() tel.find_files({ cwd = '~/.config/'}) end, '[D]otfiles find')
+    nmap('<leader>fd', tel.diagnostics, '[D]iagnostics')
+
+    nmap('<leader>fF', function() tel.find_files({ cwd = '~/.config/'}) end, '[F]ind dotfiles')
+    nmap('<leader>fG', function() tel.grep_string({ cwd = '~/.config/'}) end, '[G]rep dotfiles')
 
     nmap('<leader>/',
       function()
