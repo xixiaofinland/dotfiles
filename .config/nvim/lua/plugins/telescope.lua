@@ -53,6 +53,7 @@ return {
     nmap('<leader>fd', tel.diagnostics, '[D]iagnostics')
     nmap("<leader>z", require("telescope").extensions.zoxide.list, '[Z] jump')
     nmap('<leader>fb', function() tel.buffers({ sort_lastused = true, sort_mru = true }) end, 'Current buffers')
+    nmap('<leader>fD', function() tel.find_files({ cwd = '~/.config/'}) end, '[D]otfiles find')
 
     nmap('<leader>/',
       function()
