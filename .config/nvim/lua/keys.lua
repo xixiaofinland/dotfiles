@@ -26,12 +26,15 @@ vim.keymap.set('n', '[<Space>', ':<C-u>put!=repeat(nr2char(10),v:count)<Bar>exec
 vim.keymap.set('n', '<leader>fn', function() return ':e ' .. vim.fn.expand '%:p:h' .. '/' end,
   { expr = true, desc = '[N]ew the current file path in ex' })
 
--- Copy file name truncating dot-after, e.g. copy "Hello" from "Hello.cls"
+-- Copy file name without dot-after, e.g. copy "Hello" from "Hello.cls"
 vim.keymap.set('n', '<leader>cc', function()
-  local file_name = vim.split(vim.fn.expand("%:t"), ".", { trimempty = true, plain = true })[1] vim.fn.setreg('*', file_name)
+  local file_name = vim.split(vim.fn.expand("%:t"), ".", { trimempty = true, plain = true })[1]
+  vim.fn.setreg('*', file_name)
+  vim.notify(string.format('"%s" copied.', file_name), vim.log.levels.INFO)
 end, { desc = '[C]opy file_name' })
 
-vim.keymap.set('n', '<leader>e', '<CMD>e ~/.config/nvim/lua/plugins/sf.lua<CR>'  , { desc = 'Open sf.nvim plugin config file' })
+vim.keymap.set('n', '<leader>e', '<CMD>e ~/.config/nvim/lua/plugins/sf.lua<CR>',
+  { desc = 'Open sf.nvim plugin config file' })
 
 -- test if this is needed in macOS?
 -- vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
@@ -40,5 +43,5 @@ vim.keymap.set('n', '<leader>e', '<CMD>e ~/.config/nvim/lua/plugins/sf.lua<CR>' 
 -- seldomly used
 -- vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 
--- use telescope <leader>d?
+-- it equals to telescope <leader>d
 -- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
