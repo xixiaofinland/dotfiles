@@ -39,7 +39,7 @@ return {
           { buffer = bufnr, desc = name .. '[U]ndo_stage_hunk' })
         vim.keymap.set('n', '<leader>hS', require('gitsigns').stage_buffer,
           { buffer = bufnr, desc = name .. '[S]tage_buffer' })
-        vim.keymap.set('n', '<leader>hb', require('gitsigns').toggle_current_line_blame,
+        vim.keymap.set('n', '<leader>tb', require('gitsigns').toggle_current_line_blame,
           { buffer = bufnr, desc = name .. '[B]lame toggle' })
       end,
     },
