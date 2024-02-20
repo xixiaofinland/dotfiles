@@ -9,7 +9,6 @@ return {
   },
   config = function()
     local on_attach = function(client, bufnr)
-
       local toggleInlay = function()
         if client.server_capabilities.inlayHintProvider then
           local current_value = vim.lsp.inlay_hint.get({ bufnr = 0 })[1]
@@ -57,7 +56,7 @@ return {
         Lua = {
           workspace = { checkThirdParty = false },
           telemetry = { enable = false },
-          diagnostics = { globals = {'vim'} }
+          diagnostics = { globals = { 'vim', 'require' } }
         },
       },
       -- tsserver = {},
