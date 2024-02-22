@@ -54,13 +54,14 @@ return {
       rust_analyzer = {},
       lua_ls = {
         Lua = {
-          workspace = { checkThirdParty = false },
+          workspace = {
+            checkThirdParty = false,
+            library = vim.api.nvim_get_runtime_file("", true)
+          },
           telemetry = { enable = false },
-          diagnostics = { globals = { 'vim', 'require' } }
+          diagnostics = { globals = { 'vim' } }
         },
       },
-      -- tsserver = {},
-      -- apex_ls = {},
     }
 
     -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
