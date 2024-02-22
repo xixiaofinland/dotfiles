@@ -53,7 +53,7 @@ return {
     nmap('<leader>fb', function() tel.buffers({ sort_lastused = true, sort_mru = true }) end, 'Current buffers')
     nmap('<leader>fd', tel.diagnostics, '[D]iagnostics')
 
-    nmap('<leader>fF', function() tel.find_files({ cwd = '~/.config/'}) end, '[F]ind dotfiles')
+    nmap('<leader>fD', function() tel.find_files({ cwd = '~/.config/'}) end, '[F]ind [d]otfiles')
     nmap('<leader>fG', function() tel.grep_string({ cwd = '~/.config/'}) end, '[G]rep dotfiles')
 
     nmap('<leader>/',
