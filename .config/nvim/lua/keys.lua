@@ -26,12 +26,17 @@ vim.keymap.set('n', '[<Space>', ':<C-u>put!=repeat(nr2char(10),v:count)<Bar>exec
 vim.keymap.set('n', '<leader>fn', function() return ':e ' .. vim.fn.expand '%:p:h' .. '/' end,
   { expr = true, desc = '[N]ew the current file path in ex' })
 
--- Copy file name without dot-after, e.g. copy "Hello" from "Hello.cls"
-vim.keymap.set('n', '<leader>cc', function()
-  local file_name = vim.split(vim.fn.expand("%:t"), ".", { trimempty = true, plain = true })[1]
+vim.keymap.set('n', '<leader>cf', function()
+  local file_name = vim.fn.expand("%:t")
   vim.fn.setreg('*', file_name)
   vim.notify(string.format('"%s" copied.', file_name), vim.log.levels.INFO)
-end, { desc = '[C]opy file_name' })
+end, { desc = '[c]opy [f]ile name' })
+
+vim.keymap.set('n', '<leader>cF', function()
+  local file_name = vim.fn.expand("%:p")
+  vim.fn.setreg('*', file_name)
+  vim.notify(string.format('"%s" copied.', file_name), vim.log.levels.INFO)
+end, { desc = '[c]opy [f]ile name full path' })
 
 vim.keymap.set('n', '<leader>e', '<CMD>e ~/.config/nvim/lua/plugins/sf.lua<CR>',
   { desc = 'Open sf.nvim plugin config file' })
