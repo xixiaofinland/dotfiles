@@ -1,10 +1,10 @@
 return {
   'neovim/nvim-lspconfig',
   dependencies = {
-    { 'williamboman/mason.nvim', config = true,  opts = {} },
+    { 'williamboman/mason.nvim', config = true, opts = {} },
     'williamboman/mason-lspconfig.nvim',
     "hrsh7th/cmp-nvim-lsp",
-    { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
+    { 'j-hui/fidget.nvim',       opts = {} },
     { 'folke/neodev.nvim',       opts = {} },
   },
   config = function()
@@ -59,7 +59,10 @@ return {
             library = vim.api.nvim_get_runtime_file("", true)
           },
           telemetry = { enable = false },
-          diagnostics = { globals = { 'vim' } }
+          diagnostics = {
+            globals = { 'vim' },
+            -- disable = { 'missing-fields' }
+          }
         },
       },
     }
