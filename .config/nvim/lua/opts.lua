@@ -44,7 +44,7 @@ vim.opt.mouse = 'a'
 vim.opt.showmode = false
 
 vim.opt.splitright = true
-vim.opt.splitbelow = true
+-- vim.opt.splitbelow = true
 
 -- Sync clipboard between OS and Neovim. See `:help 'clipboard'`
 vim.opt.clipboard = 'unnamedplus'
