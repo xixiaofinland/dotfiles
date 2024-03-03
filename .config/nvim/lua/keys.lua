@@ -3,6 +3,9 @@
 -- vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 -- vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+-- Solve two jumping issues using relative line-num in one go:
+-- https://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
+-- https://www.reddit.com/r/neovim/comments/1b4xefk/comment/kt5n8xl/
 vim.keymap.set('n', 'k', [[(v:count > 1 ? "m'" . v:count : "g") . 'k']], { expr = true })
 vim.keymap.set('n', 'j', [[(v:count > 1 ? "m'" . v:count : "g") . 'j']], { expr = true })
 
