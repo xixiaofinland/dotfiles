@@ -40,7 +40,8 @@ return {
     end
 
     nmap('<leader>?', tel.oldfiles, 'Recent files')
-    nmap("<leader>fm", function() tel.treesitter({ default_text = "method | function " }) end, '[M]ethods list')
+    -- nmap("<leader>fm", function() tel.treesitter({ default_text = "method | function " }) end, '[M]ethods list')
+    nmap("<leader>fm", function() tel.lsp_document_symbols({ default_text = "method | function " }) end, '[M]ethods list')
     nmap("<leader>ft", tel.treesitter, '[T]reesitter symbols')
     nmap('<leader>fi', tel.git_files, 'g[I]t files')
     nmap('<leader>ff', tel.find_files, '[F]iles')
