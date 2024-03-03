@@ -7,6 +7,15 @@ vim.opt.listchars:append {
   nbsp = "␣",
 }
 
+-- Preview substitutions live, as you type!
+vim.opt.inccommand = 'split'
+
+-- Minimal screen lines to keep above and below the cursor.
+vim.opt.scrolloff = 10
+
+-- Show which line your cursor is on
+-- vim.opt.cursorline = true
+
 vim.opt.foldenable = false
 
 vim.opt.textwidth = 80
@@ -30,8 +39,12 @@ vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
--- Enable mouse mode
 vim.opt.mouse = 'a'
+
+vim.opt.showmode = false
+
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 -- Sync clipboard between OS and Neovim. See `:help 'clipboard'`
 vim.opt.clipboard = 'unnamedplus'

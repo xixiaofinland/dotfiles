@@ -39,7 +39,7 @@ return {
       vim.keymap.set('n', keys, func, { desc = desc })
     end
 
-    nmap('<leader>?', tel.oldfiles, 'Recent files')
+    nmap('<leader>.', tel.oldfiles, 'Recent files')
     -- nmap("<leader>fm", function() tel.treesitter({ default_text = "method | function " }) end, '[M]ethods list')
     nmap("<leader>fm", function() tel.lsp_document_symbols({ default_text = "method | function " }) end, '[M]ethods list')
     nmap("<leader>ft", tel.treesitter, '[T]reesitter symbols')
@@ -52,10 +52,10 @@ return {
     nmap('<leader>fl', tel.git_commits, '[L]og in git')
     nmap("<leader>z", require("telescope").extensions.zoxide.list, '[Z] jump')
     nmap('<leader>fb', function() tel.buffers({ sort_lastused = true, sort_mru = true }) end, 'Current buffers')
-    nmap('<leader>fd', tel.diagnostics, '[D]iagnostics')
+    -- nmap('<leader>fd', tel.diagnostics, '[D]iagnostics')
 
-    nmap('<leader>fD', function() tel.find_files({ cwd = '~/.config/'}) end, '[F]ind [d]otfiles')
-    nmap('<leader>fG', function() tel.grep_string({ cwd = '~/.config/'}) end, '[G]rep dotfiles')
+    nmap('<leader>fd', function() tel.find_files({ cwd = vim.fn.stdpath 'config' }) end, '[d]otfiles')
+    nmap('<leader>fG', function() tel.grep_string({ cwd = '~/.config/' }) end, '[g]rep dotfiles')
 
     nmap('<leader>/',
       function()
