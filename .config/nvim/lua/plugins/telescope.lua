@@ -52,7 +52,7 @@ return {
     nmap('<leader>fl', tel.git_commits, '[L]og in git')
     nmap("<leader>z", require("telescope").extensions.zoxide.list, '[Z] jump')
     nmap('<leader>fb', function() tel.buffers({ sort_lastused = true, sort_mru = true }) end, 'Current buffers')
-    -- nmap('<leader>fd', tel.diagnostics, '[D]iagnostics')
+    nmap('<leader>fD', tel.diagnostics, '[D]iagnostics')
 
     nmap('<leader>fd', function() tel.find_files({ cwd = vim.fn.stdpath 'config' }) end, '[d]otfiles')
     nmap('<leader>fG', function() tel.grep_string({ cwd = '~/.config/' }) end, '[g]rep dotfiles')
