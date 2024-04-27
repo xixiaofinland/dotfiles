@@ -13,6 +13,3 @@ alias cc='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME commit -am "+"'
 
 # Manually run "config push origin branch -u" to set the default
 alias cpp='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME push'
-
-# esp32-idf refresh
-alias get_idf='. $HOME/esp/esp-idf/export.sh'
