@@ -57,6 +57,10 @@ plugins=(git nvm npm fzf z zsh-autosuggestions)
 export FZF_DEFAULT_COMMAND='fd --type file --hidden --no-ignore'
 export LANG="en_US.UTF-8"
 
+# esp32
+export IDF_PATH="$HOME/esp-idf"
+export PATH="$PATH:$IDF_PATH/tools"
+
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
