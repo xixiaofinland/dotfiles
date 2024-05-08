@@ -82,9 +82,46 @@ return {
         vim.keymap.set('n', keys, func, { desc = desc })
       end
 
+      nmap('<leader>o', MiniFiles.open, '[O]pen explorer')
       nmap('<leader>b', require 'mini.bufremove'.delete, '[B]uffer delete')
       nmap('<leader>ts', MiniTrailspace.trim, 'Tr[i]m [S]pace')
       nmap('<leader>te', MiniTrailspace.trim_last_lines, 'Tr[i]m [E]nding-line')
+
+      -- Create mapping to show/hide dot-files in Mini Files
+
+      local show_dotfiles = true
+      local filter_show = function(fs_entry) return true end
+      local filter_hide = function(fs_entry)
+        return not vim.startswith(fs_entry.name, '.')
+      end
+      local toggle_dotfiles = function()
+        show_dotfiles = not show_dotfiles
+        local new_filter = show_dotfiles and filter_show or filter_hide
+        MiniFiles.refresh({ content = { filter = new_filter } })
+      end
+      vim.api.nvim_create_autocmd('User', {
+        pattern = 'MiniFilesBufferCreate',
+        callback = function(args)
+          local buf_id = args.data.buf_id
+          vim.keymap.set('n', 'g.', toggle_dotfiles, { buffer = buf_id })
+        end,
+      })
+
+      --  Create mapping to set current working directory ~
+
+      local files_set_cwd = function(path)
+        -- Works only if cursor is on the valid file system entry
+        local cur_entry_path = MiniFiles.get_fs_entry().path
+        local cur_directory = vim.fs.dirname(cur_entry_path)
+        vim.fn.chdir(cur_directory)
+      end
+
+      vim.api.nvim_create_autocmd('User', {
+        pattern = 'MiniFilesBufferCreate',
+        callback = function(args)
+          vim.keymap.set('n', 'g@', files_set_cwd, { buffer = args.data.buf_id })
+        end,
+      })
     end,
   }
 }
