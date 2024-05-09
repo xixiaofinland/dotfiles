@@ -3,15 +3,19 @@ return {
     'echasnovski/mini.nvim',
     version = false,
     config = function()
-      require('mini.files').setup()
       require('mini.comment').setup()
-      require('mini.cursorword').setup()
-      -- disable highlight of the word under the cursor
-      vim.cmd('hi! MiniCursorwordCurrent guifg=NONE guibg=NONE gui=NONE cterm=NONE')
-
       require('mini.surround').setup()
       require('mini.trailspace').setup()
       require('mini.doc').setup()
+
+      require('mini.cursorword').setup()
+      vim.cmd('hi! MiniCursorwordCurrent guifg=NONE guibg=NONE gui=NONE cterm=NONE') -- disable highlight of the word under the cursor
+
+      require('mini.files').setup({
+        mappings = {
+          synchronize = '-'
+        }
+      })
 
       local gen_spec = require("mini.ai").gen_spec;
       require("mini.ai").setup({
@@ -50,9 +54,9 @@ return {
         location   = { suffix = 'l', options = {} },
         conflict   = { suffix = 'x', options = {} },
         diagnostic = { suffix = 'd', options = {} },
+        comment    = { suffix = 'c', options = {} },
 
         -- disabled ones which I don't use
-        comment    = { suffix = '', options = {} },
         undo       = { suffix = '', options = {} },
         window     = { suffix = '', options = {} },
 
