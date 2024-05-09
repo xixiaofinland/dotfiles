@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- open file with cursor in the last location
 local ignore_buftype = { "quickfix", "nofile", "help" }
-local ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit" }
+local ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit", "SFTerm" }
 
 local function run()
   if vim.tbl_contains(ignore_buftype, vim.bo.buftype) then
@@ -22,7 +22,7 @@ local function run()
   end
 
   if vim.tbl_contains(ignore_filetype, vim.bo.filetype) then
-    vim.cmd [[normal! gg]]
+    -- vim.cmd [[normal! gg]]
     return
   end
 
