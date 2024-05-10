@@ -3,6 +3,13 @@ return {
     'echasnovski/mini.nvim',
     version = false,
     config = function()
+      local nmap = function(keys, func, desc)
+        if desc then
+          desc = '[Mini] ' .. desc
+        end
+        vim.keymap.set('n', keys, func, { desc = desc })
+      end
+
       require('mini.comment').setup()
       require('mini.surround').setup()
       require('mini.trailspace').setup()
@@ -10,6 +17,14 @@ return {
 
       require('mini.cursorword').setup()
       vim.cmd('hi! MiniCursorwordCurrent guifg=NONE guibg=NONE gui=NONE cterm=NONE') -- disable highlight of the word under the cursor
+
+      require('mini.misc').setup()
+      MiniMisc.setup_restore_cursor({
+        ignore_filetype = { "gitcommit", "gitrebase", "SFTerm", "fzf" }
+      })
+      MiniMisc.setup_auto_root({ '.git', 'Makefile', ".forceignore", "sfdx-project.json" },
+        function() vim.notify('Mini find_root failed.', vim.log.levels.WARN) end)
+      nmap('<leader>m', MiniMisc.zoom, 'Toggle zoom')
 
       require('mini.files').setup({
         mappings = {
@@ -78,13 +93,6 @@ return {
       require('mini.bufremove').setup({
         silent = true,
       })
-
-      local nmap = function(keys, func, desc)
-        if desc then
-          desc = '[Mini] ' .. desc
-        end
-        vim.keymap.set('n', keys, func, { desc = desc })
-      end
 
       local minifiles_toggle = function(...)
         if not MiniFiles.close() then MiniFiles.open(...) end
