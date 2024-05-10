@@ -86,7 +86,11 @@ return {
         vim.keymap.set('n', keys, func, { desc = desc })
       end
 
-      nmap('<leader>o', MiniFiles.open, '[O]pen explorer')
+      local minifiles_toggle = function(...)
+        if not MiniFiles.close() then MiniFiles.open(...) end
+      end
+
+      nmap('<leader>o', minifiles_toggle, '[O]pen/close explorer')
       nmap('<leader>b', require 'mini.bufremove'.delete, '[B]uffer delete')
       nmap('<leader>ts', MiniTrailspace.trim, 'Tr[i]m [S]pace')
       nmap('<leader>te', MiniTrailspace.trim_last_lines, 'Tr[i]m [E]nding-line')
