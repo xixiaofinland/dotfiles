@@ -7,31 +7,30 @@ return {
 
             local nmap = function(keys, func, desc)
                 if desc then
-                    desc = '[fzf] ' .. desc
+                    desc = desc .. ' [Fzf]'
                 end
                 vim.keymap.set('n', keys, func, { desc = desc })
             end
 
             local fzf = require('fzf-lua')
-            nmap('<leader>ff', fzf.files, '[F]iles')
-            nmap('<leader>fr', fzf.resume, '[R]esume')
-            nmap('<leader>fd', function() fzf.files({ cwd = vim.fn.stdpath 'config' }) end, '[d]otfiles')
-            nmap('<leader>fb', fzf.buffers, 'Current buffers')
-            nmap('<leader>.', fzf.oldfiles, 'Recent files')
-            nmap('<leader>fg', fzf.grep, '[G]rep')
-            nmap('<leader>fw', fzf.grep_cword, '[w]ord in current')
-            nmap('<leader>fW', fzf.grep_cWORD, '[W]ord in current')
-            nmap('<leader>fv', fzf.grep_visual, '[v]isual select grep')
-            nmap("<leader>fm", fzf.lsp_document_symbols, '[M]ethods list')
+            nmap('<leader>ff', fzf.files, 'files')
+            nmap('<leader>fr', fzf.resume, 'resume')
+            nmap('<leader>fd', function() fzf.files({ cwd = vim.fn.stdpath 'config' }) end, 'dotfiles')
+            nmap('<leader>fb', fzf.buffers, 'buffers')
+            nmap('<leader>.', fzf.oldfiles, 'recent files')
+            nmap('<leader>fg', fzf.grep, 'grep')
+            nmap('<leader>fw', fzf.grep_cword, 'word in project')
+            nmap('<leader>fW', fzf.grep_cWORD, 'word in current')
+            nmap("<leader>fm", fzf.lsp_document_symbols, 'method list')
             nmap('<leader>/', fzf.grep_curbuf, 'search current buffer')
-            nmap('<leader>fc', fzf.command_history, '[C]ommand history')
-            nmap('<leader>fh', fzf.helptags, '[H]elp')
+            nmap('<leader>fc', fzf.command_history, 'command history')
+            nmap('<leader>fh', fzf.helptags, 'help')
+            nmap('<leader>gf', fzf.git_files, 'git files')
+            nmap('<leader>gc', fzf.git_commits, 'git commits')
+            nmap('<leader>gC', fzf.git_bcommits, 'git commits this buffer')
+            nmap('<leader>gb', fzf.git_branches, 'git branches')
 
-            nmap('<leader>gf', fzf.git_files, '[g]it [f]iles')
-            -- nmap('<leader>gS', fzf.git_status, '[g]it [s]tatus')
-            nmap('<leader>gc', fzf.git_commits, '[g]it [c]ommits')
-            nmap('<leader>gC', fzf.git_bcommits, '[g]it [C]ommits this buffer')
-            nmap('<leader>gb', fzf.git_branches, '[g]it [b]ranches')
+            vim.keymap.set('x', '<leader>fv', fzf.grep_visual, {desc = 'visual grep [Fzf]'})
 
         end
     }

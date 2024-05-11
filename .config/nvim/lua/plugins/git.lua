@@ -2,8 +2,8 @@ return {
   {
     'sindrets/diffview.nvim',
     config = function()
-      vim.keymap.set('n', '<leader>hv', vim.cmd.DiffviewOpen, { desc = '[Diffv] Open' })
-      vim.keymap.set('n', '<leader>hc', vim.cmd.DiffviewClose, { desc = '[Diffv] Close' })
+      vim.keymap.set('n', '<leader>hv', vim.cmd.DiffviewOpen, { desc = 'open diff window' })
+      vim.keymap.set('n', '<leader>hc', vim.cmd.DiffviewClose, { desc = 'close diff window' })
     end
   },
 
@@ -27,20 +27,19 @@ return {
         changedelete = { text = '~' },
       },
       on_attach = function(bufnr)
-        local name = "[GitS] "
-        vim.keymap.set('n', '[h', require('gitsigns').prev_hunk, { buffer = bufnr, desc = name .. 'previous hunk' })
-        vim.keymap.set('n', ']h', require('gitsigns').next_hunk, { buffer = bufnr, desc = name .. 'next hunk' })
+        vim.keymap.set('n', '[h', require('gitsigns').prev_hunk, { buffer = bufnr, desc = 'previous hunk' })
+        vim.keymap.set('n', ']h', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'next hunk' })
 
         vim.keymap.set('n', '<leader>hh', require('gitsigns').preview_hunk,
-          { buffer = bufnr, desc = name .. 'preview [H]unk' })
+          { buffer = bufnr, desc = 'preview hunk' })
         vim.keymap.set('n', '<leader>hs', require('gitsigns').stage_hunk,
-          { buffer = bufnr, desc = name .. '[s]tage_hunk' })
+          { buffer = bufnr, desc = 'stage hunk' })
         vim.keymap.set('n', '<leader>hu', require('gitsigns').undo_stage_hunk,
-          { buffer = bufnr, desc = name .. '[U]ndo_stage_hunk' })
+          { buffer = bufnr, desc = 'undo stage hunk' })
         vim.keymap.set('n', '<leader>hS', require('gitsigns').stage_buffer,
-          { buffer = bufnr, desc = name .. '[S]tage_buffer' })
+          { buffer = bufnr, desc = 'stage buffer' })
         vim.keymap.set('n', '<leader>tb', require('gitsigns').toggle_current_line_blame,
-          { buffer = bufnr, desc = name .. '[B]lame toggle' })
+          { buffer = bufnr, desc = 'toggle blame' })
       end,
     },
   }

@@ -5,7 +5,7 @@ return {
     config = function()
       local nmap = function(keys, func, desc)
         if desc then
-          desc = '[Mini] ' .. desc
+          desc = desc .. ' [Mini]'
         end
         vim.keymap.set('n', keys, func, { desc = desc })
       end
@@ -25,7 +25,7 @@ return {
       })
       MiniMisc.setup_auto_root({ '.git', 'Makefile', ".forceignore", "sfdx-project.json" },
         function() vim.notify('Mini find_root failed.', vim.log.levels.WARN) end)
-      nmap('<leader>m', MiniMisc.zoom, 'Toggle zoom')
+      nmap('<leader>m', MiniMisc.zoom, 'toggle zoom')
 
       require('mini.files').setup({
         mappings = {
@@ -96,10 +96,10 @@ return {
         if not MiniFiles.close() then MiniFiles.open(...) end
       end
 
-      nmap('<leader>o', minifiles_toggle, '[O]pen/close explorer')
-      nmap('<leader>b', require 'mini.bufremove'.delete, '[B]uffer delete')
-      nmap('<leader>ts', MiniTrailspace.trim, 'Tr[i]m [S]pace')
-      nmap('<leader>te', MiniTrailspace.trim_last_lines, 'Tr[i]m [E]nding-line')
+      nmap('<leader>o', minifiles_toggle, 'open/close explorer')
+      nmap('<leader>b', require 'mini.bufremove'.delete, 'buffer delete')
+      nmap('<leader>ts', MiniTrailspace.trim, 'trim space')
+      nmap('<leader>te', MiniTrailspace.trim_last_lines, 'trim end-line')
 
       -- Create mapping to show/hide dot-files in Mini Files
 
@@ -164,6 +164,9 @@ return {
           -- miniclue.gen_clues.g(),
           -- miniclue.gen_clues.windows(),
         },
+        window = {
+          delay = 800,
+        }
       })
     end,
   }

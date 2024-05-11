@@ -33,10 +33,10 @@ return {
       local name = "[neorg] "
       local note_path = vim.fn.expand("~/notes/")
 
-      vim.keymap.set("n", "<leader>no", ":vs " .. note_path .. "personal.norg<CR>", { desc = name .. "[O]wn file" })
-      vim.keymap.set("n", "<leader>nw", ":vs " .. note_path .. "work.norg<CR>", { desc = name .. "[W]ork file" })
-      vim.keymap.set("n", "<leader>nr", "<CMD>Git pull --all<CR>", { desc = name .. "[R]etrieve all notes" })
-      vim.keymap.set("n", "<leader>np", "<CMD>Git commit -am \"+\" | Git push<CR>", { desc = name .. "[P]ush all notes" })
+      vim.keymap.set("n", "<leader>no", ":vs " .. note_path .. "personal.norg<CR>", { desc = name .. "own file" })
+      vim.keymap.set("n", "<leader>nw", ":vs " .. note_path .. "work.norg<CR>", { desc = name .. "work file" })
+      vim.keymap.set("n", "<leader>nr", "<CMD>Git pull --all<CR>", { desc = name .. "retrieve all notes" })
+      vim.keymap.set("n", "<leader>np", "<CMD>Git commit -am \"+\" | Git push<CR>", { desc = name .. "push all notes" })
       -- vim.keymap.set("n", "<leader>nc", "<CMD>Neorg return<CR>", { desc = name .. "[C]lose all notes" })
       -- vim.keymap.set("n", "<leader>ni", "<CMD>Neorg index<CR>", { desc = name .. "[I]ndex" })
 
