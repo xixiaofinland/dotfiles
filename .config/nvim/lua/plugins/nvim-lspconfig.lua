@@ -28,6 +28,7 @@ return {
       nmap('<leader>rn', vim.lsp.buf.rename, 'rename')
       nmap('<leader>ca', vim.lsp.buf.code_action, 'code action')
       nmap('K', vim.lsp.buf.hover, 'hover doc')
+      nmap('D', vim.diagnostic.open_float, 'show diagnostic')
       -- nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
       -- nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
       -- nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
