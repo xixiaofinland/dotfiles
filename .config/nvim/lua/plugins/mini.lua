@@ -70,7 +70,7 @@ return {
         jump       = { suffix = 'j', options = {} },
         location   = { suffix = 'l', options = {} },
         conflict   = { suffix = 'x', options = {} },
-        diagnostic = { suffix = 'd', options = {} },
+        diagnostic = { suffix = 'd', options = { severity = vim.diagnostic.severity.ERROR } },
         comment    = { suffix = 'c', options = {} },
 
         -- disabled ones which I don't use
