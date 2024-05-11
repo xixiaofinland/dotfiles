@@ -49,9 +49,8 @@ return {
             return { from = from, to = to }
           end
 
-          -- ts-textobject already defined `a` move
+          -- ts-textobject already defined these
           -- a = gen_spec.argument({ brackets = { '%b()' } }), -- match only within `()`
-
           -- f = gen_spec.treesitter({ a = '@call.outer', i = '@call.inner' }),
         },
       })
@@ -84,9 +83,7 @@ return {
           todo      = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
           note      = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
           hack      = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
-
-          -- Highlight hex color strings (`#rrggbb`) using that color
-          hex_color = hipatterns.gen_highlighter.hex_color(),
+          hex_color = hipatterns.gen_highlighter.hex_color(), -- Highlight hex color strings (`#rrggbb`) using that color
         },
       })
 
