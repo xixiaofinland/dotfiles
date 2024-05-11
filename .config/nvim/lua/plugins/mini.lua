@@ -13,6 +13,7 @@ return {
       -- require('mini.sessions').setup({
       --   autoread = true,
       -- })
+
       require('mini.pick').setup()
       require('mini.comment').setup()
       require('mini.surround').setup()
@@ -26,8 +27,10 @@ return {
       MiniMisc.setup_restore_cursor({
         ignore_filetype = { "gitcommit", "gitrebase", "SFTerm", "fzf" }
       })
-      MiniMisc.setup_auto_root({ '.git', 'Makefile', ".forceignore", "sfdx-project.json" },
-        function() vim.notify('Mini find_root failed.', vim.log.levels.WARN) end)
+
+      -- MiniMisc.setup_auto_root({ '.git', 'Makefile', ".forceignore", "sfdx-project.json" },
+      --   function() vim.notify('Mini find_root failed.', vim.log.levels.WARN) end)
+
       nmap('<leader>m', MiniMisc.zoom, 'toggle zoom')
 
       require('mini.files').setup({
