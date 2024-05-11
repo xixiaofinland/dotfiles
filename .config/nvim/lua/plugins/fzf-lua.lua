@@ -28,7 +28,7 @@ return {
             nmap('<leader>fh', fzf.helptags, '[H]elp')
 
             nmap('<leader>gf', fzf.git_files, '[g]it [f]iles')
-            nmap('<leader>gS', fzf.git_status, '[g]it [s]tatus')
+            -- nmap('<leader>gS', fzf.git_status, '[g]it [s]tatus')
             nmap('<leader>gc', fzf.git_commits, '[g]it [c]ommits')
             nmap('<leader>gC', fzf.git_bcommits, '[g]it [C]ommits this buffer')
             nmap('<leader>gb', fzf.git_branches, '[g]it [b]ranches')
