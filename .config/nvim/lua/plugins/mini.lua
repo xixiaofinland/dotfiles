@@ -10,6 +10,9 @@ return {
         vim.keymap.set('n', keys, func, { desc = desc })
       end
 
+      -- require('mini.sessions').setup({
+      --   autoread = true,
+      -- })
       require('mini.pick').setup()
       require('mini.comment').setup()
       require('mini.surround').setup()
@@ -131,9 +134,11 @@ return {
           -- Built-in completion
           { mode = 'i', keys = '<C-x>' },
 
-          -- `g` key
-          -- { mode = 'n', keys = 'g' },
-          -- { mode = 'x', keys = 'g' },
+          -- No leader keys
+          { mode = 'n', keys = 's' },
+          { mode = 'n', keys = 'z' },
+          { mode = 'x', keys = 'z' },
+          { mode = 'n', keys = '<C-w>' },
 
           -- Marks
           { mode = 'n', keys = "'" },
@@ -146,13 +151,6 @@ return {
           { mode = 'x', keys = '"' },
           { mode = 'i', keys = '<C-r>' },
           { mode = 'c', keys = '<C-r>' },
-
-          -- Window commands
-          { mode = 'n', keys = '<C-w>' },
-
-          -- `z` key
-          { mode = 'n', keys = 'z' },
-          { mode = 'x', keys = 'z' },
         },
 
         clues = {
@@ -161,8 +159,8 @@ return {
           miniclue.gen_clues.z(),
           miniclue.gen_clues.marks(),
           miniclue.gen_clues.registers(),
+          miniclue.gen_clues.windows(),
           -- miniclue.gen_clues.g(),
-          -- miniclue.gen_clues.windows(),
         },
         window = {
           delay = 800,
