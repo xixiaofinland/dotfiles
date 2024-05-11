@@ -24,8 +24,8 @@ return {
         ignore_filetype = { "gitcommit", "gitrebase", "SFTerm", "fzf" }
       })
 
-      -- MiniMisc.setup_auto_root({ '.git', 'Makefile', ".forceignore", "sfdx-project.json" },
-      --   function() vim.notify('Mini find_root failed.', vim.log.levels.WARN) end)
+      MiniMisc.setup_auto_root({ '.git', 'Makefile', ".forceignore", "sfdx-project.json" },
+        function() vim.notify('Mini find_root failed.', vim.log.levels.WARN) end)
 
       nmap('<leader>m', MiniMisc.zoom, 'toggle zoom')
 
