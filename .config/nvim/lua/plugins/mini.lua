@@ -10,10 +10,6 @@ return {
         vim.keymap.set('n', keys, func, { desc = desc })
       end
 
-      -- require('mini.sessions').setup({
-      --   autoread = true,
-      -- })
-
       require('mini.pick').setup()
       require('mini.comment').setup()
       require('mini.surround').setup()
@@ -134,14 +130,16 @@ return {
           { mode = 'n', keys = '<Leader>' },
           { mode = 'x', keys = '<Leader>' },
 
-          -- Built-in completion
-          { mode = 'i', keys = '<C-x>' },
-
           -- No leader keys
           { mode = 'n', keys = 's' },
           { mode = 'n', keys = 'z' },
           { mode = 'x', keys = 'z' },
           { mode = 'n', keys = '<C-w>' },
+          { mode = 'n', keys = ']' },
+          { mode = 'n', keys = '[' },
+
+          -- Built-in completion
+          { mode = 'i', keys = '<C-x>' },
 
           -- Marks
           { mode = 'n', keys = "'" },
