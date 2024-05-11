@@ -166,6 +166,7 @@ return {
         },
         window = {
           delay = 800,
+          config = { width = "auto", border = "single" },
         }
       })
     end,
