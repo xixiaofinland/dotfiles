@@ -16,11 +16,16 @@ return {
             extra_ui = true,
           },
           mappings = {
+            basic = false,
             windows = true,
             move_with_alt = true,
           },
         }
       )
+
+      require('mini.indentscope').setup()
+      require('mini.indentscope').gen_animation.none()
+
       require('mini.pick').setup()
       require('mini.comment').setup()
       require('mini.surround').setup()
