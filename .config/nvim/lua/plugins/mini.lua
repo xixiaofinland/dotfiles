@@ -24,10 +24,11 @@ return {
         ignore_filetype = { "gitcommit", "gitrebase", "SFTerm", "fzf" }
       })
 
+      nmap('<leader>m', MiniMisc.zoom, 'toggle zoom')
+
       -- MiniMisc.setup_auto_root({ '.git', 'Makefile', ".forceignore", "sfdx-project.json" },
       --   function() vim.notify('Mini find_root failed.', vim.log.levels.WARN) end)
 
-      nmap('<leader>m', MiniMisc.zoom, 'toggle zoom')
 
       require('mini.files').setup({
         mappings = {
@@ -38,14 +39,19 @@ return {
         }
       })
 
+      require('mini.files').setup()
+      vim.api.nvim_create_autocmd('User', {
+        pattern = 'MiniFilesWindowUpdate',
+        callback = function(args)
+          vim.wo[args.data.win_id].number = true
+          vim.wo[args.data.win_id].relativenumber = true
+        end,
+      })
+
       local gen_spec = require("mini.ai").gen_spec;
       require("mini.ai").setup({
         custom_textobjects = {
-          o = gen_spec.treesitter({ a = "@loop.outer", i = "@loop.inner" }, {}),
           m = gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }, {}),
-          i = gen_spec.treesitter({ a = "@conditional.outer", i = "@conditional.inner" }, {}),
-          -- c = gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }, {}),
-          -- `g` text obj for the entire file
           g = function()
             local from = { line = 1, col = 1 }
             local to = {
@@ -55,7 +61,13 @@ return {
             return { from = from, to = to }
           end
 
-          -- ts-textobject already defined these
+          -- these are not in my habit;
+          -- o = gen_spec.treesitter({ a = "@loop.outer", i = "@loop.inner" }, {}),
+          -- i = gen_spec.treesitter({ a = "@conditional.outer", i = "@conditional.inner" }, {}),
+          -- c = gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }, {}),
+          -- `g` text obj for the entire file
+
+          -- ts-textobject already has these defined;
           -- a = gen_spec.argument({ brackets = { '%b()' } }), -- match only within `()`
           -- f = gen_spec.treesitter({ a = '@call.outer', i = '@call.inner' }),
         },
@@ -64,7 +76,7 @@ return {
       require('mini.bracketed').setup({
         diagnostic = { suffix = 'd', options = { severity = vim.diagnostic.severity.ERROR } },
 
-        -- disabled ones which I don't use
+        -- disabled ones which I don't use;
         undo       = { suffix = '', options = {} },
         window     = { suffix = '', options = {} },
 
@@ -94,7 +106,7 @@ return {
       nmap('<leader>ts', MiniTrailspace.trim, 'trim space')
       nmap('<leader>te', MiniTrailspace.trim_last_lines, 'trim end-line')
 
-      -- Create mapping to show/hide dot-files in Mini Files
+      -- toggle hidden files in mini.files;
 
       local show_dotfiles = true
       local filter_show = function(fs_entry) return true end
@@ -145,7 +157,7 @@ return {
         },
 
         clues = {
-          -- Enhance this by adding descriptions for <Leader> mapping groups
+          -- for built-in keys
           miniclue.gen_clues.builtin_completion(),
           miniclue.gen_clues.z(),
           miniclue.gen_clues.marks(),
