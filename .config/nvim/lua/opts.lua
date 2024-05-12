@@ -14,7 +14,7 @@ vim.opt.inccommand = 'split'
 vim.opt.scrolloff = 10
 
 -- Show which line your cursor is on
--- vim.opt.cursorline = true
+vim.opt.cursorline = false
 
 vim.opt.foldenable = false
 
@@ -87,4 +87,3 @@ vim.g.loaded_rrhelper = 1
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrwSettings = 1
-
