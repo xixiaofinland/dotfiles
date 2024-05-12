@@ -2,16 +2,16 @@
 -- new line doesn't continue comment
 vim.cmd([[autocmd BufEnter * set formatoptions-=cro]])
 
--- Highlight on yank. `:h vim.highlight.on_yank`
+-- Highlight on yank is supplied by mini.basic already;
 
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = '*',
-})
+-- local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+-- vim.api.nvim_create_autocmd('TextYankPost', {
+--   callback = function()
+--     vim.highlight.on_yank()
+--   end,
+--   group = highlight_group,
+--   pattern = '*',
+-- })
 
 -- personal notes;
 

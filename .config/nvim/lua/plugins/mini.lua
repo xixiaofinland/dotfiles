@@ -10,6 +10,17 @@ return {
         vim.keymap.set('n', keys, func, { desc = desc })
       end
 
+      require('mini.basics').setup(
+        {
+          options = {
+            extra_ui = true,
+          },
+          mappings = {
+            windows = true,
+            move_with_alt = true,
+          },
+        }
+      )
       require('mini.pick').setup()
       require('mini.comment').setup()
       require('mini.surround').setup()
