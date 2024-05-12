@@ -62,19 +62,7 @@ return {
       })
 
       require('mini.bracketed').setup({
-        -- See `:h MiniBracketed.config` for more info.
-        buffer     = { suffix = 'b', options = {} },
-        indent     = { suffix = 'i', options = {} },
-        treesitter = { suffix = 't', options = {} },
-        file       = { suffix = 'f', options = {} },
-        oldfile    = { suffix = 'o', options = {} },
-        yank       = { suffix = 'y', options = {} },
-        quickfix   = { suffix = 'q', options = {} },
-        jump       = { suffix = 'j', options = {} },
-        location   = { suffix = 'l', options = {} },
-        conflict   = { suffix = 'x', options = {} },
         diagnostic = { suffix = 'd', options = { severity = vim.diagnostic.severity.ERROR } },
-        comment    = { suffix = 'c', options = {} },
 
         -- disabled ones which I don't use
         undo       = { suffix = '', options = {} },
@@ -134,7 +122,6 @@ return {
           { mode = 'x', keys = '<Leader>' },
 
           -- No leader keys
-          { mode = 'n', keys = 's' },
           { mode = 'n', keys = 'z' },
           { mode = 'x', keys = 'z' },
           { mode = 'n', keys = '<C-w>' },
@@ -166,6 +153,7 @@ return {
           miniclue.gen_clues.windows(),
           -- miniclue.gen_clues.g(),
         },
+
         window = {
           delay = 800,
           config = { width = "auto", border = "single" },
