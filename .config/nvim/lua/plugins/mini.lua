@@ -10,6 +10,7 @@ return {
         vim.keymap.set('n', keys, func, { desc = desc })
       end
 
+      require('mini.notify').setup()
       require('mini.pick').setup()
       require('mini.comment').setup()
       require('mini.surround').setup()
