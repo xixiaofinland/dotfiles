@@ -46,3 +46,11 @@ end, { desc = 'Copy File name full path' })
 
 vim.keymap.set('n', '<leader>e', '<CMD>e ~/.config/nvim/lua/plugins/sf.lua<CR>',
   { desc = 'Open sf config' })
+
+vim.keymap.set("n", "<Leader>tl",
+  function()
+    local curr = vim.diagnostic.config().virtual_text
+    vim.diagnostic.config({
+      virtual_text = not curr
+    })
+  end, { desc = "toggle virtual text" })
