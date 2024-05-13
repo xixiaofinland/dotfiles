@@ -23,7 +23,12 @@ return {
         }
       )
 
-      require('mini.indentscope').setup()
+      require('mini.indentscope').setup({
+        options = {
+          try_as_border = true,
+        }
+      })
+
       require('mini.indentscope').gen_animation.none()
 
       require('mini.pick').setup()
