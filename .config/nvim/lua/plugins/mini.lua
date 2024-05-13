@@ -26,6 +26,10 @@ return {
       require('mini.indentscope').setup({
         options = {
           try_as_border = true,
+        },
+        mappings = {
+          goto_top = '[s',
+          goto_bottom = ']s',
         }
       })
 
@@ -123,7 +127,7 @@ return {
       end
 
       nmap('<leader>o', minifiles_toggle, 'open/close explorer')
-      nmap('<leader>b', require 'mini.bufremove'.delete, 'buffer delete')
+      nmap('<leader>b', require'mini.bufremove'.delete, 'buffer delete')
       nmap('<leader>ts', MiniTrailspace.trim, 'trim space')
       nmap('<leader>te', MiniTrailspace.trim_last_lines, 'trim end-line')
 
