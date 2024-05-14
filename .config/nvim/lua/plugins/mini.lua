@@ -25,7 +25,7 @@ return {
 
       require('mini.indentscope').setup({
         options = {
-          indent_at_cursor = false,
+          -- indent_at_cursor = false,
           try_as_border = true,
         },
         mappings = {
