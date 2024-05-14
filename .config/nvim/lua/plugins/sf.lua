@@ -1,7 +1,7 @@
 return {
   'xixiaofinland/sf.nvim',
   branch = 'dev',
-  dir = '~/projects/sf.nvim',
+  -- dir = '~/projects/sf.nvim',
 
   dependencies = {
     'nvim-treesitter/nvim-treesitter',
@@ -9,8 +9,6 @@ return {
   },
 
   config = function()
-    require('sf').setup({
-      enable_hotkeys = false
-    })
+    require('sf').setup()
   end
 }
