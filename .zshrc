@@ -45,6 +45,7 @@ case `uname` in
     ;;
     Linux)
         alias fd="fdfind"
+        export PATH="/snap/bin:$PATH"
     ;;
 esac
 
