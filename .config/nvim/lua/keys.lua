@@ -51,3 +51,17 @@ vim.keymap.set("n", "<Leader>tl",
       virtual_text = not curr
     })
   end, { desc = "toggle virtual text" })
+
+vim.keymap.set('n', '<leader>ct',
+  function()
+    local cmd = 'ctags --extras=+q --langmap=java:.cls.trigger -f ./tags -R **/main/default/classes/**'
+    vim.fn.jobstart(cmd, {
+      on_exit = function(_, code, _)
+        if code == 0 then
+          vim.notify("Tags updated successfully.", vim.log.levels.INFO)
+        else
+          vim.notify("Error updating tags.", vim.log.levels.ERROR)
+        end
+      end
+    })
+  end, { noremap = true, silent = true, desc = "generate ctag for Apex" })
