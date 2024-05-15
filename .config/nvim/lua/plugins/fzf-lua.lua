@@ -50,10 +50,10 @@ return {
                 fzf.tags()
             end, 'ctag in project')
 
-            nmap('<leader>fb', function()
-                create_ctags()
-                fzf.btags()
-            end, 'ctag in buffer')
+            -- nmap('<leader>fb', function()
+            --     create_ctags()
+            --     fzf.btags()
+            -- end, 'ctag in buffer')
 
             vim.keymap.set('x', '<leader>fv', fzf.grep_visual, { desc = 'visual grep [Fzf]' })
         end
