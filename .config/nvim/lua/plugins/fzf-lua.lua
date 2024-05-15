@@ -12,6 +12,20 @@ return {
                 vim.keymap.set('n', keys, func, { desc = desc })
             end
 
+            local create_ctags = function()
+                -- need to install universial ctags;
+                local cmd = 'ctags --extras=+q --langmap=java:.cls.trigger -f ./tags -R **/main/default/classes/**'
+                vim.fn.jobstart(cmd, {
+                    on_exit = function(_, code, _)
+                        if code == 0 then
+                            vim.notify("Tags updated successfully.", vim.log.levels.INFO)
+                        else
+                            vim.notify("Error updating tags.", vim.log.levels.ERROR)
+                        end
+                    end
+                })
+            end
+
             local fzf = require('fzf-lua')
             nmap('<leader>ff', fzf.files, 'files')
             nmap('<leader>fr', fzf.resume, 'resume')
@@ -31,8 +45,17 @@ return {
             nmap('<leader>gC', fzf.git_bcommits, 'git commits this buffer')
             nmap('<leader>gb', fzf.git_branches, 'git branches')
 
-            vim.keymap.set('x', '<leader>fv', fzf.grep_visual, {desc = 'visual grep [Fzf]'})
+            nmap('<leader>ft', function()
+                create_ctags()
+                fzf.tags()
+            end, 'ctag in project')
 
+            nmap('<leader>fb', function()
+                create_ctags()
+                fzf.btags()
+            end, 'ctag in buffer')
+
+            vim.keymap.set('x', '<leader>fv', fzf.grep_visual, { desc = 'visual grep [Fzf]' })
         end
     }
 }
