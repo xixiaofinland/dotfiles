@@ -57,9 +57,6 @@ return {
 
 
       require('mini.files').setup({
-        mappings = {
-          synchronize = '-'
-        },
         windows = {
           width_focus = 40,
         }
