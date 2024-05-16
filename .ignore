@@ -1,3 +1,3 @@
 node_modules
-*.cls-meta.xml
+*-meta.xml
 !package.xml
