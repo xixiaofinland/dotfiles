@@ -120,8 +120,11 @@ return {
         silent = true,
       })
 
-      local minifiles_toggle = function(...)
-        if not MiniFiles.close() then MiniFiles.open(...) end
+      local minifiles_toggle = function()
+        if not MiniFiles.close() then
+          MiniFiles.open(vim.api.nvim_buf_get_name(0))
+          MiniFiles.reveal_cwd()
+        end
       end
 
       nmap('<leader>o', minifiles_toggle, 'open/close explorer')
