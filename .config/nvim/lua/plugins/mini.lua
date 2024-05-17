@@ -37,7 +37,7 @@ return {
       require('mini.indentscope').gen_animation.none()
 
       require('mini.pick').setup()
-      require('mini.comment').setup()
+      -- require('mini.comment').setup()
       require('mini.surround').setup()
       require('mini.trailspace').setup()
       require('mini.doc').setup()
