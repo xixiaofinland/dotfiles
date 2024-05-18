@@ -10,19 +10,19 @@ return {
         vim.keymap.set('n', keys, func, { desc = desc })
       end
 
-      require('mini.basics').setup(
-        {
-          options = {
-            extra_ui = true,
-          },
-          mappings = {
-            basic = false,
-            windows = true,
-            move_with_alt = true,
-          },
-        }
-      )
-
+      -- require('mini.basics').setup(
+      --   {
+      --     options = {
+      --       extra_ui = true,
+      --     },
+      --     mappings = {
+      --       basic = false,
+      --       windows = true,
+      --       move_with_alt = true,
+      --     },
+      --   }
+      -- )
+      --
       require('mini.indentscope').setup({
         options = {
           -- indent_at_cursor = false,
@@ -35,13 +35,9 @@ return {
       })
 
       require('mini.indentscope').gen_animation.none()
-
-      require('mini.pick').setup()
-      -- require('mini.comment').setup()
       require('mini.surround').setup()
       require('mini.trailspace').setup()
       require('mini.doc').setup()
-
       require('mini.cursorword').setup()
       vim.cmd('hi! MiniCursorwordCurrent guifg=NONE guibg=NONE gui=NONE cterm=NONE') -- disable highlight of the word under the cursor
 
@@ -52,22 +48,45 @@ return {
 
       nmap('<leader>M', MiniMisc.zoom, 'toggle zoom')
 
-      -- MiniMisc.setup_auto_root({ '.git', 'Makefile', ".forceignore", "sfdx-project.json" },
-      --   function() vim.notify('Mini find_root failed.', vim.log.levels.WARN) end)
-
-
       require('mini.files').setup({
         windows = {
           width_focus = 40,
         }
       })
 
-      require('mini.files').setup()
+      -- show line num in mini.files;
       vim.api.nvim_create_autocmd('User', {
         pattern = 'MiniFilesWindowUpdate',
         callback = function(args)
           vim.wo[args.data.win_id].number = true
           vim.wo[args.data.win_id].relativenumber = true
+        end,
+      })
+
+      local minifiles_toggle = function()
+        if not MiniFiles.close() then
+          MiniFiles.open(vim.api.nvim_buf_get_name(0))
+          MiniFiles.reveal_cwd()
+        end
+      end
+      nmap('<leader>o', minifiles_toggle, 'open/close explorer')
+
+      -- toggle hidden files in mini.files;
+      local show_dotfiles = true
+      local filter_show = function(fs_entry) return true end
+      local filter_hide = function(fs_entry)
+        return not vim.startswith(fs_entry.name, '.')
+      end
+      local toggle_dotfiles = function()
+        show_dotfiles = not show_dotfiles
+        local new_filter = show_dotfiles and filter_show or filter_hide
+        MiniFiles.refresh({ content = { filter = new_filter } })
+      end
+      vim.api.nvim_create_autocmd('User', {
+        pattern = 'MiniFilesBufferCreate',
+        callback = function(args)
+          local buf_id = args.data.buf_id
+          vim.keymap.set('n', 'g.', toggle_dotfiles, { buffer = buf_id })
         end,
       })
 
@@ -98,7 +117,6 @@ return {
 
       require('mini.bracketed').setup({
         diagnostic = { suffix = 'd', options = { severity = vim.diagnostic.severity.ERROR } },
-
         -- disabled ones which I don't use;
         undo       = { suffix = '', options = {} },
         window     = { suffix = '', options = {} },
@@ -120,37 +138,9 @@ return {
         silent = true,
       })
 
-      local minifiles_toggle = function()
-        if not MiniFiles.close() then
-          MiniFiles.open(vim.api.nvim_buf_get_name(0))
-          MiniFiles.reveal_cwd()
-        end
-      end
-
-      nmap('<leader>o', minifiles_toggle, 'open/close explorer')
       nmap('<leader>b', require'mini.bufremove'.delete, 'buffer delete')
       nmap('<leader>ts', MiniTrailspace.trim, 'trim space')
       nmap('<leader>te', MiniTrailspace.trim_last_lines, 'trim end-line')
-
-      -- toggle hidden files in mini.files;
-
-      local show_dotfiles = true
-      local filter_show = function(fs_entry) return true end
-      local filter_hide = function(fs_entry)
-        return not vim.startswith(fs_entry.name, '.')
-      end
-      local toggle_dotfiles = function()
-        show_dotfiles = not show_dotfiles
-        local new_filter = show_dotfiles and filter_show or filter_hide
-        MiniFiles.refresh({ content = { filter = new_filter } })
-      end
-      vim.api.nvim_create_autocmd('User', {
-        pattern = 'MiniFilesBufferCreate',
-        callback = function(args)
-          local buf_id = args.data.buf_id
-          vim.keymap.set('n', 'g.', toggle_dotfiles, { buffer = buf_id })
-        end,
-      })
 
       local miniclue = require('mini.clue')
       miniclue.setup({
