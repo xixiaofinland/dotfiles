@@ -53,10 +53,19 @@ return {
                 fzf.tags()
             end, 'ctag in project')
 
-            -- nmap('<leader>fb', function()
-            --     create_ctags()
-            --     fzf.btags()
-            -- end, 'ctag in buffer')
+
+            -- need to install zoxide
+            nmap('<leader>z', function()
+                fzf.fzf_exec("zoxide query -ls", {
+                    prompt = 'Set cwd() > ',
+                    actions = {
+                        ['default'] = function(selected)
+                            local dir = selected[1]:match("([^%s]+)$")
+                            vim.fn.chdir(dir)
+                        end
+                    }
+                })
+            end, 'z setup cwd')
 
             vim.keymap.set('x', '<leader>fv', fzf.grep_visual, { desc = 'visual grep [Fzf]' })
         end
