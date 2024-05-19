@@ -10,19 +10,6 @@ return {
         vim.keymap.set('n', keys, func, { desc = desc })
       end
 
-      -- require('mini.basics').setup(
-      --   {
-      --     options = {
-      --       extra_ui = true,
-      --     },
-      --     mappings = {
-      --       basic = false,
-      --       windows = true,
-      --       move_with_alt = true,
-      --     },
-      --   }
-      -- )
-      --
       require('mini.indentscope').setup({
         options = {
           -- indent_at_cursor = false,
@@ -42,10 +29,6 @@ return {
       vim.cmd('hi! MiniCursorwordCurrent guifg=NONE guibg=NONE gui=NONE cterm=NONE') -- disable highlight of the word under the cursor
 
       require('mini.misc').setup()
-      MiniMisc.setup_restore_cursor({
-        ignore_filetype = { "gitcommit", "gitrebase", "SFTerm", "fzf" }
-      })
-
       nmap('<leader>M', MiniMisc.zoom, 'toggle zoom')
 
       require('mini.files').setup({
@@ -102,16 +85,6 @@ return {
             }
             return { from = from, to = to }
           end
-
-          -- these are not in my habit;
-          -- o = gen_spec.treesitter({ a = "@loop.outer", i = "@loop.inner" }, {}),
-          -- i = gen_spec.treesitter({ a = "@conditional.outer", i = "@conditional.inner" }, {}),
-          -- c = gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }, {}),
-          -- `g` text obj for the entire file
-
-          -- ts-textobject already has these defined;
-          -- a = gen_spec.argument({ brackets = { '%b()' } }), -- match only within `()`
-          -- f = gen_spec.treesitter({ a = '@call.outer', i = '@call.inner' }),
         },
       })
 
