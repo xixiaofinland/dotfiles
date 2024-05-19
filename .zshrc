@@ -76,34 +76,3 @@ else
     print "404: ~/.config/zsh/.zsh_alias not found."
 
 fi
-
-# Prompt show commit difference from remote branch;
-
-setopt prompt_subst
-autoload -U colors && colors
-colors
-
-# Function to gather Git info with color
-git_info() {
-  ! git rev-parse --is-inside-work-tree > /dev/null 2>&1 && return
-
-  local branch=$(git rev-parse --abbrev-ref HEAD)
-  local ahead=$(git rev-list @{u}..HEAD 2>/dev/null | wc -l)
-  local behind=$(git rev-list HEAD..@{u} 2>/dev/null | wc -l)
-
-  local info="%F{yellow}($branch%f"
-
-  if (( ahead > 0 )); then
-    info+=" %F{green}⇡${ahead}%f"
-  fi
-  if (( behind > 0 )); then
-    info+=" %F{red}⇣${behind}%f"
-  fi
-  
-  info+="%F{yellow})%f"
-  
-  echo "$info"
-}
-
-PROMPT='%F{blue}%~%f $(git_info) %F{red}>%f '
-
