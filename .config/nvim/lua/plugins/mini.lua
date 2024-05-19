@@ -30,6 +30,9 @@ return {
 
       require('mini.misc').setup()
       nmap('<leader>M', MiniMisc.zoom, 'toggle zoom')
+      MiniMisc.setup_restore_cursor({
+        ignore_filetype = { "gitcommit", "gitrebase", "SFTerm", "fzf" }
+      })
 
       require('mini.files').setup({
         windows = {
