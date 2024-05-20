@@ -49,12 +49,6 @@ case `uname` in
     ;;
 esac
 
-ZSH_THEME=""
-# install pure prompt by:
-# npm install --global pure-prompt
-autoload -U promptinit; promptinit
-prompt pure
-
 # Load plugins
 plugins=(git nvm npm fzf z zsh-autosuggestions)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -80,3 +74,13 @@ else
     print "404: ~/.config/zsh/.zsh_alias not found."
 
 fi
+
+ZSH_THEME=""
+# manually install pure theme by:
+# mkdir -p "$HOME/.zsh"
+# git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+
+fpath+=($HOME/.zsh/pure)
+autoload -U promptinit; promptinit
+prompt pure
+
