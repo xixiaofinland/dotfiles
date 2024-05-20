@@ -49,7 +49,11 @@ case `uname` in
     ;;
 esac
 
-ZSH_THEME="ys"
+ZSH_THEME=""
+# install pure prompt by:
+# npm install --global pure-prompt
+autoload -U promptinit; promptinit
+prompt pure
 
 # Load plugins
 plugins=(git nvm npm fzf z zsh-autosuggestions)
