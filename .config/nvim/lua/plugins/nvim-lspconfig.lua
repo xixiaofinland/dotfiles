@@ -8,12 +8,10 @@ return {
     { 'folke/neodev.nvim',       opts = {} },
   },
   config = function()
-    local on_attach = function(client, bufnr)
+    local on_attach = function(_, bufnr)
       local toggleInlay = function()
-        if client.server_capabilities.inlayHintProvider then
-          local current_value = vim.lsp.inlay_hint.get({ bufnr = 0 })[1]
-          vim.lsp.inlay_hint.enable(bufnr, not current_value)
-        end
+        local current_value = vim.lsp.inlay_hint.is_enabled({ bufnr = 0 })
+        vim.lsp.inlay_hint.enable(not current_value, { bufnr = 0 })
       end
 
       local nmap = function(keys, func, desc)
@@ -29,13 +27,6 @@ return {
       nmap('<leader>ca', vim.lsp.buf.code_action, 'code action')
       nmap('K', vim.lsp.buf.hover, 'hover doc')
       nmap('D', vim.diagnostic.open_float, 'show diagnostic')
-      -- nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
-      -- nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-      -- nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
-      -- nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
-      -- nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
-      -- nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
-      -- nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
       -- Lesser used LSP functionality
       nmap('gd', vim.lsp.buf.definition, 'goto definition')
