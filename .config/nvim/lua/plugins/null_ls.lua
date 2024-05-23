@@ -12,7 +12,6 @@ return {
 
         null_ls.builtins.diagnostics.pmd.with({
           filetypes = { "apex" },
-          args = { "check", "--dir", "$ROOT", "--format", "json" },
           extra_args = { "--rulesets", "apex_ruleset.xml", },
         }),
       }

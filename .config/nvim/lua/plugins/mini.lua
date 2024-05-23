@@ -92,7 +92,8 @@ return {
       })
 
       require('mini.bracketed').setup({
-        diagnostic = { suffix = 'd', options = { severity = vim.diagnostic.severity.ERROR } },
+        -- diagnostic = { suffix = 'd', options = { severity = vim.diagnostic.severity.ERROR } },
+
         -- disabled ones which I don't use;
         undo       = { suffix = '', options = {} },
         window     = { suffix = '', options = {} },
