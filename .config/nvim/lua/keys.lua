@@ -85,3 +85,19 @@ end
 
 vim.keymap.set('n', '<leader>,', function() toggle(',') end, { noremap = true, silent = true, desc = 'toggle ","' })
 vim.keymap.set('n', '<leader>;', function() toggle(';') end, { noremap = true, silent = true, desc = 'toggle ";"' })
+
+-- toggle diagnostics;
+
+local diag_active = true
+local toggleDiagnostics = function()
+  diag_active = not diag_active
+  if diag_active then
+    vim.diagnostic.enable()
+    print("Diagnostics enabled")
+  else
+    vim.diagnostic.enable(false)
+    print("Diagnostics disabled")
+  end
+end
+
+vim.keymap.set('n', '<leader>td', toggleDiagnostics, { noremap = true, silent = true, desc = 'toggle diagnostics' })
