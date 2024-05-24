@@ -88,7 +88,7 @@ vim.keymap.set('n', '<leader>;', function() toggle(';') end, { noremap = true, s
 
 -- toggle diagnostics;
 
-local diag_active = false
+local diag_active = true
 local toggleDiagnostics = function()
   diag_active = not diag_active
   if diag_active then
