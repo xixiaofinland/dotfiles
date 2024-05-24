@@ -44,7 +44,7 @@ end, { desc = 'Copy File name full path' })
 vim.keymap.set('n', '<leader>e', '<CMD>e ~/.config/nvim/lua/plugins/sf.lua<CR>',
   { desc = 'Open sf config' })
 
-vim.keymap.set("n", "<Leader>tl",
+vim.keymap.set("n", "\\v",
   function()
     local curr = vim.diagnostic.config().virtual_text
     vim.diagnostic.config({
@@ -100,4 +100,4 @@ local toggleDiagnostics = function()
   end
 end
 
-vim.keymap.set('n', '<leader>td', toggleDiagnostics, { noremap = true, silent = true, desc = 'toggle diagnostics' })
+vim.keymap.set('n', '\\d', toggleDiagnostics, { noremap = true, silent = true, desc = 'toggle diagnostics' })

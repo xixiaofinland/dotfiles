@@ -9,7 +9,7 @@ return {
     opts = {}
   },
 
-  vim.keymap.set('n', '<leader>tk', function()
+  vim.keymap.set('n', '\\k', function()
     require("precognition").toggle()
     vim.cmd('Hardtime toggle')
   end, { noremap = true, silent = true, desc = 'toggle key-study features' })
