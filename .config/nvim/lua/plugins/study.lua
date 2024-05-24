@@ -1,7 +1,9 @@
 return {
   {
     "tris203/precognition.nvim",
-    opts = {}
+    config = {
+      startVisible = false,
+    }
   },
   {
     "m4xshen/hardtime.nvim",
@@ -11,6 +13,6 @@ return {
 
   vim.keymap.set('n', '\\k', function()
     require("precognition").toggle()
-    vim.cmd('Hardtime toggle')
+    -- vim.cmd('Hardtime toggle')
   end, { noremap = true, silent = true, desc = 'toggle key-study features' })
 }
