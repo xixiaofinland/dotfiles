@@ -28,7 +28,7 @@ return {
 
             local fzf = require('fzf-lua')
 
-            fzf.register_ui_select()
+            -- fzf.register_ui_select()
 
             nmap('<leader>ff', fzf.files, 'files')
             nmap('<leader>fr', fzf.resume, 'resume')
