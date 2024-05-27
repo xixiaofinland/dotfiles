@@ -36,8 +36,3 @@ require 'opts'
 require 'extra'
 
 -- vim: ts=2 sts=2 sw=2 et
-local function show_buffer_filetype()
-  local filetype = vim.api.nvim_buf_get_option(0, 'filetype')
-  print("Current buffer filetype: " .. filetype)
-end
-vim.keymap.set('n', '<C-y>', show_buffer_filetype, { noremap = true, silent = true })
