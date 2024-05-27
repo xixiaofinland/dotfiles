@@ -3,7 +3,12 @@ return {
         "ibhagwan/fzf-lua",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
-            require("fzf-lua").setup({})
+            require("fzf-lua").setup({
+                winopts = { row = 1, col = 0 },
+                files = {
+                    formatter = "path.filename_first",
+                }
+            })
 
             local nmap = function(keys, func, desc)
                 if desc then
