@@ -7,6 +7,7 @@ return {
                 winopts = { row = 1, col = 0 },
                 files = {
                     formatter = "path.filename_first",
+                    path_shorten = 5,
                 }
             })
 
