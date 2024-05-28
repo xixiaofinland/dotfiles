@@ -101,3 +101,18 @@ local toggleDiagnostics = function()
 end
 
 vim.keymap.set('n', '\\d', toggleDiagnostics, { noremap = true, silent = true, desc = 'toggle diagnostics' })
+
+-- toggle line num;
+local toggleLineNum = function ()
+  local current = vim.wo.number
+  if current then
+    vim.wo.number = false
+    vim.wo.relativenumber = false
+  else
+    vim.wo.number = true
+    vim.wo.relativenumber = true
+  end
+end
+
+vim.keymap.set('n', '\\l', toggleLineNum, { noremap = true, silent = true, desc = 'toggle lineNum' })
+
