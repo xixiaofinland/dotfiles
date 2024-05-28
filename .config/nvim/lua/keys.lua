@@ -114,5 +114,5 @@ local toggleLineNum = function ()
   end
 end
 
-vim.keymap.set('n', '\\l', toggleLineNum, { noremap = true, silent = true, desc = 'toggle lineNum' })
+vim.keymap.set('n', '\\n', toggleLineNum, { noremap = true, silent = true, desc = 'toggle lineNum' })
 
