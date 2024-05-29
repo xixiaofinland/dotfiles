@@ -14,7 +14,9 @@ vim.opt.inccommand = 'split'
 vim.opt.scrolloff = 10
 
 -- Show which line your cursor is on
-vim.opt.cursorline = false
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
+
 vim.api.nvim_set_hl(0, 'CursorLineNr', { bold = true, ctermfg = 11, foreground = 'Yellow' })
 
 vim.opt.foldenable = false
