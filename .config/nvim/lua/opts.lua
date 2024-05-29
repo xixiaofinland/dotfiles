@@ -1,5 +1,9 @@
 -- vim.cmd('packadd cfilter')
 
+vim.diagnostic.config({
+  virtual_text = false,
+})
+
 vim.opt.list = true
 vim.opt.listchars:append {
   trail = "~",
