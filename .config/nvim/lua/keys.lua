@@ -111,10 +111,10 @@ local toggleLineNum = function ()
 end
 vim.keymap.set('n', '\\n', toggleLineNum, { noremap = true, silent = true, desc = 'toggle lineNum' })
 
--- ctrl + h/j/k/l in insert mode;
+-- Alt + h/j/k/l in insert mode;
 
--- local opts = { noremap = true, silent = true }
--- vim.keymap.set('i', '<C-h>', '<Left>', opts)
--- vim.keymap.set('i', '<C-j>', '<Down>', opts)
--- vim.keymap.set('i', '<C-k>', '<Up>', opts)
--- vim.keymap.set('i', '<C-l>', '<Right>', opts)
+local opts = { noremap = true, silent = true }
+vim.keymap.set('i', '<M-h>', '<Left>', opts)
+vim.keymap.set('i', '<M-j>', '<Down>', opts)
+vim.keymap.set('i', '<M-k>', '<Up>', opts)
+vim.keymap.set('i', '<M-l>', '<Right>', opts)
