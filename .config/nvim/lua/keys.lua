@@ -41,9 +41,6 @@ vim.keymap.set('n', '<leader>cF', function()
   vim.notify(string.format('"%s" copied.', file_name), vim.log.levels.INFO)
 end, { desc = 'Copy File name full path' })
 
-vim.keymap.set('n', '<leader>e', '<CMD>e ~/.config/nvim/lua/plugins/sf.lua<CR>',
-  { desc = 'Open sf config' })
-
 vim.keymap.set("n", "\\v",
   function()
     local curr = vim.diagnostic.config().virtual_text
@@ -82,7 +79,6 @@ local toggle = function(character)
     return api.nvim_set_current_line(line .. character)
   end
 end
-
 vim.keymap.set('n', '<leader>,', function() toggle(',') end, { noremap = true, silent = true, desc = 'toggle ","' })
 vim.keymap.set('n', '<leader>;', function() toggle(';') end, { noremap = true, silent = true, desc = 'toggle ";"' })
 
@@ -99,10 +95,10 @@ local toggleDiagnostics = function()
     print("Diagnostics disabled")
   end
 end
-
 vim.keymap.set('n', '\\d', toggleDiagnostics, { noremap = true, silent = true, desc = 'toggle diagnostics' })
 
 -- toggle line num;
+
 local toggleLineNum = function ()
   local current = vim.wo.number
   if current then
@@ -113,6 +109,12 @@ local toggleLineNum = function ()
     vim.wo.relativenumber = true
   end
 end
-
 vim.keymap.set('n', '\\n', toggleLineNum, { noremap = true, silent = true, desc = 'toggle lineNum' })
 
+-- ctrl + h/j/k/l in insert mode;
+
+local opts = { noremap = true, silent = true }
+vim.keymap.set('i', '<C-h>', '<Left>', opts)
+vim.keymap.set('i', '<C-j>', '<Down>', opts)
+vim.keymap.set('i', '<C-k>', '<Up>', opts)
+vim.keymap.set('i', '<C-l>', '<Right>', opts)
