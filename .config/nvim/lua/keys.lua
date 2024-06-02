@@ -113,8 +113,8 @@ vim.keymap.set('n', '\\n', toggleLineNum, { noremap = true, silent = true, desc 
 
 -- ctrl + h/j/k/l in insert mode;
 
-local opts = { noremap = true, silent = true }
-vim.keymap.set('i', '<C-h>', '<Left>', opts)
-vim.keymap.set('i', '<C-j>', '<Down>', opts)
-vim.keymap.set('i', '<C-k>', '<Up>', opts)
-vim.keymap.set('i', '<C-l>', '<Right>', opts)
+-- local opts = { noremap = true, silent = true }
+-- vim.keymap.set('i', '<C-h>', '<Left>', opts)
+-- vim.keymap.set('i', '<C-j>', '<Down>', opts)
+-- vim.keymap.set('i', '<C-k>', '<Up>', opts)
+-- vim.keymap.set('i', '<C-l>', '<Right>', opts)
