@@ -24,8 +24,8 @@ vim.opt.cursorlineopt = "number"
 
 vim.opt.foldenable = false
 
-vim.opt.textwidth = 80
-vim.opt.colorcolumn = "80"
+vim.opt.textwidth = 100
+vim.opt.colorcolumn = "100"
 
 vim.opt.history = 200
 
