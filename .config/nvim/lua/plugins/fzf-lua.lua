@@ -4,7 +4,7 @@ return {
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
             require("fzf-lua").setup({
-                files = {
+                defaults = {
                     formatter = "path.filename_first",
                     path_shorten = 5,
                 }
