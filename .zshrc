@@ -16,6 +16,9 @@
 # Append rust commands
 PATH="$HOME/.cargo/bin/:$PATH"
 
+# Append Haskell commands
+PATH="$HOME/.local/bin/:$PATH"
+
 # Add oh-my-zsh to path
 export ZSH="$HOME/.oh-my-zsh"
 
