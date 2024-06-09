@@ -29,7 +29,7 @@ return {
       vim.cmd('hi! MiniCursorwordCurrent guifg=NONE guibg=NONE gui=NONE cterm=NONE') -- disable highlight of the word under the cursor
 
       require('mini.misc').setup()
-      nmap('<leader>M', MiniMisc.zoom, 'toggle zoom')
+      nmap('<leader>l', MiniMisc.zoom, 'toggle large/zoom')
       MiniMisc.setup_restore_cursor({
         ignore_filetype = { "gitcommit", "gitrebase", "SFTerm", "fzf" }
       })
