@@ -6,14 +6,19 @@ return {
       disable_mouse = false,
     }
   },
-  -- {
-  --   "tris203/precognition.nvim",
-  --   config = {
-  --     startVisible = false,
-  --   }
-  -- },
-  vim.keymap.set('n', '\\k', function()
-    -- require("precognition").toggle()
+
+  {
+    "tris203/precognition.nvim",
+    config = {
+      startVisible = false,
+    }
+  },
+
+  vim.keymap.set('n', '\\h', function()
     vim.cmd('Hardtime toggle')
-  end, { noremap = true, silent = true, desc = 'toggle key-study features' })
+  end, { noremap = true, silent = true, desc = 'toggle hard-time' }),
+
+  vim.keymap.set('n', '\\p', function()
+    require("precognition").toggle()
+  end, { noremap = true, silent = true, desc = 'toggle precognition' })
 }
