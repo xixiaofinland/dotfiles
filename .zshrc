@@ -87,3 +87,5 @@ fpath+=($HOME/.zsh/pure)
 autoload -U promptinit; promptinit
 prompt pure
 
+
+if [ -e /home/finxxi/.nix-profile/etc/profile.d/nix.sh ]; then . /home/finxxi/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
