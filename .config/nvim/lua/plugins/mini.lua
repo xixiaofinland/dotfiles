@@ -95,6 +95,7 @@ return {
         -- diagnostic = { suffix = 'd', options = { severity = vim.diagnostic.severity.ERROR } },
 
         -- disabled ones which I don't use;
+        comment    = { suffix = '', options = {} }, -- key conflict in nvim diff mode
         undo       = { suffix = '', options = {} },
         window     = { suffix = '', options = {} },
 
