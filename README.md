@@ -1,4 +1,4 @@
-# This repo is converted into Nix-compatable version in the [new repo](https://github.com/xixiaofinland/dotfiles-nix)
+# This repo is orphaned. It's converted into Nix-compatable version in the [new repo](https://github.com/xixiaofinland/dotfiles-nix)
 
 
 # What
